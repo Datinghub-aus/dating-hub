@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dating Re-Engineered | Research & Behavioral Analysis Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #020617; /* slate-950 */
+            color: #94a3b8; /* slate-400 */
+        }
+        .text-white-pure { color: #f8fafc; }
+        .border-hub { border-color: #1e293b; } /* slate-800 */
+        .bg-indigo-hub { background-color: #6366f1; }
+        
+        /* Research Metric Card */
+        .metric-card {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            transition: all 0.2s ease;
+        }
+        .metric-card:hover {
+            border-color: #6366f1;
+            background: #1e293b;
+        }
+
+        /* Technical Indicator */
+        .data-dot {
+            height: 8px;
+            width: 8px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body class="selection:bg-indigo-500/30">
+
+    <nav class="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-sm border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 bg-indigo-600 flex items-center justify-center rounded-sm">
+                    <span class="text-white font-bold text-xs">DH</span>
+                </div>
+                <span class="text-white-pure font-bold tracking-tighter text-xl uppercase">Dating Hub <span class="text-indigo-500">Research</span></span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-xs font-bold tracking-widest uppercase">
+                <a href="/about/" class="hover:text-white transition">About</a>
+                <a href="#analysis" class="hover:text-white transition">Market Analysis</a>
+                <a href="/tools/data-library/" class="hover:text-white transition">Data Library</a>
+                <a href="/blog/" class="hover:text-white transition">Publications</a>
+            </div>
+            <a href="/directory/" class="border border-indigo-500 text-indigo-400 px-4 py-1.5 text-xs font-bold rounded hover:bg-indigo-500 hover:text-white transition uppercase">
+                Directory
+            </a>
+        </div>
+    </nav>
+
+    <header class="py-24 border-b border-slate-900 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px]">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center space-x-2 bg-indigo-500/10 border border-indigo-500/20 px-3 py-1 rounded-full mb-8">
+                <span class="data-dot bg-indigo-500 animate-pulse"></span>
+                <span class="text-indigo-400 text-[10px] font-bold uppercase tracking-widest">v2.5 System Online | 2025 Intelligence Report</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white-pure tracking-tight mb-8">
+                The Science of <span class="text-indigo-500">Digital Connection.</span>
+            </h1>
+            <p class="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                Objective analysis of the modern romantic landscape. We leverage behavioral data and algorithmic transparency to help you navigate the 2025 dating market.
+            </p>
+            <div class="mt-12 flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
+                <button class="bg-indigo-600 text-white font-bold px-10 py-4 rounded hover:bg-indigo-700 transition">Access Full Reports</button>
+                <button class="bg-slate-800 text-white font-bold px-10 py-4 rounded hover:bg-slate-700 transition">View Raw Stats</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-20 max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="metric-card p-8">
+                <span class="text-xs font-bold text-indigo-400 uppercase tracking-widest">Market Saturation</span>
+                <div class="text-4xl font-bold text-white-pure my-4">82.4%</div>
+                <p class="text-sm leading-relaxed">Increase in cross-platform digital interaction within urban demographics over the last 18 months.</p>
+            </div>
+            <div class="metric-card p-8">
+                <span class="text-xs font-bold text-teal-400 uppercase tracking-widest">Success Probability</span>
+                <div class="text-4xl font-bold text-white-pure my-4">+14.2%</div>
+                <p class="text-sm leading-relaxed">Higher retention rates for couples utilizing compatibility-based algorithmic matching vs. swipe-based systems.</p>
+            </div>
+            <div class="metric-card p-8">
+                <span class="text-xs font-bold text-rose-400 uppercase tracking-widest">Fatigue Index</span>
+                <div class="text-4xl font-bold text-white-pure my-4">High</div>
+                <p class="text-sm leading-relaxed">Current user reports indicate a 60% burnout rate among active daters using 3+ applications concurrently.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="analysis" class="py-20 bg-slate-900/30 border-y border-slate-900">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white-pure tracking-tight">Core Behavioral Findings</h2>
+                <div class="h-1 w-20 bg-indigo-600 mx-auto mt-4"></div>
+            </div>
+
+            <div class="flex border-b border-slate-800 mb-10 overflow-x-auto">
+                <button class="px-8 py-4 text-sm font-bold border-b-2 border-indigo-500 text-white-pure whitespace-nowrap">01. Executive Summary</button>
+                <a href="/tools/data-library/" class="px-8 py-4 text-sm font-bold border-b-2 border-transparent hover:text-white transition whitespace-nowrap">02. Platform Pros/Cons</a>
+                <button class="px-8 py-4 text-sm font-bold border-b-2 border-transparent hover:text-white transition whitespace-nowrap">03. Future Forecasting</button>
+            </div>
+
+            <div class="prose prose-invert max-w-none">
+                <div class="grid md:grid-cols-2 gap-12 items-start">
+                    <div>
+                        <h3 class="text-xl font-bold text-white-pure mb-4 uppercase tracking-wide italic">The Objective Mission</h3>
+                        <p class="mb-6 leading-relaxed">
+                            The Dating Hub Research Department operates as an independent auditor of digital social dynamics. Our 2025 publication cycle focuses on the <strong>quantification of authenticity</strong> in an era of AI-generated profiles and automated interactions.
+                        </p>
+                        <ul class="space-y-4 text-sm">
+                            <li class="flex items-start">
+                                <span class="text-indigo-500 mr-2">/</span> Verification of algorithmic transparency.
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-indigo-500 mr-2">/</span> Analysis of ghosting behaviors as a market efficiency flaw.
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-indigo-500 mr-2">/</span> Strategic optimization for long-term emotional ROI.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-indigo-600/5 border border-indigo-500/20 p-8 rounded">
+                        <h4 class="text-white-pure font-bold mb-4 flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                            Key Research Metric: Authenticity
+                        </h4>
+                        <div class="w-full bg-slate-800 h-2 rounded-full mb-2">
+                            <div class="bg-indigo-500 h-2 rounded-full" style="width: 68%"></div>
+                        </div>
+                        <p class="text-xs uppercase font-bold tracking-widest text-slate-500">68% of users prioritize profile accuracy over physical aesthetics in 2025.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 max-w-7xl mx-auto px-6">
+        <div class="flex justify-between items-center mb-12 border-l-4 border-indigo-600 pl-6">
+            <h2 class="text-3xl font-bold text-white-pure">Latest Publications</h2>
+            <a href="/blog/" class="text-xs font-bold text-indigo-400 hover:text-white transition uppercase tracking-widest">Access Archive &rarr;</a>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-1">
+            <a href="/blog/micromance/" class="group block border border-slate-900 p-8 hover:bg-indigo-600 transition duration-300">
+                <span class="text-[10px] font-bold text-indigo-400 group-hover:text-white/80 uppercase tracking-[.25em]">Report #042</span>
+                <h3 class="text-xl font-bold text-white-pure mt-4 group-hover:translate-x-2 transition duration-300">The Rise of Micro-mance</h3>
+                <p class="mt-4 text-sm text-slate-500 group-hover:text-white/70">Analyzing the shift toward high-frequency, low-duration connections in urban environments.</p>
+            </a>
+            <a href="/blog/ai-matchmaking/" class="group block border border-slate-900 p-8 hover:bg-indigo-600 transition duration-300">
+                <span class="text-[10px] font-bold text-indigo-400 group-hover:text-white/80 uppercase tracking-[.25em]">Report #043</span>
+                <h3 class="text-xl font-bold text-white-pure mt-4 group-hover:translate-x-2 transition duration-300">Algorithmic Skepticism</h3>
+                <p class="mt-4 text-sm text-slate-500 group-hover:text-white/70">How user behavior changes when AI-driven matchmaking models are introduced.</p>
+            </a>
+            <a href="/blog/digital-boundaries/" class="group block border border-slate-900 p-8 hover:bg-indigo-600 transition duration-300">
+                <span class="text-[10px] font-bold text-indigo-400 group-hover:text-white/80 uppercase tracking-[.25em]">Report #044</span>
+                <h3 class="text-xl font-bold text-white-pure mt-4 group-hover:translate-x-2 transition duration-300">Boundary Optimization</h3>
+                <p class="mt-4 text-sm text-slate-500 group-hover:text-white/70">Technical strategies for maintaining digital privacy and psychological health in 2025.</p>
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 border-t border-slate-900 py-20">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12 text-xs">
+            <div class="col-span-2">
+                <div class="flex items-center space-x-3 mb-6">
+                    <div class="w-6 h-6 bg-slate-800 flex items-center justify-center rounded-sm">
+                        <span class="text-white font-bold text-[10px]">DH</span>
+                    </div>
+                    <span class="text-white-pure font-bold tracking-widest uppercase">Dating Hub Research</span>
+                </div>
+                <p class="text-slate-500 max-w-sm leading-relaxed mb-6">
+                    The Dating Hub is an independent research collective dedicated to the study and optimization of modern social ecosystems. All data is verified through third-party metrics.
+                </p>
+                <div class="text-slate-600">
+                    &copy; 2025 Dating Hub Research | All Data Rights Reserved.
+                </div>
+            </div>
+            <div>
+                <h5 class="text-white-pure font-bold uppercase tracking-widest mb-6">Resources</h5>
+                <ul class="space-y-4 text-slate-500 font-bold uppercase tracking-tighter">
+                    <li><a href="/directory/" class="hover:text-indigo-400">Database Directory</a></li>
+                    <li><a href="/tools/data-library/" class="hover:text-indigo-400">Analysis Sheets</a></li>
+                    <li><a href="/blog/" class="hover:text-indigo-400">Journal Archive</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white-pure font-bold uppercase tracking-widest mb-6">Compliance</h5>
+                <ul class="space-y-4 text-slate-500 font-bold uppercase tracking-tighter">
+                    <li><a href="/tools/privacy/" class="hover:text-indigo-400">Data Privacy Policy</a></li>
+                    <li><a href="/tools/terms/" class="hover:text-indigo-400">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

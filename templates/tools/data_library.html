@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block title %}Data Library | Dating Hub Research{% endblock %}
+
+{% block content %}
+<div class="content-container">
+    <section class="hero-section text-center">
+        <h1 style="font-size: 2.5rem;">Data Library</h1>
+        <p class="section-subtitle">Access anonymized datasets from our research studies</p>
+    </section>
+
+    <div class="policy-note">
+        <h3><i class="bi bi-info-circle"></i> Data Access Policy</h3>
+        <p>All datasets are anonymized to protect participant privacy. Available for academic and research purposes with proper citation.</p>
+    </div>
+
+    <div class="mt-4">
+        <!-- Micromance Study Dataset -->
+        <div class="content-card">
+            <div class="card-meta">
+                <span><i class="bi bi-calendar"></i> Published: December 2025</span>
+                <span><i class="bi bi-tag"></i> Survey Data</span>
+            </div>
+            <h3 class="card-title">Micromance Study Dataset</h3>
+            <p class="card-excerpt">
+                Comprehensive survey responses and interaction patterns from 2,150 dating app users. 
+                Includes demographic data, app usage patterns, and relationship outcomes.
+            </p>
+            <div class="mt-3">
+                <span class="badge"><i class="bi bi-file-earmark-text me-1"></i> CSV Format</span>
+                <span class="badge"><i class="bi bi-database me-1"></i> 12.8 MB</span>
+                <span class="badge"><i class="bi bi-people me-1"></i> 2,150 participants</span>
+                <span class="badge"><i class="bi bi-clock me-1"></i> 12-month study</span>
+            </div>
+            <div class="mt-4">
+                <a href="#" class="cta-button">
+                    <i class="bi bi-download me-2"></i>Download Dataset
+                </a>
+                <a href="#" class="cta-button cta-button-secondary ml-2">
+                    <i class="bi bi-file-text me-2"></i>Read Documentation
+                </a>
+            </div>
+        </div>
+
+        <!-- AI Matchmaking Dataset -->
+        <div class="content-card">
+            <div class="card-meta">
+                <span><i class="bi bi-calendar"></i> Published: November 2025</span>
+                <span><i class="bi bi-tag"></i> Algorithm Analysis</span>
+            </div>
+            <h3 class="card-title">AI Matchmaking Algorithms Dataset</h3>
+            <p class="card-excerpt">
+                Platform interaction data and match outcomes from 6-month longitudinal study. 
+                Includes algorithm performance metrics, user engagement data, and compatibility scores.
+            </p>
+            <div class="mt-3">
+                <span class="badge"><i class="bi bi-file-earmark-text me-1"></i> JSON Format</span>
+                <span class="badge"><i class="bi bi-database me-1"></i> 8.4 MB</span>
+                <span class="badge"><i class="bi bi-calendar me-1"></i> 6-month longitudinal</span>
+                <span class="badge"><i class="bi bi-bar-chart me-1"></i> 45,000+ interactions</span>
+            </div>
+            <div class="mt-4">
+                <a href="#" class="cta-button">
+                    <i class="bi bi-download me-2"></i>Download Dataset
+                </a>
+                <a href="#" class="cta-button cta-button-secondary ml-2">
+                    <i class="bi bi-file-text me-2"></i>Read Documentation
+                </a>
+            </div>
+        </div>
+
+        <!-- Digital Boundaries Dataset -->
+        <div class="content-card">
+            <div class="card-meta">
+                <span><i class="bi bi-calendar"></i> Coming: January 2026</span>
+                <span><i class="bi bi-tag"></i> Privacy & Boundaries</span>
+            </div>
+            <h3 class="card-title">Digital Boundaries Dataset</h3>
+            <p class="card-excerpt">
+                How couples negotiate privacy and connectivity in digital relationships. 
+                Study includes interview transcripts, communication patterns, and boundary-setting behaviors.
+            </p>
+            <div class="mt-3">
+                <span class="badge"><i class="bi bi-file-earmark-text me-1"></i> CSV & Text Format</span>
+                <span class="badge"><i class="bi bi-database me-1"></i> ~15 MB (estimated)</span>
+                <span class="badge"><i class="bi bi-people me-1"></i> 500+ participants</span>
+                <span class="badge badge-new">New Study</span>
+            </div>
+            <div class="mt-4">
+                <button class="cta-button cta-button-secondary" disabled>
+                    <i class="bi bi-clock me-2"></i>Available January 2026
+                </button>
+                <a href="{% url 'digital_boundaries' %}" class="cta-button cta-button-secondary ml-2">
+                    <i class="bi bi-book me-2"></i>Read Study Preview
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Data Usage Guidelines -->
+    <div class="feature-highlight mt-5">
+        <h3><i class="bi bi-shield-check"></i> Data Usage Guidelines</h3>
+        <p>
+            <strong>Citation Required:</strong> Please cite our research when using these datasets.<br>
+            <strong>Academic Use:</strong> Primarily intended for academic and research purposes.<br>
+            <strong>Non-Commercial:</strong> Commercial use requires written permission.<br>
+            <strong>Anonymity:</strong> All personal identifiers have been removed to protect privacy.
+        </p>
+        <div class="mt-3">
+            <a href="{% url 'research_ethics' %}" class="cta-button cta-button-secondary" style="font-size: 0.9rem;">
+                <i class="bi bi-shield-check me-2"></i>View Research Ethics
+            </a>
+            <a href="mailto:info@dating-hub.com.au" class="cta-button cta-button-secondary ml-2" style="font-size: 0.9rem;">
+                <i class="bi bi-envelope me-2"></i>Request Dataset Access
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}Our Research Methodology | Dating Hub Research{% endblock %}
+
+{% block breadcrumb_items %}
+<li class="breadcrumb-item"><a href="/">Home</a></li>
+<li class="breadcrumb-item active" aria-current="page">Methodology</li>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <h1 class="display-5 fw-bold mb-4">Our Research Methodology</h1>
+        
+        <div class="methodology-box mb-5">
+            <h2 class="h4"><i class="bi bi-clipboard-data me-2"></i>Research Philosophy</h2>
+            <p>We believe relationship research should be rigorous, transparent, and ethically conducted. Our methodology combines quantitative precision with qualitative depth to understand the nuanced realities of modern dating.</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title h5"><i class="bi bi-bar-chart me-2"></i>Quantitative Methods</h3>
+                        <ul class="mt-3">
+                            <li class="mb-2">Large-scale surveys (1,000-5,000 participants)</li>
+                            <li class="mb-2">Statistical analysis of behavioral data</li>
+                            <li class="mb-2">Longitudinal tracking studies</li>
+                            <li>Regression and correlation analysis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title h5"><i class="bi bi-chat-dots me-2"></i>Qualitative Methods</h3>
+                        <ul class="mt-3">
+                            <li class="mb-2">In-depth interviews (45-90 minutes)</li>
+                            <li class="mb-2">Focus group discussions</li>
+                            <li class="mb-2">Content analysis of user communications</li>
+                            <li>Thematic and narrative analysis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <h2 class="h4">Ethical Standards</h2>
+            <div class="alert alert-light">
+                <h5 class="h6"><i class="bi bi-shield-check me-2"></i>Participant Protection</h5>
+                <p class="mb-0 small">All research undergoes ethics review. Participants provide informed consent, data is anonymized, and sensitive information is protected with encryption.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

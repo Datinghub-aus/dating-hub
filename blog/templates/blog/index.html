@@ -1,0 +1,524 @@
+<!-- blog/templates/blog/index.html -->
+{% extends 'base.html' %}
+
+{% block title %}Blog - Dating Hub Research{% endblock %}
+
+{% block extra_head %}
+<style>
+    /* Blog-specific styles */
+    .blog-header {
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        padding: 4rem 0 3rem 0;
+        margin-bottom: 3rem;
+        border-bottom: 1px solid #E0E0E0;
+    }
+    
+    .blog-header h1 {
+        font-family: 'Merriweather', serif;
+        font-size: 3rem;
+        color: #1D1D1D;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+    
+    .blog-header .lead {
+        font-size: 1.25rem;
+        color: #505050;
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 1.6;
+    }
+    
+    .blog-wrapper {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+    
+    .blog-container {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        gap: 3rem;
+        margin: 2rem 0;
+    }
+    
+    @media (max-width: 992px) {
+        .blog-container {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+    }
+    
+    /* Blog Post Card */
+    .blog-post-card {
+        background: #FFFFFF;
+        border: 1px solid #E0E0E0;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 2rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+    }
+    
+    .blog-post-card:hover {
+        box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        transform: translateY(-2px);
+    }
+    
+    .blog-post-card.featured {
+        border-left: 4px solid #0066CC;
+    }
+    
+    .blog-post-image {
+        height: 200px;
+        overflow: hidden;
+    }
+    
+    .blog-post-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    .blog-post-card:hover .blog-post-image img {
+        transform: scale(1.05);
+    }
+    
+    .blog-post-content {
+        padding: 1.5rem;
+    }
+    
+    .blog-post-meta {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        color: #767676;
+        font-size: 0.9rem;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    
+    .blog-post-category {
+        background: #0066CC;
+        color: white;
+        padding: 0.25rem 0.75rem;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-decoration: none;
+    }
+    
+    .blog-post-category:hover {
+        background: #0052A3;
+        color: white;
+        text-decoration: none;
+    }
+    
+    .blog-post-title {
+        font-family: 'Merriweather', serif;
+        font-size: 1.5rem;
+        color: #1D1D1D;
+        margin: 0 0 1rem 0;
+        line-height: 1.3;
+    }
+    
+    .blog-post-title a {
+        color: inherit;
+        text-decoration: none;
+    }
+    
+    .blog-post-title a:hover {
+        color: #0066CC;
+    }
+    
+    .blog-post-excerpt {
+        color: #505050;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+    
+    .blog-post-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 1rem;
+        border-top: 1px solid #E0E0E0;
+    }
+    
+    .blog-post-stats {
+        display: flex;
+        gap: 1rem;
+        color: #767676;
+        font-size: 0.9rem;
+    }
+    
+    /* Sidebar */
+    .blog-sidebar {
+        position: sticky;
+        top: 100px;
+        height: fit-content;
+    }
+    
+    .sidebar-widget {
+        background: #FFFFFF;
+        border: 1px solid #E0E0E0;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    
+    .sidebar-widget h3 {
+        font-family: 'Merriweather', serif;
+        font-size: 1.25rem;
+        color: #1D1D1D;
+        margin: 0 0 1.5rem 0;
+        padding-bottom: 0.75rem;
+        border-bottom: 2px solid #E0E0E0;
+    }
+    
+    .categories-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .categories-list li {
+        margin-bottom: 0.75rem;
+    }
+    
+    .categories-list a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #505050;
+        text-decoration: none;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #f5f5f5;
+    }
+    
+    .categories-list a:hover {
+        color: #0066CC;
+    }
+    
+    .category-count {
+        background: #f8f9fa;
+        color: #767676;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+    
+    .recent-post {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #f5f5f5;
+    }
+    
+    .recent-post:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+    
+    .recent-post-image {
+        width: 60px;
+        height: 60px;
+        flex-shrink: 0;
+        overflow: hidden;
+        border-radius: 4px;
+    }
+    
+    .recent-post-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .recent-post-content {
+        flex: 1;
+    }
+    
+    .recent-post-title {
+        font-size: 0.9rem;
+        margin: 0 0 0.25rem 0;
+        line-height: 1.3;
+    }
+    
+    .recent-post-title a {
+        color: #1D1D1D;
+        text-decoration: none;
+    }
+    
+    .recent-post-title a:hover {
+        color: #0066CC;
+    }
+    
+    .recent-post-meta {
+        font-size: 0.8rem;
+        color: #767676;
+    }
+    
+    /* Pagination */
+    .pagination {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        margin: 3rem 0;
+    }
+    
+    .page-link {
+        padding: 0.5rem 1rem;
+        background: #FFFFFF;
+        border: 1px solid #E0E0E0;
+        border-radius: 4px;
+        color: #505050;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    
+    .page-link:hover {
+        background: #f8f9fa;
+        color: #0066CC;
+    }
+    
+    .page-link.active {
+        background: #0066CC;
+        color: white;
+        border-color: #0066CC;
+    }
+    
+    .page-link.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+    
+    /* Empty State */
+    .empty-state {
+        text-align: center;
+        padding: 3rem;
+        background: #f8f9fa;
+        border-radius: 8px;
+        border: 1px solid #E0E0E0;
+    }
+    
+    .empty-state i {
+        font-size: 3rem;
+        color: #767676;
+        margin-bottom: 1rem;
+    }
+    
+    .empty-state h3 {
+        font-family: 'Merriweather', serif;
+        color: #1D1D1D;
+        margin-bottom: 1rem;
+    }
+    
+    .empty-state p {
+        color: #505050;
+        max-width: 500px;
+        margin: 0 auto 1.5rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="blog-header">
+    <div class="content-container">
+        <h1>Dating Hub Research Blog</h1>
+        <p class="lead">
+            Insights, analysis, and commentary on digital dating trends, 
+            relationship science, and the intersection of technology and human connection.
+        </p>
+    </div>
+</div>
+
+<div class="blog-wrapper">
+    <div class="blog-container">
+        <main class="blog-main">
+            {% if featured_posts %}
+            <section class="featured-posts">
+                <h2 style="font-family: 'Merriweather', serif; font-size: 1.5rem; margin-bottom: 1.5rem; color: #1D1D1D;">
+                    <i class="bi bi-star-fill" style="color: #FFC107;"></i> Featured Posts
+                </h2>
+                {% for post in featured_posts %}
+                <article class="blog-post-card featured">
+                    {% if post.featured_image %}
+                    <div class="blog-post-image">
+                        <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+                    </div>
+                    {% endif %}
+                    <div class="blog-post-content">
+                        <div class="blog-post-meta">
+                            {% if post.category %}
+                            <a href="{% url 'blog:blog_category' post.category %}" class="blog-post-category">
+                                {{ post.get_category_display }}
+                            </a>
+                            {% endif %}
+                            <span><i class="bi bi-calendar"></i> {{ post.published_date|date:"F j, Y" }}</span>
+                            <span><i class="bi bi-person"></i> {{ post.author_initials }}</span>
+                            <span><i class="bi bi-clock"></i> {{ post.read_time }} min read</span>
+                        </div>
+                        <h2 class="blog-post-title">
+                            <a href="{% url 'blog:blog_detail' post.slug %}">{{ post.title }}</a>
+                        </h2>
+                        <p class="blog-post-excerpt">{{ post.excerpt }}</p>
+                        <div class="blog-post-footer">
+                            <a href="{% url 'blog:blog_detail' post.slug %}" class="cta-button" style="font-size: 0.9rem; padding: 0.5rem 1rem;">
+                                Read More <i class="bi bi-arrow-right"></i>
+                            </a>
+                            <div class="blog-post-stats">
+                                <span><i class="bi bi-eye"></i> {{ post.views }} views</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                {% endfor %}
+            </section>
+            {% endif %}
+
+            <section class="all-posts">
+                <h2 style="font-family: 'Merriweather', serif; font-size: 1.5rem; margin: 2.5rem 0 1.5rem 0; color: #1D1D1D;">
+                    Latest Posts
+                </h2>
+                
+                {% if page_obj.object_list %}
+                    {% for post in page_obj.object_list %}
+                    <article class="blog-post-card">
+                        {% if post.featured_image %}
+                        <div class="blog-post-image">
+                            <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+                        </div>
+                        {% endif %}
+                        <div class="blog-post-content">
+                            <div class="blog-post-meta">
+                                {% if post.category %}
+                                <a href="{% url 'blog:blog_category' post.category %}" class="blog-post-category">
+                                    {{ post.get_category_display }}
+                                </a>
+                                {% endif %}
+                                <span><i class="bi bi-calendar"></i> {{ post.published_date|date:"F j, Y" }}</span>
+                                <span><i class="bi bi-person"></i> {{ post.author_initials }}</span>
+                                <span><i class="bi bi-clock"></i> {{ post.read_time }} min read</span>
+                            </div>
+                            <h2 class="blog-post-title">
+                                <a href="{% url 'blog:blog_detail' post.slug %}">{{ post.title }}</a>
+                            </h2>
+                            <p class="blog-post-excerpt">{{ post.excerpt }}</p>
+                            <div class="blog-post-footer">
+                                <a href="{% url 'blog:blog_detail' post.slug %}" class="cta-button" style="font-size: 0.9rem; padding: 0.5rem 1rem;">
+                                    Read More <i class="bi bi-arrow-right"></i>
+                                </a>
+                                <div class="blog-post-stats">
+                                    <span><i class="bi bi-eye"></i> {{ post.views }} views</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    {% endfor %}
+                    
+                    <!-- Pagination -->
+                    {% if page_obj.has_other_pages %}
+                    <nav class="pagination">
+                        {% if page_obj.has_previous %}
+                        <a href="?page={{ page_obj.previous_page_number }}" class="page-link">
+                            <i class="bi bi-chevron-left"></i> Previous
+                        </a>
+                        {% else %}
+                        <span class="page-link disabled">
+                            <i class="bi bi-chevron-left"></i> Previous
+                        </span>
+                        {% endif %}
+                        
+                        {% for num in page_obj.paginator.page_range %}
+                            {% if page_obj.number == num %}
+                            <span class="page-link active">{{ num }}</span>
+                            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                            <a href="?page={{ num }}" class="page-link">{{ num }}</a>
+                            {% endif %}
+                        {% endfor %}
+                        
+                        {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}" class="page-link">
+                            Next <i class="bi bi-chevron-right"></i>
+                        </a>
+                        {% else %}
+                        <span class="page-link disabled">
+                            Next <i class="bi bi-chevron-right"></i>
+                        </span>
+                        {% endif %}
+                    </nav>
+                    {% endif %}
+                    
+                {% else %}
+                <div class="empty-state">
+                    <i class="bi bi-journal-text"></i>
+                    <h3>No blog posts yet</h3>
+                    <p>Check back soon for new articles and research insights.</p>
+                    <a href="{% url 'research_index' %}" class="cta-button">
+                        Browse Research <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+                {% endif %}
+            </section>
+        </main>
+
+        <aside class="blog-sidebar">
+            <!-- Categories Widget -->
+            <div class="sidebar-widget">
+                <h3><i class="bi bi-folder"></i> Categories</h3>
+                <ul class="categories-list">
+                    {% for category in categories %}
+                    <li>
+                        <a href="{% url 'blog:blog_category' category.slug %}">
+                            {{ category.name }}
+                            <span class="category-count">{{ category.post_count }}</span>
+                        </a>
+                    </li>
+                    {% empty %}
+                    <li style="color: #767676; font-style: italic;">No categories yet</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <!-- Recent Posts Widget -->
+            <div class="sidebar-widget">
+                <h3><i class="bi bi-clock-history"></i> Recent Posts</h3>
+                {% for post in recent_posts %}
+                <div class="recent-post">
+                    {% if post.featured_image %}
+                    <div class="recent-post-image">
+                        <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+                    </div>
+                    {% endif %}
+                    <div class="recent-post-content">
+                        <h4 class="recent-post-title">
+                            <a href="{% url 'blog:blog_detail' post.slug %}">{{ post.title|truncatechars:50 }}</a>
+                        </h4>
+                        <div class="recent-post-meta">
+                            {{ post.published_date|date:"M j, Y" }}
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <p style="color: #767676; font-style: italic;">No recent posts</p>
+                {% endfor %}
+            </div>
+
+            <!-- CTA Widget -->
+            <div class="sidebar-widget" style="background: linear-gradient(135deg, #0066CC 0%, #0052A3 100%); color: white; border: none;">
+                <h3 style="color: white;"><i class="bi bi-megaphone"></i> Stay Updated</h3>
+                <p style="margin-bottom: 1.5rem;">Get the latest research insights delivered to your inbox.</p>
+                <a href="{% url 'contact' %}" class="cta-button" style="background: white; color: #0066CC;">
+                    Subscribe <i class="bi bi-envelope"></i>
+                </a>
+            </div>
+        </aside>
+    </div>
+</div>
+{% endblock %}

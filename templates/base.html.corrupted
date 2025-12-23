@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Dating Hub Research | Data-Driven Relationship Analysis{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dh-blue: #0066CC;
+            --dh-blue-dark: #004C99;
+            --dh-gray-100: #F8F9FA;
+            --dh-gray-800: #343A40;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #212529;
+            line-height: 1.6;
+            padding-top: 0;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Merriweather', 'Georgia', serif;
+            font-weight: 700;
+        }
+        .navbar-brand {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, var(--dh-blue) 0%, var(--dh-blue-dark) 100%);
+            color: white;
+            padding: 4rem 0;
+        }
+        .card {
+            border: 1px solid rgba(0,0,0,0.125);
+            border-radius: 0.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        .key-finding {
+            border-left: 4px solid var(--dh-blue);
+            background-color: var(--dh-gray-100);
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+        }
+        .methodology-box {
+            background-color: #FFF8DC;
+            border: 1px solid #FFE082;
+            border-radius: 0.5rem;
+            padding: 2rem;
+        }
+        .metric-badge {
+            background: var(--dh-blue);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .btn-primary {
+            background-color: var(--dh-blue);
+            border-color: var(--dh-blue);
+            padding: 0.75rem 1.75rem;
+            font-weight: 600;
+        }
+        .btn-primary:hover {
+            background-color: var(--dh-blue-dark);
+            border-color: var(--dh-blue-dark);
+        }
+        footer {
+            border-top: 1px solid #dee2e6;
+        }
+        .breadcrumb {
+            background: transparent;
+            padding: 0.75rem 0;
+            margin-bottom: 1.5rem;
+        }
+        .content-container {
+            min-height: 60vh;
+        }
+    </style>
+    {% block extra_css %}{% endblock %}
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="bi bi-graph-up me-2"></i>Dating Hub Research
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link {% if request.path == '/' %}active{% endif %}" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link {% if '/blog/' in request.path %}active{% endif %}" href="/blog/">Research</a></li>
+                    <li class="nav-item"><a class="nav-link {% if '/data-library/' in request.path %}active{% endif %}" href="/tools/data-library/">Data Library</a></li>
+                    <li class="nav-item"><a class="nav-link {% if '/about/' in request.path %}active{% endif %}" href="/about/">Methodology</a></li>
+                </ul>
+            </div>
+        <div class="row mt-4 pt-3 border-top">
+            <div class="col-md-6">
+                <p class="mb-0 text-muted">&copy; 2025 Dating Hub Research. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <p class="mb-0 text-muted">info@dating-hub.com.au</p>
+            </div>
+        </div>
+        </div>
+        <div class="row mt-4 pt-3 border-top">
+            <div class="col-md-6">
+                <p class="mb-0 text-muted">&copy; 2025 Dating Hub Research. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <p class="mb-0 text-muted">info@dating-hub.com.au</p>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <main>
+        {% block hero %}{% endblock %}
+        
+        <div class="container content-container py-5">
+            {% block breadcrumb %}
+            {% if request.path != '/' %}
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    {% block breadcrumb_items %}{% endblock %}
+                </ol>
+            </nav>
+            {% endif %}
+            {% endblock %}
+            
+            {% block content %}{% endblock %}
+        </div>
+        <div class="row mt-4 pt-3 border-top">
+            <div class="col-md-6">
+                <p class="mb-0 text-muted">&copy; 2025 Dating Hub Research. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <p class="mb-0 text-muted">info@dating-hub.com.au</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3"><i class="bi bi-graph-up me-2"></i>Dating Hub Research</h5>
+                    <p class="text-muted small">
+                        Independent research analyzing digital dating trends and relationship formation.
+                    </p>
+                </div>
+        <div class="row mt-4 pt-3 border-top">
+            <div class="col-md-6">
+                <p class="mb-0 text-muted">&copy; 2025 Dating Hub Research. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <p class="mb-0 text-muted">info@dating-hub.com.au</p>
+            </div>
+        </div>
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h6 class="mb-3">Research</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="/blog/" class="text-decoration-none text-muted">All Studies</a></li>
+                        <li class="mb-2"><a href="/blog/micromance/" class="text-decoration-none text-muted">Micromance</a></li>
+                        <li class="mb-2"><a href="/blog/ai-matchmaking/" class="text-decoration-none text-muted">AI Matchmaking</a></li>
+                        <li><a href="/blog/digital-boundaries/" class="text-decoration-none text-muted">Digital Boundaries</a></li>
+                    </ul>
+                </div>
+        <div class="row mt-4 pt-3 border-top">
+            <div class="col-md-6">
+                <p class="mb-0 text-muted">&copy; 2025 Dating Hub Research. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <p class="mb-0 text-muted">info@dating-hub.com.au</p>
+            </div>
+        </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h6 class="mb-3">Resources</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="/tools/data-library/" class="text-decoration-none text-muted">Data Library</a></li>
+                        <li class="mb-2"><a href="/about/" class="text-decoration-none text-muted">Methodology</a></li>
+                        <li><a href="/tools/ethics/" class="text-decoration-none text-muted">Research Ethics</a></li>
+                    </ul>
+                </div>
+        <div class="row mt-4 pt-3 border-top">
+            <div class="col-md-6">
+                <p class="mb-0 text-muted">&copy; 2025 Dating Hub Research. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <p class="mb-0 text-muted">info@dating-hub.com.au</p>
+            </div>
+        </div>
+                <div class="col-lg-3 col-md-4 mb-4">
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h6 class="mb-3">Legal</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="/tools/privacy/" class="text-decoration-none text-muted">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="/tools/terms/" class="text-decoration-none text-muted">Terms of Use</a></li>
+                        <li><a href="/tools/ethics/" class="text-decoration-none text-muted">Research Ethics</a></li>
+                    </ul>
+                </div>                </div>
+        <div class="row mt-4 pt-3 border-top">
+            <div class="col-md-6">
+                <p class="mb-0 text-muted">&copy; 2025 Dating Hub Research. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <p class="mb-0 text-muted">info@dating-hub.com.au</p>
+            </div>
+        </div>
+            </div>
+        <div class="row mt-4 pt-3 border-top">
+            <div class="col-md-6">
+                <p class="mb-0 text-muted">&copy; 2025 Dating Hub Research. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <p class="mb-0 text-muted">info@dating-hub.com.au</p>
+            </div>
+        </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p class="mb-0 small text-muted">
+                        <i class="bi bi-c-circle me-1"></i>2025 Dating Hub Research. All rights reserved.
+                    </p>
+                </div>
+        <div class="row mt-4 pt-3 border-top">
+            <div class="col-md-6">
+                <p class="mb-0 text-muted">&copy; 2025 Dating Hub Research. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <p class="mb-0 text-muted">info@dating-hub.com.au</p>
+            </div>
+        </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0 small text-muted">
+                        An independent research project. Not affiliated with any dating platform.
+                    </p>
+                </div>
+        <div class="row mt-4 pt-3 border-top">
+            <div class="col-md-6">
+                <p class="mb-0 text-muted">&copy; 2025 Dating Hub Research. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <p class="mb-0 text-muted">info@dating-hub.com.au</p>
+            </div>
+        </div>
+            </div>
+        <div class="row mt-4 pt-3 border-top">
+            <div class="col-md-6">
+                <p class="mb-0 text-muted">&copy; 2025 Dating Hub Research. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <p class="mb-0 text-muted">info@dating-hub.com.au</p>
+            </div>
+        </div>
+        </div>
+        <div class="row mt-4 pt-3 border-top">
+            <div class="col-md-6">
+                <p class="mb-0 text-muted">&copy; 2025 Dating Hub Research. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <p class="mb-0 text-muted">info@dating-hub.com.au</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

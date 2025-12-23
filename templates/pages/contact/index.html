@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us | Dating Hub Research{% endblock %}
+
+{% block breadcrumb_items %}
+<li class="breadcrumb-item"><a href="/">Home</a></li>
+<li class="breadcrumb-item active" aria-current="page">Contact</li>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <h1 class="display-5 fw-bold mb-4">Contact Us</h1>
+        <div class="card shadow-sm">
+            <div class="card-body p-4">
+                <p class="lead">For general inquiries, feedback, or questions about our research, please contact our team.</p>
+                
+                <div class="mt-4">
+                    <h4 class="h5">Email</h4>
+                    <div class="alert alert-light border">
+                        <p class="mb-1"><strong>info@dating-hub.com.au</strong></p>
+                        <small class="text-muted">We strive to respond within 2-3 business days</small>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <h4 class="h5">Mailing Address</h4>
+                    <div class="alert alert-light border">
+                        <p class="mb-0">
+                            Dating Hub Research<br>
+                            [Your Street Address]<br>
+                            [Your City, State, Postcode]<br>
+                            Australia
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <h4 class="h5">Office Hours</h4>
+                    <p>Monday - Friday: 9:00 AM - 5:00 PM AEST</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

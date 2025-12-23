@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}Research Studies | Dating Hub Research{% endblock %}
+
+{% block breadcrumb_items %}
+<li class="breadcrumb-item active" aria-current="page">Research</li>
+{% endblock %}
+
+{% block content %}
+<div class="text-center mb-5">
+    <h1 class="display-5 fw-bold">Research Studies</h1>
+    <p class="lead text-muted">Comprehensive analysis of modern dating trends and behaviors</p>
+</div>
+
+<div class="row g-4">
+    <!-- Study 1 -->
+    <div class="col-lg-4 col-md-6">
+        <div class="card h-100">
+            <div class="card-body">
+                <span class="metric-badge mb-3">DIGITAL TRENDS</span>
+                <h3 class="card-title h5">The Rise of Micromance</h3>
+                <p class="card-text small">How brief digital interactions reshape emotional connections in app-based dating.</p>
+                <div class="mt-3">
+                    <span class="badge bg-light text-dark me-2">2025 Study</span>
+                    <span class="badge bg-light text-dark">15 min read</span>
+                </div>
+            </div>
+            <div class="card-footer bg-transparent border-top-0">
+                <a href="{% url 'micromance' %}" class="btn btn-outline-primary w-100">Read Study</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Study 2 -->
+    <div class="col-lg-4 col-md-6">
+        <div class="card h-100">
+            <div class="card-body">
+                <span class="metric-badge mb-3" style="background:#17a2b8">TECHNOLOGY</span>
+                <h3 class="card-title h5">AI Matchmaking Algorithms</h3>
+                <p class="card-text small">How artificial intelligence changes partner selection and compatibility assessment.</p>
+                <div class="mt-3">
+                    <span class="badge bg-light text-dark me-2">2025 Study</span>
+                    <span class="badge bg-light text-dark">20 min read</span>
+                </div>
+            </div>
+            <div class="card-footer bg-transparent border-top-0">
+                <a href="{% url 'ai_matchmaking' %}" class="btn btn-outline-primary w-100">Read Study</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Study 3 -->
+    <div class="col-lg-4 col-md-6">
+        <div class="card h-100">
+            <div class="card-body">
+                <span class="metric-badge mb-3" style="background:#28a745">RELATIONSHIPS</span>
+                <h3 class="card-title h5">Digital Boundaries in Dating</h3>
+                <p class="card-text small">How couples negotiate privacy, connectivity, and digital intimacy in modern relationships.</p>
+                <div class="mt-3">
+                    <span class="badge bg-light text-dark me-2">2025 Study</span>
+                    <span class="badge bg-light text-dark">18 min read</span>
+                </div>
+            </div>
+            <div class="card-footer bg-transparent border-top-0">
+                <a href="{% url 'digital_boundaries' %}" class="btn btn-outline-primary w-100">Read Study</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-lg-8 mx-auto">
+        <div class="alert alert-info">
+            <h4 class="alert-heading h5"><i class="bi bi-info-circle me-2"></i>About Our Research</h4>
+            <p class="mb-0 small">Each study undergoes rigorous review, employs mixed-methods research, and follows strict ethical guidelines for data privacy and participant consent.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

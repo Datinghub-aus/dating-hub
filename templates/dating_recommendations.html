@@ -1,0 +1,237 @@
+{% extends "base.html" %}
+
+{% block title %}AI Dating Site Matchmaker | Dating Hub Research{% endblock %}
+
+{% block content %}
+<div class="content-container">
+    <div class="text-center mb-5">
+        <span class="badge" style="background: #0066CC; color: white; padding: 0.5rem 1.5rem; font-size: 1rem;">
+            <i class="bi bi-cpu"></i> AI-Powered Matchmaking
+        </span>
+        <h1 class="mt-3" style="font-family: 'Merriweather', serif; font-size: 2.5rem;">
+            Find Your Perfect Dating Site
+        </h1>
+        <p class="section-subtitle">
+            6 smart questions. Our AI analyzes your preferences to recommend the best dating platforms for you.
+        </p>
+    </div>
+
+    <div class="row">
+        <!-- Survey Form -->
+        <div class="col-lg-8 mx-auto">
+            <div class="content-card">
+                <form method="POST" action="{% url 'dating_recommendations' %}">
+                    {% csrf_token %}
+                    
+                    <!-- Question 1 -->
+                    <div class="mb-4">
+                        <h3 class="card-title">1. What's your main relationship goal?</h3>
+                        <div class="mt-3">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="q1" id="q1_serious" value="serious" required>
+                                <label class="form-check-label" for="q1_serious">
+                                    <strong>Serious Relationship</strong> - Looking for long-term commitment
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="q1" id="q1_casual" value="casual">
+                                <label class="form-check-label" for="q1_casual">
+                                    <strong>Casual Dating</strong> - Keeping things light and fun
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="q1" id="q1_explore" value="explore">
+                                <label class="form-check-label" for="q1_explore">
+                                    <strong>Explore & See</strong> - Open to whatever happens
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="q1" id="q1_friends" value="friends">
+                                <label class="form-check-label" for="q1_friends">
+                                    <strong>Friends First</strong> - Build connection before romance
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="mb-4">
+                        <h3 class="card-title">2. What age range are you looking to date?</h3>
+                        <select class="form-control mt-2" name="q2" required>
+                            <option value="">Select age range...</option>
+                            <option value="18-25">18-25 (Young adults)</option>
+                            <option value="26-35">26-35 (Young professionals)</option>
+                            <option value="36-50">36-50 (Established professionals)</option>
+                            <option value="50+">50+ (Mature dating)</option>
+                        </select>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="mb-4">
+                        <h3 class="card-title">3. What's most important in a dating platform?</h3>
+                        <div class="mt-3">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="q3" id="q3_algorithm" value="algorithm" required>
+                                <label class="form-check-label" for="q3_algorithm">
+                                    <strong>Smart Matching</strong> - Quality algorithm, not just quantity
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="q3" id="q3_userbase" value="userbase">
+                                <label class="form-check-label" for="q3_userbase">
+                                    <strong>Large User Base</strong> - More options to choose from
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="q3" id="q3_safety" value="safety">
+                                <label class="form-check-label" for="q3_safety">
+                                    <strong>Safety Features</strong> - Verified profiles & security
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="q3" id="q3_free" value="free">
+                                <label class="form-check-label" for="q3_free">
+                                    <strong>Free Features</strong> - Good functionality without paying
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="mb-4">
+                        <h3 class="card-title">4. How much time can you dedicate weekly?</h3>
+                        <select class="form-control mt-2" name="q4" required>
+                            <option value="">Select time commitment...</option>
+                            <option value="low">Less than 1 hour (Quick check-ins)</option>
+                            <option value="medium">1-3 hours (Moderate usage)</option>
+                            <option value="high">3+ hours (Active user)</option>
+                        </select>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="mb-4">
+                        <h3 class="card-title">5. Preferred communication style?</h3>
+                        <div class="mt-3">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="q5" id="q5_text" value="text" required>
+                                <label class="form-check-label" for="q5_text">
+                                    <strong>Text-based</strong> - Messaging first, then maybe video/voice
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="q5" id="q5_video" value="video">
+                                <label class="form-check-label" for="q5_video">
+                                    <strong>Video-friendly</strong> - Prefer platforms with video features
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="q5" id="q5_voice" value="voice">
+                                <label class="form-check-label" for="q5_voice">
+                                    <strong>Voice/audio</strong> - Like audio messages or calls
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div class="mb-4">
+                        <h3 class="card-title">6. What's your dating app experience?</h3>
+                        <div class="mt-3">
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="q6" id="q6_beginner" value="beginner" required>
+                                <label class="form-check-label" for="q6_beginner">
+                                    <strong>Beginner</strong> - First time using dating apps
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="q6" id="q6_intermediate" value="intermediate">
+                                <label class="form-check-label" for="q6_intermediate">
+                                    <strong>Some Experience</strong> - Used 1-2 apps before
+                                </label>
+                            </div>
+                            <div class="form-check mb-2">
+                                <input class="form-check-input" type="radio" name="q6" id="q6_experienced" value="experienced">
+                                <label class="form-check-label" for="q6_experienced">
+                                    <strong>Experienced</strong> - Used multiple apps extensively
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="feature-highlight">
+                        <h3><i class="bi bi-envelope"></i> Where should we send your recommendations?</h3>
+                        <div class="mt-3">
+                            <div class="mb-3">
+                                <label class="form-label">Your Name</label>
+                                <input type="text" class="form-control" name="name" placeholder="Optional">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email Address *</label>
+                                <input type="email" class="form-control" name="email" required placeholder="you@example.com">
+                            </div>
+                            <p class="small text-muted">
+                                <i class="bi bi-clock"></i> Recommendations will arrive within 72 hours
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="text-center mt-4">
+                        <button type="submit" class="cta-button" style="padding: 1rem 3rem; font-size: 1.1rem;">
+                            <i class="bi bi-send"></i> Get My AI Recommendations
+                        </button>
+                        <p class="small text-muted mt-2">
+                            <i class="bi bi-shield-check"></i> We never share your email or data
+                        </p>
+                    </div>
+                </form>
+
+                <!-- Skip Survey Option -->
+                <div class="text-center mt-5 pt-4 border-top">
+                    <p class="mb-3">Prefer to skip the survey?</p>
+                    <form method="POST" action="{% url 'dating_recommendations' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="skip_survey" value="true">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <input type="email" class="form-control" name="email" required placeholder="Your email address">
+                                </div>
+                                <button type="submit" class="cta-button" style="background: #6c757d; width: 100%;">
+                                    <i class="bi bi-lightning"></i> Skip Survey & Get Recommendations
+                                </button>
+                                <p class="small text-muted mt-2">
+                                    We'll email you general dating site suggestions
+                                </p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Information Box -->
+            <div class="content-card mt-4" style="background: #f8f9fa;">
+                <h3 class="card-title"><i class="bi bi-info-circle"></i> How It Works</h3>
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <h5><i class="bi bi-question-circle text-primary"></i> Answer Questions</h5>
+                        <p class="small">6 quick questions about your dating preferences</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5><i class="bi bi-cpu text-primary"></i> AI Analysis</h5>
+                        <p class="small">Our algorithm analyzes thousands of data points</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5><i class="bi bi-envelope text-primary"></i> Get Recommendations</h5>
+                        <p class="small">Personalized site suggestions delivered via email</p>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <p class="small"><strong>Based on our research of:</strong> 5,000+ user experiences, 12 dating platforms, and 2 years of relationship outcome data.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

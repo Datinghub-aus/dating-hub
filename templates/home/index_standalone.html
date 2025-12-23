@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block hero %}
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-4 fw-bold mb-3">Understanding Modern Dating Through Data</h1>
+                <p class="lead mb-4">
+                    Independent, data-driven research on dating apps, relationship trends, and digital intimacy in the 2020s.
+                </p>
+                <a href="/blog/" class="btn btn-light btn-lg px-4">
+                    <i class="bi bi-journal-text me-2"></i>Explore Our Research
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<!-- Featured Research -->
+<div class="text-center mb-5">
+    <h2 class="h1">Latest Research Findings</h2>
+    <p class="text-muted">Evidence-based analysis of digital dating trends</p>
+</div>
+
+<div class="row g-4 mb-5">
+    <!-- Micromance Research -->
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <span class="metric-badge">DIGITAL DATING TRENDS</span>
+                    <small class="text-muted"><i class="bi bi-calendar me-1"></i>December 2025</small>
+                </div>
+                <h3 class="card-title h4">The Rise of Micromance</h3>
+                <p class="card-text">
+                    How brief, frequent digital interactions are reshaping emotional connections in dating app culture.
+                </p>
+                
+                <div class="key-finding">
+                    <h4 class="h6 text-primary"><i class="bi bi-lightbulb me-2"></i>Key Finding</h4>
+                    <p class="mb-0 fw-medium">
+                        67% of frequent dating app users report preferring multiple "micro-conversations" throughout the day over longer, scheduled chats.
+                    </p>
+                </div>
+                
+                <a href="/blog/micromance/" class="btn btn-outline-primary w-100 mt-3">
+                    Read Full Analysis <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Matchmaking Research -->
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <span class="metric-badge" style="background:#17a2b8">TECHNOLOGY & DATING</span>
+                    <small class="text-muted"><i class="bi bi-calendar me-1"></i>December 2025</small>
+                </div>
+                <h3 class="card-title h4">AI Matchmaking Algorithms</h3>
+                <p class="card-text">
+                    Examining how artificial intelligence is changing partner selection and compatibility assessment in modern dating platforms.
+                </p>
+                
+                <div class="key-finding">
+                    <h4 class="h6 text-primary"><i class="bi bi-lightbulb me-2"></i>Key Finding</h4>
+                    <p class="mb-0 fw-medium">
+                        Algorithms prioritizing long-term compatibility over immediate attraction show 42% higher 6-month retention rates.
+                    </p>
+                </div>
+                
+                <a href="/blog/ai-matchmaking/" class="btn btn-outline-primary w-100 mt-3">
+                    Read Full Analysis <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Methodology -->
+<div class="row">
+    <div class="col-lg-10 mx-auto">
+        <div class="methodology-box">
+            <h3 class="h4 mb-3"><i class="bi bi-clipboard-data me-2"></i>Our Research Methodology</h3>
+            <p class="mb-3">All findings are based on rigorous mixed-methods research combining:</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="mb-3">
+                        <li>Analysis of anonymized behavioral data from dating platforms</li>
+                        <li>Surveys of 2,000+ dating app users (ages 18-45)</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul>
+                        <li>Qualitative interviews with relationship experts</li>
+                        <li>Academic literature review and meta-analysis</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="alert alert-light mt-3 mb-0">
+                <i class="bi bi-shield-check me-2"></i>
+                <small>All research adheres to strict ethical guidelines for privacy, data protection, and informed consent.</small>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

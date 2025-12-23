@@ -1,0 +1,13 @@
+from django.urls import path
+from django.views.generic import TemplateView
+
+urlpatterns = [
+    path("contact/", TemplateView.as_view(template_name="contact/index.html"), name="contact"),    path('', TemplateView.as_view(template_name='home/index.html'), name='home'),
+    path('about/', TemplateView.as_view(template_name='about/index.html'), name='about'),
+    path('blog/ai-matchmaking/', TemplateView.as_view(template_name='blog/ai_matchmaking.html'), name='ai_matchmaking'),
+    path('blog/digital-boundaries/', TemplateView.as_view(template_name='blog/digital_boundaries.html'), name='digital_boundaries'),
+    path('tools/data-library/', TemplateView.as_view(template_name='tools/data_library.html'), name='data_library'),
+    path('tools/privacy/', TemplateView.as_view(template_name='tools/privacy.html'), name='privacy'),
+    path('tools/terms/', TemplateView.as_view(template_name='tools/terms.html'), name='terms'),
+
+path('blog/micromance/', TemplateView.as_view(template_name='blog/micromance.html'), name='micromance'),
