@@ -1,606 +1,119 @@
-<!-- blog/templates/blog/detail.html -->
 {% extends 'base.html' %}
+{% load blog_filters %}  <!-- LOAD THE FILTER -->
 
 {% block title %}{{ post.title }} - Blog - Dating Hub Research{% endblock %}
 
 {% block extra_head %}
 <style>
-    /* Blog Detail Styles */
-    .blog-detail-header {
-        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-        padding: 3rem 0;
-        margin-bottom: 2rem;
-        border-bottom: 1px solid #E0E0E0;
-    }
-    
-    .blog-detail-header .content-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-    }
-    
-    .blog-wrapper {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-    }
-    
-    .blog-detail-container {
-        display: grid;
-        grid-template-columns: 1fr 300px;
-        gap: 3rem;
-        margin: 2rem 0;
-    }
-    
-    @media (max-width: 992px) {
-        .blog-detail-container {
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-    }
-    
-    .post-title {
-        font-family: 'Merriweather', serif;
-        font-size: 2.5rem;
-        color: #1D1D1D;
-        margin: 0 0 1rem 0;
-        line-height: 1.2;
-    }
-    
-    .post-meta {
-        display: flex;
-        gap: 1.5rem;
-        margin-bottom: 2rem;
-        color: #767676;
-        font-size: 0.95rem;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-    
-    .post-meta-item {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    
-    .post-category {
-        background: #0066CC;
-        color: white;
-        padding: 0.5rem 1rem;
-        border-radius: 4px;
-        font-size: 0.9rem;
-        font-weight: 600;
-        text-decoration: none;
-        display: inline-block;
-        margin-bottom: 1rem;
-    }
-    
-    .post-category:hover {
-        background: #0052A3;
-        color: white;
-        text-decoration: none;
-    }
-    
-    .featured-image {
-        width: 100%;
-        max-height: 500px;
-        object-fit: cover;
-        border-radius: 8px;
-        margin: 2rem 0;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    
-    .blog-detail-main {
-        width: 100%;
-    }
-    
-    .post-content {
-        font-size: 1.1rem;
+    /* Enhanced styling for better readability */
+    .research-content {
+        font-family: system-ui, -apple-system, sans-serif;
         line-height: 1.8;
-        color: #1D1D1D;
-        width: 100%;
     }
     
-    .post-content h2 {
-        font-family: 'Merriweather', serif;
-        font-size: 1.8rem;
-        margin: 2.5rem 0 1rem 0;
-        color: #1D1D1D;
+    .research-content p {
+        margin-bottom: 1.8rem;
+        color: #374151;
+        font-size: 1.125rem;
     }
     
-    .post-content h3 {
-        font-family: 'Merriweather', serif;
+    .research-content .content-heading {
+        margin-top: 3rem;
+        margin-bottom: 1.5rem;
         font-size: 1.5rem;
-        margin: 2rem 0 1rem 0;
-        color: #1D1D1D;
+        font-weight: 800;
+        color: #1e3a8a;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #e5e7eb;
     }
     
-    .post-content p {
-        margin-bottom: 1.5rem;
-    }
-    
-    .post-content blockquote {
-        border-left: 4px solid #0066CC;
-        padding: 1.5rem 2rem;
+    .research-content .key-finding {
+        background-color: #f0f9ff;
+        padding: 1.5rem;
+        border-radius: 0.75rem;
+        border-left: 4px solid #0ea5e9;
         margin: 2rem 0;
-        background: #f8f9fa;
-        font-style: italic;
-        color: #505050;
-        font-size: 1.2rem;
-        line-height: 1.6;
+        font-weight: 600;
+        color: #1e40af;
     }
     
-    .post-content img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 8px;
+    .research-content strong {
+        color: #1d4ed8;
+        font-weight: 700;
+    }
+    
+    /* Fix for lists within content */
+    .research-content ul, 
+    .research-content ol {
         margin: 1.5rem 0;
+        padding-left: 1.5rem;
     }
     
-    .post-footer {
-        margin: 3rem 0;
-        padding: 2rem 0;
-        border-top: 1px solid #E0E0E0;
-        border-bottom: 1px solid #E0E0E0;
-        width: 100%;
-    }
-    
-    .post-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-bottom: 2rem;
-    }
-    
-    .tag {
-        background: #f8f9fa;
-        color: #505050;
-        padding: 0.5rem 1rem;
-        border-radius: 20px;
-        font-size: 0.9rem;
-        text-decoration: none;
-        border: 1px solid #E0E0E0;
-    }
-    
-    .tag:hover {
-        background: #0066CC;
-        color: white;
-        border-color: #0066CC;
-        text-decoration: none;
-    }
-    
-    .post-navigation {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 2rem;
-        gap: 1rem;
-        width: 100%;
-    }
-    
-    .nav-post {
-        flex: 1;
-        max-width: 300px;
-        padding: 1.5rem;
-        background: #f8f9fa;
-        border-radius: 8px;
-        border: 1px solid #E0E0E0;
-        text-decoration: none;
-        transition: all 0.3s ease;
-    }
-    
-    .nav-post:hover {
-        background: #FFFFFF;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        transform: translateY(-2px);
-        text-decoration: none;
-    }
-    
-    .nav-post.prev {
-        text-align: left;
-    }
-    
-    .nav-post.next {
-        text-align: right;
-    }
-    
-    .nav-post i {
-        font-size: 1.2rem;
-        color: #0066CC;
-    }
-    
-    .nav-post-label {
-        font-size: 0.9rem;
-        color: #767676;
+    .research-content li {
         margin-bottom: 0.5rem;
-        font-weight: 600;
-    }
-    
-    .nav-post-title {
-        font-family: 'Merriweather', serif;
-        color: #1D1D1D;
-        font-size: 1rem;
-        line-height: 1.3;
-        margin: 0;
-    }
-    
-    .related-posts {
-        margin-top: 4rem;
-        width: 100%;
-    }
-    
-    .related-posts h2 {
-        font-family: 'Merriweather', serif;
-        font-size: 1.8rem;
-        margin-bottom: 1.5rem;
-        color: #1D1D1D;
-    }
-    
-    .related-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 2rem;
-    }
-    
-    .related-card {
-        background: #FFFFFF;
-        border: 1px solid #E0E0E0;
-        border-radius: 8px;
-        overflow: hidden;
-        transition: all 0.3s ease;
-        text-decoration: none;
-    }
-    
-    .related-card:hover {
-        box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-        transform: translateY(-2px);
-        text-decoration: none;
-    }
-    
-    .related-card img {
-        width: 100%;
-        height: 150px;
-        object-fit: cover;
-    }
-    
-    .related-card-content {
-        padding: 1.5rem;
-    }
-    
-    .related-card-title {
-        font-family: 'Merriweather', serif;
-        font-size: 1.1rem;
-        color: #1D1D1D;
-        margin: 0 0 0.5rem 0;
-        line-height: 1.3;
-    }
-    
-    .related-card-excerpt {
-        color: #505050;
-        font-size: 0.9rem;
-        line-height: 1.5;
-    }
-    
-    /* Sidebar */
-    .blog-sidebar {
-        position: sticky;
-        top: 100px;
-        height: fit-content;
-    }
-    
-    .sidebar-widget {
-        background: #FFFFFF;
-        border: 1px solid #E0E0E0;
-        border-radius: 8px;
-        padding: 1.5rem;
-        margin-bottom: 2rem;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    
-    .sidebar-widget h3 {
-        font-family: 'Merriweather', serif;
-        font-size: 1.25rem;
-        color: #1D1D1D;
-        margin: 0 0 1.5rem 0;
-        padding-bottom: 0.75rem;
-        border-bottom: 2px solid #E0E0E0;
-    }
-    
-    .categories-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-    
-    .categories-list li {
-        margin-bottom: 0.75rem;
-    }
-    
-    .categories-list a {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: #505050;
-        text-decoration: none;
-        padding: 0.5rem 0;
-        border-bottom: 1px solid #f5f5f5;
-    }
-    
-    .categories-list a:hover {
-        color: #0066CC;
-    }
-    
-    .category-count {
-        background: #f8f9fa;
-        color: #767676;
-        padding: 0.25rem 0.5rem;
-        border-radius: 4px;
-        font-size: 0.8rem;
-        font-weight: 600;
-    }
-    
-    .recent-post {
-        display: flex;
-        gap: 1rem;
-        margin-bottom: 1rem;
-        padding-bottom: 1rem;
-        border-bottom: 1px solid #f5f5f5;
-    }
-    
-    .recent-post:last-child {
-        margin-bottom: 0;
-        padding-bottom: 0;
-        border-bottom: none;
-    }
-    
-    .recent-post-image {
-        width: 60px;
-        height: 60px;
-        flex-shrink: 0;
-        overflow: hidden;
-        border-radius: 4px;
-    }
-    
-    .recent-post-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    
-    .recent-post-content {
-        flex: 1;
-    }
-    
-    .recent-post-title {
-        font-size: 0.9rem;
-        margin: 0 0 0.25rem 0;
-        line-height: 1.3;
-    }
-    
-    .recent-post-title a {
-        color: #1D1D1D;
-        text-decoration: none;
-    }
-    
-    .recent-post-title a:hover {
-        color: #0066CC;
-    }
-    
-    .recent-post-meta {
-        font-size: 0.8rem;
-        color: #767676;
-    }
-    
-    /* Share buttons */
-    .share-buttons {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        margin-top: 1rem;
-    }
-    
-    .share-button {
-        padding: 0.5rem 1rem;
-        border-radius: 4px;
-        color: white;
-        text-decoration: none;
-        font-size: 0.9rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        transition: opacity 0.3s ease;
-    }
-    
-    .share-button:hover {
-        opacity: 0.9;
-        color: white;
-        text-decoration: none;
-    }
-    
-    .share-button.facebook {
-        background: #1877F2;
-    }
-    
-    .share-button.twitter {
-        background: #1DA1F2;
-    }
-    
-    .share-button.linkedin {
-        background: #0077B5;
+        line-height: 1.6;
     }
 </style>
 {% endblock %}
 
 {% block content %}
-<div class="blog-detail-header">
-    <div class="content-container">
-        <div style="max-width: 900px; margin: 0 auto;">
-            {% if post.category %}
-            <a href="{% url 'blog:blog_category' post.category %}" class="post-category">
+<article class="bg-white">
+    <header class="bg-slate-50 border-b border-gray-100 py-16 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <span class="bg-blue-600 text-white px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest mb-6 inline-block">
                 {{ post.get_category_display }}
-            </a>
-            {% endif %}
+            </span>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-8 tracking-tight">{{ post.title }}</h1>
             
-            <h1 class="post-title">{{ post.title }}</h1>
-            
-            <div class="post-meta">
-                <div class="post-meta-item">
-                    <i class="bi bi-person"></i>
-                    <span>{{ post.author_initials }}</span>
-                </div>
-                <div class="post-meta-item">
-                    <i class="bi bi-calendar"></i>
-                    <span>{{ post.published_date|date:"F j, Y" }}</span>
-                </div>
-                <div class="post-meta-item">
-                    <i class="bi bi-clock"></i>
-                    <span>{{ post.read_time }} min read</span>
-                </div>
-                <div class="post-meta-item">
-                    <i class="bi bi-eye"></i>
-                    <span>{{ post.views }} views</span>
-                </div>
+            <div class="flex items-center justify-center gap-6 text-gray-400 text-xs font-bold uppercase tracking-widest">
+                <span><i class="bi bi-person me-2"></i> {{ post.author }}</span>
+                <span class="hidden md:inline">•</span>
+                <span><i class="bi bi-calendar3 me-2"></i> {{ post.published_date|date:"F j, Y" }}</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-3 gap-16">
+                <main class="lg:col-span-2">
+                    {% if post.featured_image %}
+                    <img src="{{ post.featured_image.url }}" alt="{{ post.title }}" class="w-full rounded-[2rem] shadow-xl mb-12">
+                    {% endif %}
+                    
+                    <!-- USING OUR CUSTOM FILTER -->
+                    <div class="research-content text-lg">
+                        {{ post.content|format_blog_content|safe }}
+                    </div>
+                </main>
+
+                <aside class="space-y-8">
+                    <div class="glass-card !p-8">
+                        <h4 class="text-lg font-bold text-blue-900 mb-6 flex items-center gap-2">
+                            <i class="bi bi-clock-history text-blue-600"></i> Recent Insights
+                        </h4>
+                        <div class="space-y-6">
+                            {% for recent in recent_posts %}
+                            <a href="{% url 'blog:blog_detail' recent.slug %}" class="group block">
+                                <h5 class="text-sm font-bold text-blue-900 leading-snug group-hover:text-blue-600 transition mb-1">
+                                    {{ recent.title }}
+                                </h5>
+                                <span class="text-[10px] text-gray-400 font-bold uppercase">{{ recent.published_date|date:"M j, Y" }}</span>
+                            </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-900 p-8 rounded-[2rem] text-white">
+                        <h4 class="text-xl font-bold mb-4">Need Data?</h4>
+                        <p class="text-sm text-blue-100/70 mb-6">Explore our full repository of anonymized dating datasets.</p>
+                        <a href="{% url 'data_library' %}" class="block text-center bg-cyan-400 text-blue-900 py-3 rounded-xl font-bold hover:bg-white transition">
+                            Visit Data Library
+                        </a>
+                    </div>
+                </aside>
             </div>
         </div>
     </div>
-</div>
-
-<div class="blog-wrapper">
-    <div class="blog-detail-container">
-        <main class="blog-detail-main">
-            {% if post.featured_image %}
-            <img src="{{ post.featured_image.url }}" alt="{{ post.title }}" class="featured-image">
-            {% endif %}
-            
-            <article class="post-content">
-                {{ post.content|linebreaks }}
-            </article>
-            
-            <div class="post-footer">
-                <div style="text-align: center;">
-                    <p style="color: #767676; margin-bottom: 1rem;">Share this article</p>
-                    <div class="share-buttons">
-                        <a href="#" class="share-button facebook">
-                            <i class="bi bi-facebook"></i> Facebook
-                        </a>
-                        <a href="#" class="share-button twitter">
-                            <i class="bi bi-twitter"></i> Twitter
-                        </a>
-                        <a href="#" class="share-button linkedin">
-                            <i class="bi bi-linkedin"></i> LinkedIn
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Post Navigation -->
-            {% if prev_post or next_post %}
-            <div class="post-navigation">
-                {% if prev_post %}
-                <a href="{% url 'blog:blog_detail' prev_post.slug %}" class="nav-post prev">
-                    <div class="nav-post-label"><i class="bi bi-chevron-left"></i> Previous Post</div>
-                    <h3 class="nav-post-title">{{ prev_post.title|truncatechars:60 }}</h3>
-                </a>
-                {% endif %}
-                
-                {% if next_post %}
-                <a href="{% url 'blog:blog_detail' next_post.slug %}" class="nav-post next">
-                    <div class="nav-post-label">Next Post <i class="bi bi-chevron-right"></i></div>
-                    <h3 class="nav-post-title">{{ next_post.title|truncatechars:60 }}</h3>
-                </a>
-                {% endif %}
-            </div>
-            {% endif %}
-            
-            <!-- Related Posts -->
-            {% if related_posts %}
-            <section class="related-posts">
-                <h2>Related Articles</h2>
-                <div class="related-grid">
-                    {% for related in related_posts %}
-                    <a href="{% url 'blog:blog_detail' related.slug %}" class="related-card">
-                        {% if related.featured_image %}
-                        <img src="{{ related.featured_image.url }}" alt="{{ related.title }}">
-                        {% endif %}
-                        <div class="related-card-content">
-                            <h3 class="related-card-title">{{ related.title|truncatechars:70 }}</h3>
-                            <p class="related-card-excerpt">{{ related.excerpt|truncatechars:120 }}</p>
-                        </div>
-                    </a>
-                    {% endfor %}
-                </div>
-            </section>
-            {% endif %}
-        </main>
-        
-        <aside class="blog-sidebar">
-            <!-- Author Bio -->
-            <div class="sidebar-widget">
-                <h3><i class="bi bi-person-badge"></i> About the Author</h3>
-                <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem;">
-                    <div style="width: 60px; height: 60px; background: #0066CC; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
-                        {{ post.author_initials }}
-                    </div>
-                    <div>
-                        <h4 style="margin: 0; font-size: 1.1rem;">Dating Hub Research Team</h4>
-                        <p style="color: #767676; margin: 0.25rem 0 0 0; font-size: 0.9rem;">Research Contributor</p>
-                    </div>
-                </div>
-                <p style="color: #505050; font-size: 0.95rem; line-height: 1.5;">
-                    The Dating Hub Research Team contributes research and analysis 
-                    to Dating Hub Research, focusing on digital dating trends and relationship science.
-                </p>
-            </div>
-            
-            <!-- Categories Widget -->
-            <div class="sidebar-widget">
-                <h3><i class="bi bi-folder"></i> Categories</h3>
-                <ul class="categories-list">
-                    {% for category in categories %}
-                    <li>
-                        <a href="{% url 'blog:blog_category' category.slug %}">
-                            {{ category.name }}
-                            <span class="category-count">{{ category.post_count }}</span>
-                        </a>
-                    </li>
-                    {% empty %}
-                    <li style="color: #767676; font-style: italic;">No categories yet</li>
-                    {% endfor %}
-                </ul>
-            </div>
-            
-            <!-- Recent Posts Widget -->
-            <div class="sidebar-widget">
-                <h3><i class="bi bi-clock-history"></i> Recent Posts</h3>
-                {% for recent in recent_posts %}
-                <div class="recent-post">
-                    {% if recent.featured_image %}
-                    <div class="recent-post-image">
-                        <img src="{{ recent.featured_image.url }}" alt="{{ recent.title }}">
-                    </div>
-                    {% endif %}
-                    <div class="recent-post-content">
-                        <h4 class="recent-post-title">
-                            <a href="{% url 'blog:blog_detail' recent.slug %}">{{ recent.title|truncatechars:50 }}</a>
-                        </h4>
-                        <div class="recent-post-meta">
-                            {{ recent.published_date|date:"M j, Y" }}
-                        </div>
-                    </div>
-                </div>
-                {% empty %}
-                <p style="color: #767676; font-style: italic;">No recent posts</p>
-                {% endfor %}
-            </div>
-            
-            <!-- Newsletter CTA -->
-            <div class="sidebar-widget" style="background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%); color: white; border: none;">
-                <h3 style="color: white;"><i class="bi bi-envelope-open"></i> Newsletter</h3>
-                <p style="margin-bottom: 1.5rem;">Get research insights delivered weekly.</p>
-                <a href="{% url 'contact' %}" class="cta-button" style="background: white; color: #28a745;">
-                    Subscribe Now <i class="bi bi-arrow-right"></i>
-                </a>
-            </div>
-        </aside>
-    </div>
-</div>
+</article>
 {% endblock %}
