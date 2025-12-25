@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # Use environment variable for production, fallback for development
-SECRET_KEY = config('SECRET_KEY', default='datinghub-final-2025')
+SECRET_KEY = config('SECRET_KEY', default='datinghub-' + os.urandom(32).hex() + '-2025-final-launch')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # Debug mode based on environment
