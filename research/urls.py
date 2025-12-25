@@ -1,10 +1,10 @@
-# research/urls.py
+# research/urls.py - SIMPLE WORKING VERSION
 from django.urls import path
 from django.views.generic import TemplateView
 from . import views
 
 urlpatterns = [
-    # Home page
+    # Home page - NEW pretty landing page
     path('', views.home, name='home'),
     
     # About page

@@ -2,449 +2,229 @@
 
 {% block title %}AI Dating Site Matchmaker | Dating Hub Research{% endblock %}
 
-{% block extra_head %}
-<style>
-    .survey-container {
-        max-width: 800px;
-        margin: 0 auto;
-    }
-    
-    .survey-header {
-        background: linear-gradient(135deg, #0066CC 0%, #004C99 100%);
-        color: white;
-        padding: 2.5rem 0;
-        margin-bottom: 2.5rem;
-        border-radius: 0 0 12px 12px;
-    }
-    
-    .survey-step {
-        background: #fff;
-        border: 1px solid #e0e0e0;
-        border-radius: 8px;
-        padding: 1.75rem;
-        margin-bottom: 1.5rem;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    
-    .survey-question {
-        font-family: 'Merriweather', serif;
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: #2C3E50;
-        margin-bottom: 1.25rem;
-    }
-    
-    .survey-question-number {
-        display: inline-block;
-        background: #0066CC;
-        color: white;
-        width: 28px;
-        height: 28px;
-        line-height: 28px;
-        text-align: center;
-        border-radius: 50%;
-        font-size: 0.875rem;
-        font-weight: 600;
-        margin-right: 0.75rem;
-    }
-    
-    .survey-option {
-        display: block;
-        padding: 0.875rem 1rem;
-        margin-bottom: 0.75rem;
-        border: 1px solid #dee2e6;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: all 0.2s ease;
-        background: #f8f9fa;
-    }
-    
-    .survey-option:hover {
-        background: #e9ecef;
-        border-color: #adb5bd;
-    }
-    
-    .survey-option.selected {
-        background: #e7f1ff;
-        border-color: #0066CC;
-        border-left: 4px solid #0066CC;
-    }
-    
-    input[type="radio"] {
-        margin-right: 0.75rem;
-    }
-    
-    .form-control-lg {
-        padding: 0.875rem 1rem;
-        font-size: 1rem;
-        border: 1px solid #dee2e6;
-        border-radius: 6px;
-    }
-    
-    .btn-submit {
-        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-        color: white;
-        border: none;
-        padding: 1rem 2.5rem;
-        font-size: 1.125rem;
-        font-weight: 600;
-        border-radius: 8px;
-        transition: all 0.2s ease;
-        width: 100%;
-    }
-    
-    .btn-submit:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(40, 167, 69, 0.25);
-    }
-    
-    /* UPDATED: Red/Orange Skip Button - Most attention-grabbing */
-    .btn-skip {
-        background: linear-gradient(135deg, #DC3545 0%, #E76A77 100%);
-        color: white;
-        border: none;
-        padding: 0.875rem 2rem;
-        font-size: 1.1rem;
-        font-weight: 600;
-        border-radius: 8px;
-        transition: all 0.2s ease;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        box-shadow: 0 3px 8px rgba(220, 53, 69, 0.3);
-    }
-    
-    .btn-skip:hover {
-        background: linear-gradient(135deg, #C82333 0%, #D9534F 100%);
-        color: white;
-        text-decoration: none;
-        transform: translateY(-3px);
-        box-shadow: 0 6px 15px rgba(220, 53, 69, 0.4);
-    }
-    
-    .email-section {
-        background: #f8f9fa;
-        border: 1px solid #e0e0e0;
-        border-radius: 8px;
-        padding: 2rem;
-        margin-top: 2rem;
-    }
-    
-    .privacy-note {
-        font-size: 0.875rem;
-        color: #6c757d;
-        margin-top: 0.5rem;
-    }
-    
-    .privacy-note i {
-        color: #28a745;
-        margin-right: 0.25rem;
-    }
-    
-    .gender-options {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-    }
-    
-    .gender-option {
-        flex: 1;
-        min-width: 120px;
-    }
-    
-    .skip-section {
-        background: #fff3f3;
-        border: 2px solid #FFE5E5;
-        border-radius: 10px;
-        padding: 2rem;
-        margin-bottom: 2rem;
-        text-align: center;
-        box-shadow: 0 4px 12px rgba(220, 53, 69, 0.08);
-    }
-    
-    .skip-description {
-        font-size: 1rem;
-        color: #721C24;
-        margin-bottom: 1.25rem;
-        font-weight: 500;
-    }
-    
-    .skip-note {
-        font-size: 0.9rem;
-        color: #856404;
-        margin-top: 1rem;
-        background: #FFF3CD;
-        padding: 0.5rem 1rem;
-        border-radius: 6px;
-        display: inline-block;
-    }
-</style>
-{% endblock %}
-
 {% block content %}
-<div class="survey-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 mx-auto text-center">
-                <h1 class="display-5 fw-bold mb-3">AI Dating Site Matchmaker</h1>
-                <p class="lead mb-0">
-                    Get personalized platform recommendations based on your preferences and relationship goals.
-                    7 questions • 2-3 minutes
-                </p>
-            </div>
+<div class="py-12 px-4 bg-slate-50">
+    <div class="max-w-4xl mx-auto">
+        
+        <div class="text-center mb-12">
+            <span class="bg-blue-600 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block">Interactive Tool</span>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-4">AI Dating Site Matchmaker</h1>
+            <p class="text-lg text-gray-500 max-w-2xl mx-auto">7 questions • 2-3 minutes. Get personalized platform recommendations based on your unique goals.</p>
         </div>
+
+        <form method="POST" action="{% url 'dating_recommendations' %}" class="space-y-6">
+            {% csrf_token %}
+            
+            <div class="glass-card !p-8">
+                <div class="flex items-start gap-4 mb-6">
+                    <span class="w-8 h-8 bg-blue-900 text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
+                    <h2 class="text-xl font-bold text-blue-900">What is your gender?</h2>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <label class="survey-option-wrapper">
+                        <input type="radio" name="gender" value="woman" required class="hidden">
+                        <div class="p-4 border-2 border-gray-100 rounded-2xl text-center cursor-pointer bg-white hover:bg-blue-50 transition-all font-semibold text-gray-700">Woman</div>
+                    </label>
+                    <label class="survey-option-wrapper">
+                        <input type="radio" name="gender" value="man" class="hidden">
+                        <div class="p-4 border-2 border-gray-100 rounded-2xl text-center cursor-pointer bg-white hover:bg-blue-50 transition-all font-semibold text-gray-700">Man</div>
+                    </label>
+                    <label class="survey-option-wrapper">
+                        <input type="radio" name="gender" value="nonbinary" class="hidden">
+                        <div class="p-4 border-2 border-gray-100 rounded-2xl text-center cursor-pointer bg-white hover:bg-blue-50 transition-all font-semibold text-gray-700">Non-binary</div>
+                    </label>
+                    <label class="survey-option-wrapper">
+                        <input type="radio" name="gender" value="prefer_not_say" class="hidden">
+                        <div class="p-4 border-2 border-gray-100 rounded-2xl text-center cursor-pointer bg-white hover:bg-blue-50 transition-all font-semibold text-gray-700">Prefer not to say</div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="glass-card !p-8">
+                <div class="flex items-start gap-4 mb-6">
+                    <span class="w-8 h-8 bg-blue-900 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
+                    <h2 class="text-xl font-bold text-blue-900">What is your primary relationship goal?</h2>
+                </div>
+                <div class="space-y-3">
+                    <label class="survey-option-wrapper block">
+                        <input type="radio" name="q1" value="serious" required class="hidden">
+                        <div class="p-4 border-2 border-gray-100 rounded-2xl cursor-pointer bg-white hover:bg-blue-50 transition-all">
+                            <strong>Serious relationship</strong> - Looking for long-term commitment
+                        </div>
+                    </label>
+                    <label class="survey-option-wrapper block">
+                        <input type="radio" name="q1" value="casual" class="hidden">
+                        <div class="p-4 border-2 border-gray-100 rounded-2xl cursor-pointer bg-white hover:bg-blue-50 transition-all">
+                            <strong>Casual dating</strong> - Keeping things light and fun
+                        </div>
+                    </label>
+                    <label class="survey-option-wrapper block">
+                        <input type="radio" name="q1" value="explore" class="hidden">
+                        <div class="p-4 border-2 border-gray-100 rounded-2xl cursor-pointer bg-white hover:bg-blue-50 transition-all">
+                            <strong>Explore & see</strong> - Open to whatever happens
+                        </div>
+                    </label>
+                    <label class="survey-option-wrapper block">
+                        <input type="radio" name="q1" value="friendship" class="hidden">
+                        <div class="p-4 border-2 border-gray-100 rounded-2xl cursor-pointer bg-white hover:bg-blue-50 transition-all">
+                            <strong>Friendship first</strong> - Build connection before romance
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="glass-card !p-8">
+                <div class="flex items-start gap-4 mb-6">
+                    <span class="w-8 h-8 bg-blue-900 text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
+                    <h2 class="text-xl font-bold text-blue-900">What age range are you looking to date?</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <label class="survey-option-wrapper">
+                        <input type="radio" name="q2" value="18-25" required class="hidden">
+                        <div class="p-4 border-2 border-gray-100 rounded-2xl cursor-pointer bg-white hover:bg-blue-50 transition-all"><strong>18-25</strong> (Young adults)</div>
+                    </label>
+                    <label class="survey-option-wrapper">
+                        <input type="radio" name="q2" value="26-35" class="hidden">
+                        <div class="p-4 border-2 border-gray-100 rounded-2xl cursor-pointer bg-white hover:bg-blue-50 transition-all"><strong>26-35</strong> (Professionals)</div>
+                    </label>
+                    <label class="survey-option-wrapper">
+                        <input type="radio" name="q2" value="36-50" class="hidden">
+                        <div class="p-4 border-2 border-gray-100 rounded-2xl cursor-pointer bg-white hover:bg-blue-50 transition-all"><strong>36-50</strong> (Established adults)</div>
+                    </label>
+                    <label class="survey-option-wrapper">
+                        <input type="radio" name="q2" value="50+" class="hidden">
+                        <div class="p-4 border-2 border-gray-100 rounded-2xl cursor-pointer bg-white hover:bg-blue-50 transition-all"><strong>50+</strong> (Mature dating)</div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="glass-card !p-8">
+                <div class="flex items-start gap-4 mb-6">
+                    <span class="w-8 h-8 bg-blue-900 text-white rounded-full flex items-center justify-center font-bold text-sm">4</span>
+                    <h2 class="text-xl font-bold text-blue-900">What's most important in a dating platform?</h2>
+                </div>
+                <div class="space-y-3">
+                    <label class="survey-option-wrapper block">
+                        <input type="radio" name="q3" value="algorithm" required class="hidden">
+                        <div class="p-4 border-2 border-gray-100 rounded-2xl cursor-pointer bg-white hover:bg-blue-50 transition-all"><strong>Smart matching</strong> - Quality algorithm over quantity</div>
+                    </label>
+                    <label class="survey-option-wrapper block">
+                        <input type="radio" name="q3" value="userbase" class="hidden">
+                        <div class="p-4 border-2 border-gray-100 rounded-2xl cursor-pointer bg-white hover:bg-blue-50 transition-all"><strong>Large user base</strong> - More options to choose from</div>
+                    </label>
+                    <label class="survey-option-wrapper block">
+                        <input type="radio" name="q3" value="safety" class="hidden">
+                        <div class="p-4 border-2 border-gray-100 rounded-2xl cursor-pointer bg-white hover:bg-blue-50 transition-all"><strong>Safety features</strong> - Verified profiles & security</div>
+                    </label>
+                    <label class="survey-option-wrapper block">
+                        <input type="radio" name="q3" value="free" class="hidden">
+                        <div class="p-4 border-2 border-gray-100 rounded-2xl cursor-pointer bg-white hover:bg-blue-50 transition-all"><strong>Free features</strong> - Good functionality without paying</div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="glass-card !p-8">
+                <div class="flex items-start gap-4 mb-6">
+                    <span class="w-8 h-8 bg-blue-900 text-white rounded-full flex items-center justify-center font-bold text-sm">5</span>
+                    <h2 class="text-xl font-bold text-blue-900">How much time can you dedicate weekly?</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                    <label class="survey-option-wrapper">
+                        <input type="radio" name="q4" value="low" required class="hidden">
+                        <div class="p-4 border-2 border-gray-100 rounded-2xl cursor-pointer bg-white hover:bg-blue-50 transition-all"><strong>&lt; 1 hour</strong> (Quick check-ins)</div>
+                    </label>
+                    <label class="survey-option-wrapper">
+                        <input type="radio" name="q4" value="medium" class="hidden">
+                        <div class="p-4 border-2 border-gray-100 rounded-2xl cursor-pointer bg-white hover:bg-blue-50 transition-all"><strong>1-3 hours</strong> (Regular browsing)</div>
+                    </label>
+                    <label class="survey-option-wrapper">
+                        <input type="radio" name="q4" value="high" class="hidden">
+                        <div class="p-4 border-2 border-gray-100 rounded-2xl cursor-pointer bg-white hover:bg-blue-50 transition-all"><strong>3+ hours</strong> (Active engagement)</div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="glass-card !p-8">
+                <div class="flex items-start gap-4 mb-6">
+                    <span class="w-8 h-8 bg-blue-900 text-white rounded-full flex items-center justify-center font-bold text-sm">6</span>
+                    <h2 class="text-xl font-bold text-blue-900">Preferred communication style?</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <label class="survey-option-wrapper">
+                        <input type="radio" name="q5" value="text" required class="hidden">
+                        <div class="p-4 border-2 border-gray-100 rounded-2xl cursor-pointer bg-white hover:bg-blue-50 transition-all"><strong>Text-based</strong></div>
+                    </label>
+                    <label class="survey-option-wrapper">
+                        <input type="radio" name="q5" value="video" class="hidden">
+                        <div class="p-4 border-2 border-gray-100 rounded-2xl cursor-pointer bg-white hover:bg-blue-50 transition-all"><strong>Video calls</strong></div>
+                    </label>
+                    <label class="survey-option-wrapper">
+                        <input type="radio" name="q5" value="voice" class="hidden">
+                        <div class="p-4 border-2 border-gray-100 rounded-2xl cursor-pointer bg-white hover:bg-blue-50 transition-all"><strong>Voice messages</strong></div>
+                    </label>
+                    <label class="survey-option-wrapper">
+                        <input type="radio" name="q5" value="mixed" class="hidden">
+                        <div class="p-4 border-2 border-gray-100 rounded-2xl cursor-pointer bg-white hover:bg-blue-50 transition-all"><strong>Mixed approach</strong></div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="glass-card !p-8">
+                <div class="flex items-start gap-4 mb-6">
+                    <span class="w-8 h-8 bg-blue-900 text-white rounded-full flex items-center justify-center font-bold text-sm">7</span>
+                    <h2 class="text-xl font-bold text-blue-900">What's your experience level with dating apps?</h2>
+                </div>
+                <div class="space-y-3">
+                    <label class="survey-option-wrapper block">
+                        <input type="radio" name="q6" value="beginner" required class="hidden">
+                        <div class="p-4 border-2 border-gray-100 rounded-2xl cursor-pointer bg-white hover:bg-blue-50 transition-all"><strong>Beginner</strong> - New to online dating</div>
+                    </label>
+                    <label class="survey-option-wrapper block">
+                        <input type="radio" name="q6" value="some" class="hidden">
+                        <div class="p-4 border-2 border-gray-100 rounded-2xl cursor-pointer bg-white hover:bg-blue-50 transition-all"><strong>Some experience</strong> - Tried a few platforms</div>
+                    </label>
+                    <label class="survey-option-wrapper block">
+                        <input type="radio" name="q6" value="experienced" class="hidden">
+                        <div class="p-4 border-2 border-gray-100 rounded-2xl cursor-pointer bg-white hover:bg-blue-50 transition-all"><strong>Experienced</strong> - Regularly use dating apps</div>
+                    </label>
+                    <label class="survey-option-wrapper block">
+                        <input type="radio" name="q6" value="frustrated" class="hidden">
+                        <div class="p-4 border-2 border-gray-100 rounded-2xl cursor-pointer bg-white hover:bg-blue-50 transition-all"><strong>Frustrated user</strong> - Looking for better options</div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="bg-blue-900 p-10 rounded-[2.5rem] text-white">
+                <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                    <i class="bi bi-envelope"></i> Where should we send your results?
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest mb-2 opacity-70">Your Name (Optional)</label>
+                        <input type="text" name="name" class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white" placeholder="Alex Johnson">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-widest mb-2 opacity-70">Email Address *</label>
+                        <input type="email" name="email" required class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white" placeholder="you@example.com">
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center pt-8">
+                <button type="submit" class="cta-pulse bg-blue-600 text-white px-12 py-4 rounded-2xl font-extrabold text-lg hover:bg-blue-700 transition shadow-xl w-full md:w-auto">
+                    Submit Survey & Generate Recommendations
+                </button>
+            </div>
+        </form>
     </div>
 </div>
 
-<main class="container py-4">
-    <div class="survey-container">
-        <form method="POST" action="{% url 'dating_recommendations' %}">
-            {% csrf_token %}
-            
-            
-            <!-- Question 1: Gender -->
-            <div class="survey-step">
-                <div class="survey-question">
-                    <span class="survey-question-number">1</span> What is your gender?
-                </div>
-                <div class="gender-options">
-                    <label class="survey-option gender-option">
-                        <input type="radio" name="gender" value="woman" required>
-                        <strong>Woman</strong>
-                    </label>
-                    <label class="survey-option gender-option">
-                        <input type="radio" name="gender" value="man">
-                        <strong>Man</strong>
-                    </label>
-                    <label class="survey-option gender-option">
-                        <input type="radio" name="gender" value="nonbinary">
-                        <strong>Non-binary</strong>
-                    </label>
-                    <label class="survey-option gender-option">
-                        <input type="radio" name="gender" value="prefer_not_say">
-                        <strong>Prefer not to say</strong>
-                    </label>
-                </div>
-            </div>
-            
-            <!-- Question 2: Relationship Goal -->
-            <div class="survey-step">
-                <div class="survey-question">
-                    <span class="survey-question-number">2</span> What is your primary relationship goal?
-                </div>
-                <label class="survey-option">
-                    <input type="radio" name="q1" value="serious" required>
-                    <strong>Serious relationship</strong> - Looking for long-term commitment
-                </label>
-                <label class="survey-option">
-                    <input type="radio" name="q1" value="casual">
-                    <strong>Casual dating</strong> - Keeping things light and fun
-                </label>
-                <label class="survey-option">
-                    <input type="radio" name="q1" value="explore">
-                    <strong>Explore & see</strong> - Open to whatever happens
-                </label>
-                <label class="survey-option">
-                    <input type="radio" name="q1" value="friendship">
-                    <strong>Friendship first</strong> - Build connection before romance
-                </label>
-            </div>
-            
-            <!-- Question 3: Age Range -->
-            <div class="survey-step">
-                <div class="survey-question">
-                    <span class="survey-question-number">3</span> What age range are you looking to date?
-                </div>
-                <label class="survey-option">
-                    <input type="radio" name="q2" value="18-25" required>
-                    <strong>18-25</strong> (Young adults)
-                </label>
-                <label class="survey-option">
-                    <input type="radio" name="q2" value="26-35">
-                    <strong>26-35</strong> (Professionals)
-                </label>
-                <label class="survey-option">
-                    <input type="radio" name="q2" value="36-50">
-                    <strong>36-50</strong> (Established adults)
-                </label>
-                <label class="survey-option">
-                    <input type="radio" name="q2" value="50+">
-                    <strong>50+</strong> (Mature dating)
-                </label>
-            </div>
-            
-            <!-- Question 4: Platform Priority -->
-            <div class="survey-step">
-                <div class="survey-question">
-                    <span class="survey-question-number">4</span> What's most important in a dating platform?
-                </div>
-                <label class="survey-option">
-                    <input type="radio" name="q3" value="algorithm" required>
-                    <strong>Smart matching</strong> - Quality algorithm over quantity
-                </label>
-                <label class="survey-option">
-                    <input type="radio" name="q3" value="userbase">
-                    <strong>Large user base</strong> - More options to choose from
-                </label>
-                <label class="survey-option">
-                    <input type="radio" name="q3" value="safety">
-                    <strong>Safety features</strong> - Verified profiles & security
-                </label>
-                <label class="survey-option">
-                    <input type="radio" name="q3" value="free">
-                    <strong>Free features</strong> - Good functionality without paying
-                </label>
-            </div>
-            
-            <!-- Question 5: Time Commitment -->
-            <div class="survey-step">
-                <div class="survey-question">
-                    <span class="survey-question-number">5</span> How much time can you dedicate weekly?
-                </div>
-                <label class="survey-option">
-                    <input type="radio" name="q4" value="low" required>
-                    <strong>Less than 1 hour</strong> (Quick check-ins)
-                </label>
-                <label class="survey-option">
-                    <input type="radio" name="q4" value="medium">
-                    <strong>1-3 hours</strong> (Regular browsing)
-                </label>
-                <label class="survey-option">
-                    <input type="radio" name="q4" value="high">
-                    <strong>3+ hours</strong> (Active engagement)
-                </label>
-            </div>
-            
-            <!-- Question 6: Communication Style -->
-            <div class="survey-step">
-                <div class="survey-question">
-                    <span class="survey-question-number">6</span> Preferred communication style?
-                </div>
-                <label class="survey-option">
-                    <input type="radio" name="q5" value="text" required>
-                    <strong>Text-based</strong> - Messaging and chat features
-                </label>
-                <label class="survey-option">
-                    <input type="radio" name="q5" value="video">
-                    <strong>Video calls</strong> - Face-to-face interaction
-                </label>
-                <label class="survey-option">
-                    <input type="radio" name="q5" value="voice">
-                    <strong>Voice messages</strong> - Audio communication
-                </label>
-                <label class="survey-option">
-                    <input type="radio" name="q5" value="mixed">
-                    <strong>Mixed approach</strong> - Variety of communication options
-                </label>
-            </div>
-            
-            <!-- Question 7: Experience Level -->
-            <div class="survey-step">
-                <div class="survey-question">
-                    <span class="survey-question-number">7</span> What's your experience level with dating apps?
-                </div>
-                <label class="survey-option">
-                    <input type="radio" name="q6" value="beginner" required>
-                    <strong>Beginner</strong> - New to online dating
-                </label>
-                <label class="survey-option">
-                    <input type="radio" name="q6" value="some">
-                    <strong>Some experience</strong> - Tried a few platforms
-                </label>
-                <label class="survey-option">
-                    <input type="radio" name="q6" value="experienced">
-                    <strong>Experienced</strong> - Regularly use dating apps
-                </label>
-                <label class="survey-option">
-                    <input type="radio" name="q6" value="frustrated">
-                    <strong>Frustrated user</strong> - Looking for better options
-                </label>
-            </div>
-            
-            <!-- Email Collection Section -->
-            <div class="email-section">
-                <h3 class="h5 mb-3" style="color: #2C3E50;">
-                    <i class="bi bi-envelope me-2"></i>Where should we send your recommendations?
-                </h3>
-                
-                <div class="row g-3">
-                    <div class="col-md-6">
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Your Name (Optional)</label>
-                            <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Alex Johnson">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
-                            <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="you@example.com" required>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="privacy-note">
-                    <i class="bi bi-shield-check"></i>
-                    Your email is protected and will only be used to send your personalized recommendations. 
-                    We follow strict data privacy guidelines and never share your information with third parties.
-                </div>
-            </div>
-            
-            <!-- Submit Button -->
-            <div class="mt-4">
-                <button type="submit" class="btn btn-submit">
-                    <i class="bi bi-check-circle me-2"></i>Submit Survey
-                </button>
-                <p class="small text-muted text-center mt-2">
-                    <i class="bi bi-clock me-1"></i>Personalized recommendations delivered within 72 hours
-                </p>
-            </div>
-            
-            <!-- Messages Display -->
-            {% if messages %}
-                <div class="mt-4">
-                    {% for message in messages %}
-                        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-                            {{ message }}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    {% endfor %}
-                </div>
-            {% endif %}
-        </form>
-        
-        <!-- Survey Footer -->
-        <div class="text-center mt-5 pt-4 border-top">
-            <p class="small text-muted mb-2">
-                <i class="bi bi-lock me-1"></i>All responses are confidential and used only for research purposes
-            </p>
-            <p class="small text-muted">
-                <i class="bi bi-bar-chart me-1"></i>Recommendations based on analysis of 50+ dating platforms
-            </p>
-        </div>
-    </div>
-</main>
-
-<script>
-    // Add visual feedback for selected options
-    document.addEventListener('DOMContentLoaded', function() {
-        const options = document.querySelectorAll('.survey-option');
-        
-        options.forEach(option => {
-            const radio = option.querySelector('input[type="radio"]');
-            
-            // Highlight selected option
-            radio.addEventListener('change', function() {
-                options.forEach(opt => opt.classList.remove('selected'));
-                if (this.checked) {
-                    this.closest('.survey-option').classList.add('selected');
-                }
-            });
-            
-            // Also highlight if already selected (on page refresh/validation error)
-            if (radio.checked) {
-                option.classList.add('selected');
-            }
-        });
-    });
-</script>
+<style>
+    .survey-option-wrapper input:checked + div {
+        border-color: #2563eb;
+        background-color: #eff6ff;
+        color: #1e40af;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+    }
+</style>
 {% endblock %}

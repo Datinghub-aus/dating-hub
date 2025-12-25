@@ -3,117 +3,125 @@
 {% block title %}Data Library | Dating Hub Research{% endblock %}
 
 {% block content %}
-<div class="content-container">
-    <section class="hero-section text-center">
-        <h1 style="font-size: 2.5rem;">Data Library</h1>
-        <p class="section-subtitle">Access anonymized datasets from our research studies</p>
-    </section>
+<div class="py-16 px-4 bg-slate-50">
+    <div class="max-w-6xl mx-auto">
+        
+        <header class="text-center mb-16">
+            <span class="bg-blue-600 text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block">Research Repository</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-blue-900 mb-6 tracking-tight">Open Data Library</h1>
+            <p class="text-lg text-gray-500 max-w-2xl mx-auto">Access anonymized datasets from our major studies for academic and research purposes.</p>
+            
+            <div class="mt-10 inline-flex items-center gap-4 bg-blue-50 border border-blue-100 p-4 rounded-2xl text-left max-w-2xl">
+                <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-blue-600 shadow-sm flex-shrink-0">
+                    <i class="bi bi-info-circle-fill text-xl"></i>
+                </div>
+                <div>
+                    <h5 class="font-bold text-blue-900 text-sm">Data Access Policy</h5>
+                    <p class="text-xs text-gray-500">All datasets are anonymized to protect participant privacy. Proper citation is required for all academic use.</p>
+                </div>
+            </div>
+        </header>
 
-    <div class="policy-note">
-        <h3><i class="bi bi-info-circle"></i> Data Access Policy</h3>
-        <p>All datasets are anonymized to protect participant privacy. Available for academic and research purposes with proper citation.</p>
-    </div>
+        <div class="space-y-8">
+            
+            <div class="glass-card !p-0 overflow-hidden flex flex-col md:flex-row">
+                <div class="p-8 md:w-2/3">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest">Published: Dec 2025</span>
+                        <span class="text-gray-400 text-xs font-medium"><i class="bi bi-tag-fill me-1"></i> Survey Data</span>
+                    </div>
+                    <h3 class="text-2xl font-extrabold text-blue-900 mb-4">Micromance Study Dataset</h3>
+                    <p class="text-sm text-gray-500 mb-6 leading-relaxed">Comprehensive survey responses and interaction patterns from 2,150 dating app users. Includes demographic data, app usage patterns, and relationship outcomes.</p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="bg-slate-100 text-slate-600 px-3 py-1.5 rounded-xl text-xs font-bold"><i class="bi bi-filetype-csv me-1"></i> CSV</span>
+                        <span class="bg-slate-100 text-slate-600 px-3 py-1.5 rounded-xl text-xs font-bold"><i class="bi bi-database me-1"></i> 12.8 MB</span>
+                        <span class="bg-slate-100 text-slate-600 px-3 py-1.5 rounded-xl text-xs font-bold"><i class="bi bi-people me-1"></i> 2,150 Participants</span>
+                        <span class="bg-slate-100 text-slate-600 px-3 py-1.5 rounded-xl text-xs font-bold"><i class="bi bi-clock me-1"></i> 12-Month Study</span>
+                    </div>
 
-    <div class="mt-4">
-        <!-- Micromance Study Dataset -->
-        <div class="content-card">
-            <div class="card-meta">
-                <span><i class="bi bi-calendar"></i> Published: December 2025</span>
-                <span><i class="bi bi-tag"></i> Survey Data</span>
+                    <div class="flex gap-4">
+                        <a href="#" class="bg-blue-600 text-white px-6 py-2.5 rounded-xl text-sm font-bold hover:bg-blue-700 transition flex items-center gap-2">
+                            <i class="bi bi-download"></i> Download Dataset
+                        </a>
+                        <a href="#" class="border border-gray-200 text-gray-600 px-6 py-2.5 rounded-xl text-sm font-bold hover:bg-gray-50 transition flex items-center gap-2">
+                            <i class="bi bi-file-text"></i> Documentation
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-blue-50 md:w-1/3 flex items-center justify-center p-8 border-l border-blue-100">
+                    <i class="bi bi-folder2-open text-8xl text-blue-200"></i>
+                </div>
             </div>
-            <h3 class="card-title">Micromance Study Dataset</h3>
-            <p class="card-excerpt">
-                Comprehensive survey responses and interaction patterns from 2,150 dating app users. 
-                Includes demographic data, app usage patterns, and relationship outcomes.
-            </p>
-            <div class="mt-3">
-                <span class="badge"><i class="bi bi-file-earmark-text me-1"></i> CSV Format</span>
-                <span class="badge"><i class="bi bi-database me-1"></i> 12.8 MB</span>
-                <span class="badge"><i class="bi bi-people me-1"></i> 2,150 participants</span>
-                <span class="badge"><i class="bi bi-clock me-1"></i> 12-month study</span>
+
+            <div class="glass-card !p-0 overflow-hidden flex flex-col md:flex-row">
+                <div class="p-8 md:w-2/3">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest">Published: Nov 2025</span>
+                        <span class="text-gray-400 text-xs font-medium"><i class="bi bi-cpu-fill me-1"></i> Algorithm Analysis</span>
+                    </div>
+                    <h3 class="text-2xl font-extrabold text-blue-900 mb-4">AI Matchmaking Algorithms Dataset</h3>
+                    <p class="text-sm text-gray-500 mb-6 leading-relaxed">Platform interaction data and match outcomes from 6-month longitudinal study. Includes performance metrics and compatibility scores.</p>
+                    
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="bg-slate-100 text-slate-600 px-3 py-1.5 rounded-xl text-xs font-bold"><i class="bi bi-filetype-json me-1"></i> JSON</span>
+                        <span class="bg-slate-100 text-slate-600 px-3 py-1.5 rounded-xl text-xs font-bold"><i class="bi bi-database me-1"></i> 8.4 MB</span>
+                        <span class="bg-slate-100 text-slate-600 px-3 py-1.5 rounded-xl text-xs font-bold"><i class="bi bi-bar-chart me-1"></i> 45,000+ Interactions</span>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <a href="#" class="bg-blue-600 text-white px-6 py-2.5 rounded-xl text-sm font-bold hover:bg-blue-700 transition flex items-center gap-2">
+                            <i class="bi bi-download"></i> Download Dataset
+                        </a>
+                        <a href="#" class="border border-gray-200 text-gray-600 px-6 py-2.5 rounded-xl text-sm font-bold hover:bg-gray-50 transition flex items-center gap-2">
+                            <i class="bi bi-file-text"></i> Documentation
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-slate-100 md:w-1/3 flex items-center justify-center p-8 border-l border-gray-200">
+                    <i class="bi bi-graph-up-arrow text-8xl text-slate-200"></i>
+                </div>
             </div>
-            <div class="mt-4">
-                <a href="#" class="cta-button">
-                    <i class="bi bi-download me-2"></i>Download Dataset
+
+            <div class="glass-card !p-8 border-dashed border-2 border-gray-200 flex flex-col md:flex-row items-center gap-8 bg-gray-50/50">
+                <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-gray-300 shadow-sm flex-shrink-0">
+                    <i class="bi bi-lock-fill text-3xl"></i>
+                </div>
+                <div class="flex-1 text-center md:text-left">
+                    <h4 class="font-extrabold text-gray-400 text-xl">Digital Boundaries Dataset</h4>
+                    <p class="text-sm text-gray-400">Scheduled for release in January 2026. This study includes interview transcripts and communication patterns.</p>
+                </div>
+                <a href="{% url 'digital_boundaries' %}" class="text-blue-600 text-sm font-bold hover:underline">
+                    Read Study Preview →
                 </a>
-                <a href="#" class="cta-button cta-button-secondary ml-2">
-                    <i class="bi bi-file-text me-2"></i>Read Documentation
-                </a>
             </div>
+
         </div>
 
-        <!-- AI Matchmaking Dataset -->
-        <div class="content-card">
-            <div class="card-meta">
-                <span><i class="bi bi-calendar"></i> Published: November 2025</span>
-                <span><i class="bi bi-tag"></i> Algorithm Analysis</span>
+        <footer class="mt-20 bg-[#001a33] p-10 rounded-[2.5rem] text-white">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                        <i class="bi bi-shield-check text-cyan-400"></i> Data Usage Guidelines
+                    </h3>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="flex items-start gap-3"><i class="bi bi-check2 text-cyan-400"></i> <span><strong>Citation Required:</strong> Cite our research when using these datasets.</span></li>
+                        <li class="flex items-start gap-3"><i class="bi bi-check2 text-cyan-400"></i> <span><strong>Non-Commercial:</strong> Commercial use requires written permission.</span></li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <a href="{% url 'research_ethics' %}" class="bg-white/10 border border-white/20 p-4 rounded-2xl flex items-center justify-between hover:bg-white/20 transition">
+                        <span class="font-bold">View Research Ethics</span>
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                    <a href="mailto:info@dating-hub.com.au" class="bg-blue-600 p-4 rounded-2xl flex items-center justify-between hover:bg-blue-700 transition">
+                        <span class="font-bold">Request Access</span>
+                        <i class="bi bi-envelope-fill"></i>
+                    </a>
+                </div>
             </div>
-            <h3 class="card-title">AI Matchmaking Algorithms Dataset</h3>
-            <p class="card-excerpt">
-                Platform interaction data and match outcomes from 6-month longitudinal study. 
-                Includes algorithm performance metrics, user engagement data, and compatibility scores.
-            </p>
-            <div class="mt-3">
-                <span class="badge"><i class="bi bi-file-earmark-text me-1"></i> JSON Format</span>
-                <span class="badge"><i class="bi bi-database me-1"></i> 8.4 MB</span>
-                <span class="badge"><i class="bi bi-calendar me-1"></i> 6-month longitudinal</span>
-                <span class="badge"><i class="bi bi-bar-chart me-1"></i> 45,000+ interactions</span>
-            </div>
-            <div class="mt-4">
-                <a href="#" class="cta-button">
-                    <i class="bi bi-download me-2"></i>Download Dataset
-                </a>
-                <a href="#" class="cta-button cta-button-secondary ml-2">
-                    <i class="bi bi-file-text me-2"></i>Read Documentation
-                </a>
-            </div>
-        </div>
+        </footer>
 
-        <!-- Digital Boundaries Dataset -->
-        <div class="content-card">
-            <div class="card-meta">
-                <span><i class="bi bi-calendar"></i> Coming: January 2026</span>
-                <span><i class="bi bi-tag"></i> Privacy & Boundaries</span>
-            </div>
-            <h3 class="card-title">Digital Boundaries Dataset</h3>
-            <p class="card-excerpt">
-                How couples negotiate privacy and connectivity in digital relationships. 
-                Study includes interview transcripts, communication patterns, and boundary-setting behaviors.
-            </p>
-            <div class="mt-3">
-                <span class="badge"><i class="bi bi-file-earmark-text me-1"></i> CSV & Text Format</span>
-                <span class="badge"><i class="bi bi-database me-1"></i> ~15 MB (estimated)</span>
-                <span class="badge"><i class="bi bi-people me-1"></i> 500+ participants</span>
-                <span class="badge badge-new">New Study</span>
-            </div>
-            <div class="mt-4">
-                <button class="cta-button cta-button-secondary" disabled>
-                    <i class="bi bi-clock me-2"></i>Available January 2026
-                </button>
-                <a href="{% url 'digital_boundaries' %}" class="cta-button cta-button-secondary ml-2">
-                    <i class="bi bi-book me-2"></i>Read Study Preview
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Data Usage Guidelines -->
-    <div class="feature-highlight mt-5">
-        <h3><i class="bi bi-shield-check"></i> Data Usage Guidelines</h3>
-        <p>
-            <strong>Citation Required:</strong> Please cite our research when using these datasets.<br>
-            <strong>Academic Use:</strong> Primarily intended for academic and research purposes.<br>
-            <strong>Non-Commercial:</strong> Commercial use requires written permission.<br>
-            <strong>Anonymity:</strong> All personal identifiers have been removed to protect privacy.
-        </p>
-        <div class="mt-3">
-            <a href="{% url 'research_ethics' %}" class="cta-button cta-button-secondary" style="font-size: 0.9rem;">
-                <i class="bi bi-shield-check me-2"></i>View Research Ethics
-            </a>
-            <a href="mailto:info@dating-hub.com.au" class="cta-button cta-button-secondary ml-2" style="font-size: 0.9rem;">
-                <i class="bi bi-envelope me-2"></i>Request Dataset Access
-            </a>
-        </div>
     </div>
 </div>
 {% endblock %}

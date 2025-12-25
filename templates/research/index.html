@@ -3,76 +3,85 @@
 {% block title %}Research Studies | Dating Hub Research{% endblock %}
 
 {% block breadcrumb_items %}
-<li class="breadcrumb-item active" aria-current="page">Research</li>
+<li class="breadcrumb-item active text-blue-600 font-bold" aria-current="page">Research</li>
 {% endblock %}
 
 {% block content %}
-<div class="text-center mb-5">
-    <h1 class="display-5 fw-bold">Research Studies</h1>
-    <p class="lead text-muted">Comprehensive analysis of modern dating trends and behaviors</p>
-</div>
-
-<div class="row g-4">
-    <!-- Study 1 -->
-    <div class="col-lg-4 col-md-6">
-        <div class="card h-100">
-            <div class="card-body">
-                <span class="metric-badge mb-3">DIGITAL TRENDS</span>
-                <h3 class="card-title h5">The Rise of Micromance</h3>
-                <p class="card-text small">How brief digital interactions reshape emotional connections in app-based dating.</p>
-                <div class="mt-3">
-                    <span class="badge bg-light text-dark me-2">2025 Study</span>
-                    <span class="badge bg-light text-dark">15 min read</span>
-                </div>
-            </div>
-            <div class="card-footer bg-transparent border-top-0">
-                <a href="{% url 'micromance' %}" class="btn btn-outline-primary w-100">Read Study</a>
-            </div>
+<div class="py-16 px-4 bg-slate-50">
+    <div class="max-w-7xl mx-auto">
+        
+        <div class="text-center mb-16">
+            <span class="bg-blue-600 text-white px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest mb-6 inline-block">Knowledge Base</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-blue-900 mb-6 tracking-tight">Research Studies</h1>
+            <p class="text-lg text-gray-500 max-w-2xl mx-auto">Comprehensive analysis of modern dating trends, algorithmic performance, and digital relationship behaviors.</p>
         </div>
-    </div>
 
-    <!-- Study 2 -->
-    <div class="col-lg-4 col-md-6">
-        <div class="card h-100">
-            <div class="card-body">
-                <span class="metric-badge mb-3" style="background:#17a2b8">TECHNOLOGY</span>
-                <h3 class="card-title h5">AI Matchmaking Algorithms</h3>
-                <p class="card-text small">How artificial intelligence changes partner selection and compatibility assessment.</p>
-                <div class="mt-3">
-                    <span class="badge bg-light text-dark me-2">2025 Study</span>
-                    <span class="badge bg-light text-dark">20 min read</span>
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
+            
+            <div class="glass-card group hover:border-blue-400 transition-all duration-500 flex flex-col">
+                <div class="mb-6">
+                    <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest">Digital Trends</span>
                 </div>
-            </div>
-            <div class="card-footer bg-transparent border-top-0">
-                <a href="{% url 'ai_matchmaking' %}" class="btn btn-outline-primary w-100">Read Study</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Study 3 -->
-    <div class="col-lg-4 col-md-6">
-        <div class="card h-100">
-            <div class="card-body">
-                <span class="metric-badge mb-3" style="background:#28a745">RELATIONSHIPS</span>
-                <h3 class="card-title h5">Digital Boundaries in Dating</h3>
-                <p class="card-text small">How couples negotiate privacy, connectivity, and digital intimacy in modern relationships.</p>
-                <div class="mt-3">
-                    <span class="badge bg-light text-dark me-2">2025 Study</span>
-                    <span class="badge bg-light text-dark">18 min read</span>
+                <h3 class="text-2xl font-extrabold text-blue-900 mb-4 group-hover:text-blue-600 transition-colors">The Rise of Micromance</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-8 flex-grow">How brief digital interactions reshape emotional connections in app-based dating.</p>
+                
+                <div class="flex items-center gap-3 mb-6 pt-6 border-t border-gray-100">
+                    <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-md text-[10px] font-bold">2025 STUDY</span>
+                    <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-md text-[10px] font-bold"><i class="bi bi-clock me-1"></i> 15 MIN READ</span>
                 </div>
+                
+                <a href="{% url 'micromance' %}" class="w-full bg-[#001a33] text-white text-center py-3 rounded-xl font-bold hover:bg-blue-900 transition shadow-lg">
+                    Read Full Study
+                </a>
             </div>
-            <div class="card-footer bg-transparent border-top-0">
-                <a href="{% url 'digital_boundaries' %}" class="btn btn-outline-primary w-100">Read Study</a>
-            </div>
-        </div>
-    </div>
-</div>
 
-<div class="row mt-5">
-    <div class="col-lg-8 mx-auto">
-        <div class="alert alert-info">
-            <h4 class="alert-heading h5"><i class="bi bi-info-circle me-2"></i>About Our Research</h4>
-            <p class="mb-0 small">Each study undergoes rigorous review, employs mixed-methods research, and follows strict ethical guidelines for data privacy and participant consent.</p>
+            <div class="glass-card group hover:border-blue-400 transition-all duration-500 flex flex-col">
+                <div class="mb-6">
+                    <span class="bg-cyan-100 text-cyan-700 px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest">Technology</span>
+                </div>
+                <h3 class="text-2xl font-extrabold text-blue-900 mb-4 group-hover:text-blue-600 transition-colors">AI Matchmaking Algorithms</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-8 flex-grow">Performance analysis and compatibility prediction in modern digital dating platforms.</p>
+                
+                <div class="flex items-center gap-3 mb-6 pt-6 border-t border-gray-100">
+                    <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-md text-[10px] font-bold">2025 STUDY</span>
+                    <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-md text-[10px] font-bold"><i class="bi bi-clock me-1"></i> 22 MIN READ</span>
+                </div>
+                
+                <a href="{% url 'ai_matchmaking' %}" class="w-full bg-[#001a33] text-white text-center py-3 rounded-xl font-bold hover:bg-blue-900 transition shadow-lg">
+                    Read Full Study
+                </a>
+            </div>
+
+            <div class="glass-card group hover:border-blue-400 transition-all duration-500 flex flex-col">
+                <div class="mb-6">
+                    <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-widest">Relationships</span>
+                </div>
+                <h3 class="text-2xl font-extrabold text-blue-900 mb-4 group-hover:text-blue-600 transition-colors">Digital Boundaries in Dating</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-8 flex-grow">How couples negotiate privacy, connectivity, and digital intimacy in modern relationships.</p>
+                
+                <div class="flex items-center gap-3 mb-6 pt-6 border-t border-gray-100">
+                    <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-md text-[10px] font-bold">2025 STUDY</span>
+                    <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-md text-[10px] font-bold"><i class="bi bi-clock me-1"></i> 18 MIN READ</span>
+                </div>
+                
+                <a href="{% url 'digital_boundaries' %}" class="w-full bg-[#001a33] text-white text-center py-3 rounded-xl font-bold hover:bg-blue-900 transition shadow-lg">
+                    Read Full Study
+                </a>
+            </div>
+
+        </div>
+
+        <div class="mt-20 bg-blue-900 p-10 rounded-[2.5rem] text-white flex flex-col md:flex-row items-center gap-8">
+            <div class="w-20 h-20 bg-blue-800 rounded-3xl flex items-center justify-center text-cyan-400 text-4xl flex-shrink-0">
+                <i class="bi bi-shield-shaded"></i>
+            </div>
+            <div>
+                <h4 class="text-2xl font-extrabold mb-2">Our Research Rigor</h4>
+                <p class="text-blue-100 text-sm opacity-80 leading-relaxed">Each study undergoes rigorous review, employs mixed-methods research, and follows strict ethical guidelines to ensure the highest data integrity.</p>
+            </div>
+            <div class="flex-shrink-0">
+                <a href="{% url 'methodology' %}" class="bg-white text-blue-900 px-8 py-3 rounded-xl font-bold hover:bg-cyan-400 transition">View Methodology</a>
+            </div>
         </div>
     </div>
 </div>

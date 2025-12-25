@@ -3,393 +3,135 @@
 {% block title %}AI Matchmaking Algorithms | Dating Hub Research{% endblock %}
 
 {% block content %}
-<div class="content-container">
-    <article class="research-article">
-        <!-- Research Header -->
-        <header class="research-header">
-            <div class="research-metadata">
-                <span class="badge badge-new">Independent Research Study</span>
-                <span class="badge">Algorithm Analysis</span>
-                <span class="badge">Machine Learning</span>
-                <span class="badge">Study ID: DHR-2024-004</span>
+<div class="py-16 px-4 bg-slate-50">
+    <div class="max-w-6xl mx-auto">
+        
+        <header class="mb-16">
+            <div class="flex flex-wrap gap-2 mb-6">
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-widest">Independent Research Study</span>
+                <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-widest">Machine Learning</span>
+                <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-widest">Study ID: DHR-2024-004</span>
             </div>
             
-            <h1 class="research-title">AI Matchmaking Algorithms: Performance Analysis and Compatibility Prediction in Digital Dating Platforms</h1>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-blue-900 mb-6 tracking-tight">AI Matchmaking: Performance & Compatibility Prediction</h1>
             
-            <div class="research-authors">
-                <div class="author-item">
-                    <strong>Study Lead:</strong> Technology & Algorithms Research Team
+            <div class="glass-card !p-8 grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-sm">
+                <div>
+                    <p class="text-gray-400 font-bold text-[10px] uppercase mb-1">Study Lead</p>
+                    <p class="text-blue-900 font-extrabold">Technology & Algorithms Team</p>
                 </div>
-                <div class="author-item">
-                    <strong>Methodology:</strong> Quantitative Analysis Committee
+                <div>
+                    <p class="text-gray-400 font-bold text-[10px] uppercase mb-1">Data Science</p>
+                    <p class="text-blue-900 font-extrabold">ML Analysis Group</p>
                 </div>
-                <div class="author-item">
-                    <strong>Data Science:</strong> Machine Learning Analysis Group
+                <div>
+                    <p class="text-gray-400 font-bold text-[10px] uppercase mb-1">Sample Size</p>
+                    <p class="text-blue-900 font-extrabold">n=3,200</p>
                 </div>
-                <div class="author-item">
-                    <strong>Peer Review:</strong> Internal Review Board
+                <div>
+                    <p class="text-gray-400 font-bold text-[10px] uppercase mb-1">Design</p>
+                    <p class="text-blue-600 font-extrabold">A/B Testing + Longitudinal</p>
                 </div>
-            </div>
-            
-            <div class="research-details">
-                <div class="detail-item">
-                    <i class="bi bi-calendar"></i>
-                    <span><strong>Study Period:</strong> January 2024 - December 2024</span>
-                </div>
-                <div class="detail-item">
-                    <i class="bi bi-people"></i>
-                    <span><strong>Sample Size:</strong> n=3,200</span>
-                </div>
-                <div class="detail-item">
-                    <i class="bi bi-clock"></i>
-                    <span><strong>Design:</strong> 6-month longitudinal + A/B testing</span>
-                </div>
-                <div class="detail-item">
-                    <i class="bi bi-shield-check"></i>
-                    <span><strong>Protocol:</strong> DHR-ETH-2024 v2.1</span>
-                </div>
-            </div>
-            
-            <div class="transparency-notice">
-                <p><i class="bi bi-info-circle"></i> <strong>Research Transparency:</strong> This independent study follows rigorous methodological protocols. Full documentation available upon request.</p>
             </div>
         </header>
 
-        <!-- Abstract -->
-        <section class="research-section">
-            <h2><i class="bi bi-file-text"></i> Abstract</h2>
-            <div class="abstract">
-                <p>This comprehensive study analyzes the performance and predictive accuracy of AI-driven matchmaking algorithms across three major dating platforms. Through controlled A/B testing and longitudinal tracking of 3,200 users over 6 months, we evaluate how machine learning models compare to traditional matching methods in predicting long-term compatibility and user satisfaction.</p>
-                
-                <div class="key-findings-box">
-                    <h4>Key Statistical Findings:</h4>
-                    <ul>
-                        <li>Algorithms prioritizing long-term compatibility show 42% higher 6-month retention</li>
-                        <li>AI-driven matches have 28% higher user satisfaction scores</li>
-                        <li>Neural network models outperform logistic regression by 31% in compatibility prediction</li>
-                        <li>Hybrid algorithms (AI + human feedback) achieve optimal balance of accuracy and user trust</li>
-                    </ul>
+        <div class="space-y-12">
+            
+            <section class="glass-card">
+                <h2 class="text-3xl font-extrabold text-blue-900 mb-8 flex items-center gap-3">
+                    <i class="bi bi-cpu text-blue-600"></i> Performance Abstract
+                </h2>
+                <div class="prose prose-slate max-w-none text-gray-600 leading-relaxed mb-10">
+                    <p>This study evaluates the predictive accuracy of AI-driven matchmaking across three major platforms over 6 months. We examine how neural network models compare to traditional filtering in predicting long-term relationship outcomes.</p>
                 </div>
-                
-                <p><strong>Keywords:</strong> AI matchmaking, machine learning, compatibility algorithms, dating platforms, predictive analytics, user satisfaction</p>
-            </div>
-        </section>
 
-        <!-- Introduction -->
-        <section class="research-section">
-            <h2><i class="bi bi-book"></i> Introduction & Research Context</h2>
-            
-            <h3>1.1 Study Rationale</h3>
-            <p>As dating platforms increasingly adopt AI and machine learning for partner matching, there remains limited independent research evaluating the actual performance and ethical implications of these algorithms. This study addresses critical gaps in understanding algorithmic effectiveness, bias mitigation, and user outcomes.</p>
-            
-            <h3>1.2 Research Questions</h3>
-            <div class="research-questions">
-                <div class="question-item">
-                    <span class="question-number">RQ1</span>
-                    <span class="question-text">How do AI-driven matching algorithms compare to traditional methods in predicting long-term compatibility?</span>
-                </div>
-                <div class="question-item">
-                    <span class="question-number">RQ2</span>
-                    <span class="question-text">What algorithmic features optimize both accuracy and user satisfaction?</span>
-                </div>
-                <div class="question-item">
-                    <span class="question-number">RQ3</span>
-                    <span class="question-text">How can algorithmic bias be detected and mitigated in matchmaking systems?</span>
-                </div>
-                <div class="question-item">
-                    <span class="question-number">RQ4</span>
-                    <span class="question-text">What are the ethical implications of AI-mediated partner selection?</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Methodology -->
-        <section class="research-section">
-            <h2><i class="bi bi-clipboard-data"></i> Methodology</h2>
-            
-            <h3>2.1 Study Design</h3>
-            <p>Controlled comparative analysis combining A/B testing with longitudinal tracking. Platform-agnostic evaluation of algorithmic performance.</p>
-            
-            <table class="research-table">
-                <thead>
-                    <tr>
-                        <th>Phase</th>
-                        <th>Method</th>
-                        <th>Participants</th>
-                        <th>Duration</th>
-                        <th>Primary Measures</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Phase 1</strong></td>
-                        <td>A/B testing of algorithm variations</td>
-                        <td>n=1,500</td>
-                        <td>3 months</td>
-                        <td>Match quality, user engagement, satisfaction metrics</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Phase 2</strong></td>
-                        <td>Longitudinal tracking</td>
-                        <td>n=800</td>
-                        <td>6 months</td>
-                        <td>Retention rates, relationship outcomes, algorithm accuracy</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Phase 3</strong></td>
-                        <td>Algorithm performance analysis</td>
-                        <td>3 platforms</td>
-                        <td>6 months</td>
-                        <td>Predictive accuracy, bias detection, error rates</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Phase 4</strong></td>
-                        <td>User experience interviews</td>
-                        <td>n=45</td>
-                        <td>2 months</td>
-                        <td>Algorithm transparency perception, trust metrics</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <h3>2.2 Algorithm Types Analyzed</h3>
-            <div class="algorithm-types">
-                <div class="algorithm-item">
-                    <h5><i class="bi bi-diagram-3"></i> Neural Network Models</h5>
-                    <p>Deep learning approaches using user interaction data</p>
-                </div>
-                <div class="algorithm-item">
-                    <h5><i class="bi bi-graph-up"></i> Collaborative Filtering</h5>
-                    <p>User similarity-based recommendations</p>
-                </div>
-                <div class="algorithm-item">
-                    <h5><i class="bi bi-cpu"></i> Hybrid Systems</h5>
-                    <p>Combining AI predictions with human feedback</p>
-                </div>
-                <div class="algorithm-item">
-                    <h5><i class="bi bi-people"></i> Traditional Methods</h5>
-                    <p>Manual selection and basic filtering (control group)</p>
-                </div>
-            </div>
-            
-            <h3>2.3 Performance Metrics</h3>
-            <ul>
-                <li><strong>Predictive Accuracy:</strong> F1-score, precision, recall on compatibility outcomes</li>
-                <li><strong>User Satisfaction:</strong> 5-point Likert scales, Net Promoter Score (NPS)</li>
-                <li><strong>Retention Metrics:</strong> 30/60/180-day user retention rates</li>
-                <li><strong>Bias Detection:</strong> Demographic parity, equal opportunity metrics</li>
-                <li><strong>Transparency:</strong> User understanding and trust in algorithm</li>
-            </ul>
-        </section>
-
-        <!-- Results -->
-        <section class="research-section">
-            <h2><i class="bi bi-bar-chart"></i> Results</h2>
-            
-            <h3>3.1 Algorithm Performance Comparison</h3>
-            <p>Neural network models significantly outperformed other approaches in long-term compatibility prediction.</p>
-            
-            <table class="results-table">
-                <thead>
-                    <tr>
-                        <th>Algorithm Type</th>
-                        <th>Predictive Accuracy</th>
-                        <th>6-Month Retention</th>
-                        <th>User Satisfaction</th>
-                        <th>Bias Score</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Neural Network</strong></td>
-                        <td>78.4%</td>
-                        <td>64%</td>
-                        <td>4.3/5.0</td>
-                        <td>0.12</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Collaborative Filtering</strong></td>
-                        <td>65.2%</td>
-                        <td>52%</td>
-                        <td>3.8/5.0</td>
-                        <td>0.18</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Hybrid System</strong></td>
-                        <td>72.1%</td>
-                        <td>58%</td>
-                        <td>4.1/5.0</td>
-                        <td>0.09</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Traditional Methods</strong></td>
-                        <td>47.8%</td>
-                        <td>45%</td>
-                        <td>3.4/5.0</td>
-                        <td>0.25</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <div class="key-stat">
-                <div class="stat-value">42%</div>
-                <div class="stat-label">higher 6-month retention with compatibility-focused algorithms</div>
-            </div>
-            
-            <h3>3.2 Key Performance Insights</h3>
-            <div class="insights-grid">
-                <div class="insight-card">
-                    <h5><i class="bi bi-lightbulb"></i> Optimal Feature Weighting</h5>
-                    <p>Algorithms weighing long-term compatibility factors (values, life goals) 60% and immediate attraction 40% showed optimal balance of accuracy and user satisfaction.</p>
-                </div>
-                <div class="insight-card">
-                    <h5><i class="bi bi-shield-check"></i> Bias Mitigation</h5>
-                    <p>Regularized models with demographic parity constraints reduced bias scores by 64% while maintaining 91% of predictive accuracy.</p>
-                </div>
-                <div class="insight-card">
-                    <h5><i class="bi bi-eye"></i> Transparency Impact</h5>
-                    <p>Users shown simplified explanations of match reasons reported 37% higher trust in algorithm recommendations.</p>
-                </div>
-            </div>
-            
-            <h3>3.3 User Experience Findings</h3>
-            <div class="data-visualization">
-                <h4>Figure 1: Algorithm Trust vs. Satisfaction Correlation</h4>
-                <div class="chart-placeholder">
-                    <p>[SCATTER PLOT: Higher algorithm transparency correlates with increased user satisfaction]</p>
-                </div>
-                <p class="chart-caption"><strong>Interpretation:</strong> Users who understand why matches are made report 28% higher satisfaction.</p>
-            </div>
-        </section>
-
-        <!-- Discussion -->
-        <section class="research-section">
-            <h2><i class="bi bi-chat-dots"></i> Discussion & Implications</h2>
-            
-            <h3>4.1 Algorithm Design Recommendations</h3>
-            <div class="recommendations">
-                <div class="recommendation-item">
-                    <strong>Priority Long-Term Factors:</strong> Algorithms should weight compatibility dimensions (values, goals, communication style) more heavily than superficial attraction signals.
-                </div>
-                <div class="recommendation-item">
-                    <strong>Implement Bias Audits:</strong> Regular algorithmic audits for demographic and preference biases improve fairness and user trust.
-                </div>
-                <div class="recommendation-item">
-                    <strong>Enhance Transparency:</strong> Simple, understandable explanations of match reasons increase user acceptance and satisfaction.
-                </div>
-            </div>
-            
-            <h3>4.2 Ethical Considerations</h3>
-            <p>The delegation of partner selection to algorithms raises important ethical questions about autonomy, bias reproduction, and the commodification of relationships. Our findings suggest:</p>
-            <ul>
-                <li><strong>User Agency:</strong> Algorithms should augment rather than replace human choice</li>
-                <li><strong>Transparency Standards:</strong> Platforms should disclose basic matching logic</li>
-                <li><strong>Bias Accountability:</strong> Regular public reporting on algorithmic fairness metrics</li>
-                <li><strong>Opt-Out Options:</strong> Users should be able to disable algorithmic matching</li>
-            </ul>
-            
-            <h3>4.3 Practical Applications</h3>
-            <p><strong>For Platform Developers:</strong> Focus on hybrid systems combining AI efficiency with human nuance. Prioritize transparency features that build user trust.</p>
-            <p><strong>For Users:</strong> Understanding that algorithms work best when they prioritize long-term compatibility over immediate attraction can lead to better match acceptance.</p>
-        </section>
-
-        <!-- Conclusion -->
-        <section class="research-section">
-            <h2><i class="bi bi-check-circle"></i> Conclusion</h2>
-            <div class="conclusion-box">
-                <p>AI matchmaking algorithms show significant promise for improving partner compatibility prediction, but their effectiveness depends critically on design choices that prioritize long-term factors, mitigate biases, and maintain transparency. The optimal approach appears to be hybrid systems that leverage machine learning efficiency while preserving human agency and understanding.</p>
-                <p class="conclusion-note"><strong>Primary Takeaway:</strong> The most effective matchmaking algorithms balance predictive accuracy with user trust, emphasizing transparency and ethical design alongside technical performance.</p>
-            </div>
-        </section>
-
-        <!-- Data Availability -->
-        <section class="research-section">
-            <h2><i class="bi bi-database"></i> Data Availability</h2>
-            <div class="data-availability">
-                <div class="availability-item">
-                    <i class="bi bi-file-earmark-text"></i>
-                    <div>
-                        <strong>Anonymized Dataset:</strong> Available in <a href="{% url 'data_library' %}">Data Library</a>
-                        <p class="small">JSON format, 8.4 MB, includes algorithm performance metrics</p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="p-6 rounded-2xl bg-[#001a33] text-white">
+                        <p class="text-4xl font-extrabold text-cyan-400 mb-2">42%</p>
+                        <p class="text-xs font-bold leading-tight">Higher 6-month retention with compatibility focus.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-blue-50 border border-blue-100">
+                        <p class="text-4xl font-extrabold text-blue-600 mb-2">28%</p>
+                        <p class="text-xs font-bold text-blue-900 leading-tight">Increase in user satisfaction scores.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-blue-50 border border-blue-100">
+                        <p class="text-4xl font-extrabold text-blue-600 mb-2">31%</p>
+                        <p class="text-xs font-bold text-blue-900 leading-tight">Neural Network outperform Logistic Regression.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-blue-50 border border-blue-100">
+                        <p class="text-4xl font-extrabold text-blue-600 mb-2">64%</p>
+                        <p class="text-xs font-bold text-blue-900 leading-tight">Bias reduction via regularized modeling.</p>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Citation -->
-        <div class="citation-box">
-            <h4><i class="bi bi-quote"></i> Citation Format</h4>
-            <div class="citation-text">
-                <p>Dating Hub Research Team. (2025). AI Matchmaking Algorithms: Performance Analysis and Compatibility Prediction in Digital Dating Platforms [Study DHR-2024-004]. <em>Dating Hub Research</em>.</p>
-            </div>
+            <section class="glass-card">
+                <h2 class="text-3xl font-extrabold text-blue-900 mb-8 flex items-center gap-3">
+                    <i class="bi bi-bar-chart-steps text-blue-600"></i> Comparative Performance
+                </h2>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-sm">
+                        <thead class="bg-blue-900 text-white font-bold uppercase text-[10px] tracking-widest">
+                            <tr>
+                                <th class="p-4 rounded-tl-xl">Algorithm Type</th>
+                                <th class="p-4">Predictive Accuracy</th>
+                                <th class="p-4">6-Month Retention</th>
+                                <th class="p-4">Satisfaction</th>
+                                <th class="p-4 rounded-tr-xl">Bias Score</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100 text-gray-600 font-medium">
+                            <tr>
+                                <td class="p-4 font-bold text-blue-900">Neural Network</td>
+                                <td class="p-4">78.4%</td>
+                                <td class="p-4">64%</td>
+                                <td class="p-4">4.3/5.0</td>
+                                <td class="p-4 text-xs">0.12</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-bold text-blue-900">Hybrid System</td>
+                                <td class="p-4">72.1%</td>
+                                <td class="p-4">58%</td>
+                                <td class="p-4">4.1/5.0</td>
+                                <td class="p-4 text-xs">0.09</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-bold text-blue-900">Traditional</td>
+                                <td class="p-4">47.8%</td>
+                                <td class="p-4">45%</td>
+                                <td class="p-4">3.4/5.0</td>
+                                <td class="p-4 text-xs">0.25</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="grid md:grid-cols-3 gap-6">
+                <div class="glass-card !p-6">
+                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 text-2xl mb-4">
+                        <i class="bi bi-sliders"></i>
+                    </div>
+                    <h4 class="font-bold text-blue-900 mb-2">Feature Weighting</h4>
+                    <p class="text-xs text-gray-500">60% weight on long-term values vs 40% on immediate attraction yields optimal results.</p>
+                </div>
+                <div class="glass-card !p-6">
+                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 text-2xl mb-4">
+                        <i class="bi bi-eye"></i>
+                    </div>
+                    <h4 class="font-bold text-blue-900 mb-2">Trust Transparency</h4>
+                    <p class="text-xs text-gray-500">Explaining match logic increases user trust by 37%.</p>
+                </div>
+                <div class="glass-card !p-6">
+                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 text-2xl mb-4">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+                    <h4 class="font-bold text-blue-900 mb-2">Ethical Auditing</h4>
+                    <p class="text-xs text-gray-500">Regular bias audits improve fairness metrics without significant accuracy loss.</p>
+                </div>
+            </section>
+
         </div>
-    </article>
+    </div>
 </div>
-
-<style>
-    .algorithm-types {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.5rem;
-        margin: 1.5rem 0;
-    }
-    
-    .algorithm-item {
-        background: white;
-        border: 1px solid #E0E0E0;
-        border-radius: 8px;
-        padding: 1.5rem;
-        text-align: center;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    
-    .algorithm-item h5 {
-        color: #0066CC;
-        margin-bottom: 0.75rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-    }
-    
-    .insights-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
-        margin: 1.5rem 0;
-    }
-    
-    .insight-card {
-        background: white;
-        border: 1px solid #E0E0E0;
-        border-radius: 8px;
-        padding: 1.5rem;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    
-    .insight-card h5 {
-        color: #0066CC;
-        margin-bottom: 0.75rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    
-    .recommendations {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        margin: 1.5rem 0;
-    }
-    
-    .recommendation-item {
-        padding: 1rem;
-        background: #f0f7ff;
-        border-radius: 6px;
-        border-left: 4px solid #0066CC;
-        font-size: 0.95rem;
-    }
-    
-    /* Include all other CSS from micromance.html */
-</style>
 {% endblock %}

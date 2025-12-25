@@ -3,809 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Dating Hub Research{% endblock %}</title>
+    <title>{% block title %}Dating Hub{% endblock %}</title>
     
-    <!-- Load your PEW-inspired CSS -->
-    <link rel="stylesheet" href="/static/css/style.css">
-    
-    <!-- Google Fonts for professional typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     
     <style>
-        /* Ensure body uses flex for footer positioning */
-        body {
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #f8fafc; 
+            color: #001a33;
+            line-height: 1.6;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: #FFFFFF;
-            color: #1D1D1D;
-            line-height: 1.6;
         }
-        .main-content {
+
+        main {
             flex: 1;
         }
-        
-        /* Header styles matching your CSS */
-        .main-nav {
-            background: #FFFFFF;
-            border-bottom: 1px solid #E0E0E0;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
-        /* Professional DH monogram logo */
-        .nav-logo {
-            font-family: 'Merriweather', 'Georgia', serif;
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: #1D1D1D;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        
-        .dh-monogram {
-            width: 36px;
-            height: 36px;
-            background: #0066CC;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Merriweather', serif;
-            font-weight: 700;
-            font-size: 1.1rem;
-            border: 2px solid rgba(0, 102, 204, 0.2);
-            box-shadow: 0 2px 4px rgba(0, 102, 204, 0.1);
-        }
-        
-        .nav-logo:hover {
-            color: #1D1D1D;
-            text-decoration: none;
-        }
-        
-        .nav-logo:hover .dh-monogram {
-            background: #0052A3;
-            transform: scale(1.05);
-            transition: all 0.3s ease;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-        
-        .nav-links a {
-            color: #505050;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            padding: 0.5rem 0;
-            position: relative;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-links a:hover {
-            color: #0066CC;
-        }
-        
-        .nav-links a.active {
-            color: #0066CC;
-        }
-        
-        .nav-links a.active::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: #0066CC;
-        }
-        
-        /* Content Cards & Sections */
-        .content-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-        
-        .hero-section {
-            text-align: center;
-            padding: 4rem 0;
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            border-radius: 12px;
-            margin-bottom: 3rem;
-            border: 1px solid #E0E0E0;
-        }
-        
-        .section-title {
-            font-family: 'Merriweather', serif;
-            font-size: 2rem;
-            color: #1D1D1D;
+
+        /* Consistent Glass Cards for all sub-page content */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 10px 40px rgba(0, 102, 204, 0.08);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
             margin-bottom: 2rem;
-            padding-bottom: 0.75rem;
-            border-bottom: 2px solid #0066CC;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
         }
-        
-        .section-subtitle {
-            font-size: 1.25rem;
-            color: #505050;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            line-height: 1.5;
+
+        .glass-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0, 102, 204, 0.12);
+            border-color: rgba(0, 212, 255, 0.3);
         }
-        
-        .content-card {
-            background: #FFFFFF;
-            border: 1px solid #E0E0E0;
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
+
+        /* Pulse for the AI button in the header - MATCHES HOMEPAGE */
+        @keyframes electric-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 212, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0); }
         }
-        
-        .content-card:hover {
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-            transform: translateY(-2px);
+        .cta-pulse { 
+            animation: electric-pulse 2s infinite; 
+            box-shadow: 0 4px 14px rgba(0, 102, 204, 0.3);
         }
-        
-        .card-title {
-            font-family: 'Merriweather', serif;
-            font-size: 1.5rem;
-            color: #1D1D1D;
-            margin: 0 0 1rem 0;
+
+        .cta-pulse:hover {
+            animation: electric-pulse 1.5s infinite;
+            box-shadow: 0 6px 20px rgba(0, 102, 204, 0.4);
         }
-        
-        .card-meta {
-            color: #767676;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-            display: flex;
-            gap: 1rem;
-            align-items: center;
+
+        /* Typography upgrades for Research/Policy content */
+        h1, h2, h3 { 
+            color: #001a33; 
+            font-weight: 800; 
+            letter-spacing: -0.025em;
+            line-height: 1.2;
         }
-        
-        .card-meta i {
-            font-size: 1rem;
+
+        h1 { font-size: 2.5rem; margin-bottom: 1.5rem; }
+        h2 { font-size: 2rem; margin-bottom: 1.25rem; }
+        h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+
+        .content-container { 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding: 4rem 1rem;
         }
-        
-        .card-excerpt {
-            color: #505050;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-        
-        .cta-button {
-            background: #0066CC;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-        
-        .cta-button:hover {
-            background: #0052A3;
-            color: white;
-            text-decoration: none;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(0,102,204,0.2);
-        }
-        
-        .cta-button-secondary {
-            background: transparent;
-            color: #0066CC;
-            border: 2px solid #0066CC;
-        }
-        
-        .cta-button-secondary:hover {
-            background: #0066CC;
-            color: white;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        .stat-card {
-            text-align: center;
-            padding: 2rem;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border: 1px solid #E0E0E0;
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #0066CC;
-            font-family: 'Merriweather', serif;
-            margin-bottom: 0.5rem;
-        }
-        
-        .stat-label {
-            color: #505050;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
-        
-        .feature-highlight {
-            background: linear-gradient(135deg, #FFFBF0 0%, #FFF8E1 100%);
-            border-left: 4px solid #FFC107;
-            padding: 2rem;
-            margin: 3rem 0;
-            border-radius: 0 8px 8px 0;
-        }
-        
-        .feature-highlight h3 {
-            color: #1D1D1D;
-            margin-top: 0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        /* Footer styles */
-        .site-footer {
-            background: #1D1D1D;
-            border-top: 1px solid #333;
-            padding: 4rem 0 2rem 0;
-            margin-top: 4rem;
-            color: #FFFFFF;
-        }
-        
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
-        .footer-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .footer-title h2 {
-            margin: 0 0 0.5rem 0;
-            color: #FFFFFF;
-            font-family: 'Merriweather', 'Georgia', serif;
-            font-size: 2rem;
-        }
-        
-        .footer-title p {
-            color: #CCCCCC;
-            margin: 0;
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .footer-columns {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-        
-        .footer-column h3 {
-            margin-top: 0;
-            color: #FFFFFF;
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .footer-column ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .footer-column li {
-            margin-bottom: 0.75rem;
-        }
-        
-        .footer-column a {
-            color: #CCCCCC;
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .footer-column a:hover {
-            color: #0066CC;
-            text-decoration: none;
-        }
-        
-        /* IMPROVED FOOTER BOTTOM SECTION */
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2.5rem;
-            border-top: 1px solid #333;
-            color: #FFFFFF;
-        }
-        
-        .footer-tagline {
-            font-family: 'Merriweather', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #FFFFFF;
-            margin-bottom: 1.5rem;
-            letter-spacing: 0.5px;
-            text-align: center;
-            line-height: 1.3;
-        }
-        
-        .footer-tagline span {
-            color: #0066CC;
-        }
-        
-        .footer-copyright {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 1.5rem;
-            font-size: 0.9rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-            color: #999;
-        }
-        
-        .footer-email {
-            color: #0066CC;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .footer-email:hover {
-            color: #4DA1FF;
-            text-decoration: underline;
-        }
-        
-        /* Responsive Design */
+
+        /* Mobile header adjustments to match homepage */
         @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 1rem;
+            .header-container {
+                min-height: 70px;
+                padding: 0 1rem;
             }
             
-            .nav-links {
-                gap: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
+            .cta-pulse {
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
             }
             
-            .nav-links a {
-                margin: 0;
+            .glass-card {
+                padding: 1.5rem;
+                border-radius: 1rem;
+                margin-bottom: 1.5rem;
             }
             
-            .footer-columns {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .footer-copyright {
-                flex-direction: column;
-                text-align: center;
-                gap: 0.5rem;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero-section {
+            .content-container {
                 padding: 2rem 1rem;
             }
             
-            .footer-tagline {
-                font-size: 1.3rem;
-            }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.75rem; }
+            h3 { font-size: 1.25rem; }
         }
-        
-        /* Utility Classes */
-        .text-center {
-            text-align: center;
-        }
-        
-        .mt-1 { margin-top: 1rem; }
-        .mt-2 { margin-top: 2rem; }
-        .mt-3 { margin-top: 3rem; }
-        .mb-1 { margin-bottom: 1rem; }
-        .mb-2 { margin-bottom: 2rem; }
-        .mb-3 { margin-bottom: 3rem; }
-        
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-        }
-        
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-        
-        @media (max-width: 768px) {
-            .grid-2, .grid-3 {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* Badge/Label */
-        .badge {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            background: #0066CC;
-            color: white;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .badge-new {
-            background: #FFC107;
-            color: #1D1D1D;
-        }
-        
-        .badge-featured {
-            background: #28a745;
-        }
-        
-        /* Policy/legal page styles */
-        .policy-header {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 3rem 0;
-            margin-bottom: 3rem;
-            border-bottom: 1px solid #E0E0E0;
-        }
-        
-        .policy-content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
-        .policy-section {
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid #E0E0E0;
-        }
-        
-        .policy-section:last-child {
-            border-bottom: none;
-        }
-        
-        .policy-title {
-            font-family: 'Merriweather', serif;
-            font-size: 2.5rem;
-            color: #1D1D1D;
-            margin-bottom: 1rem;
-        }
-        
-        .policy-subtitle {
+
+        /* Link styling */
+        a:not(.cta-pulse) {
             color: #0066CC;
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid #E0E0E0;
+            text-decoration: none;
+            transition: color 0.2s ease;
         }
-        
-        .policy-list {
-            padding-left: 1.5rem;
-            margin-bottom: 1.5rem;
+
+        a:not(.cta-pulse):hover {
+            color: #004C99;
+            text-decoration: underline;
+            text-underline-offset: 3px;
         }
-        
-        .policy-list li {
-            margin-bottom: 0.75rem;
-            line-height: 1.6;
-        }
-        
-        .policy-note {
-            background: #FFFBF0;
-            border-left: 4px solid #FFC107;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 0 4px 4px 0;
-        }
-        
-        .policy-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-        }
-        
-        .policy-table th,
-        .policy-table td {
-            padding: 1rem;
-            border: 1px solid #E0E0E0;
-            text-align: left;
-        }
-        
-        .policy-table th {
-            background: #f8f9fa;
-            font-weight: 600;
-        }
-        
-        .policy-update {
-            background: #e8f4fd;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-top: 2rem;
-            border-left: 4px solid #0066CC;
-        }
-        
-        .update-badge {
-            background: #0066CC;
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 0.5rem;
-        }
+
+        {% block extra_head %}{% endblock %}
     </style>
-    
-    {% block extra_head %}{% endblock %}
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="main-nav">
-        <div class="nav-container">
-            <a href="{% url 'home' %}" class="nav-logo">
-                <div class="dh-monogram">DH</div>
-                Dating Hub Research
-            </a>
-            <div class="nav-links">
-                <!-- Removed Home link - logo is sufficient -->
-                <a href="{% url 'research_index' %}" {% if 'research' in request.path %}class="active"{% endif %}>
-                    <i class="bi bi-journal-text"></i> Research
-                </a>
-                <a href="{% url 'blog:blog_index' %}" {% if 'blog' in request.path %}class="active"{% endif %}>
-                    <i class="bi bi-pencil-square"></i> Blog
-                </a>
-                <a href="{% url 'data_library' %}" {% if 'data' in request.path %}class="active"{% endif %}>
-                    <i class="bi bi-database"></i> Data Library
-                </a>
-                <a href="{% url 'methodology' %}" {% if 'methodology' in request.path %}class="active"{% endif %}>
-                    <i class="bi bi-clipboard-data"></i> Methodology
-                </a>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="content-container">
-            {% block content %}
-            <!-- Default content block - override in child templates -->
-            <section class="hero-section">
-                <h1 style="font-size: 3rem; font-family: 'Merriweather', serif; margin-bottom: 1rem;">
-                    Data-Driven Insights Into Modern Dating
-                </h1>
-                <p class="section-subtitle">
-                    Independent research analyzing how digital platforms are transforming relationships, 
-                    connections, and romantic interactions in the 21st century.
-                </p>
-                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                    <a href="{% url 'research_index' %}" class="cta-button">
-                        Explore Research <i class="bi bi-arrow-right"></i>
-                    </a>
-                    <a href="{% url 'blog:blog_index' %}" class="cta-button cta-button-secondary">
-                        Read Blog <i class="bi bi-pencil-square"></i>
-                    </a>
-                    <a href="{% url 'methodology' %}" class="cta-button cta-button-secondary">
-                        Our Methodology <i class="bi bi-clipboard-check"></i>
-                    </a>
-                </div>
-            </section>
-            
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">87%</div>
-                    <div class="stat-label">of modern daters use apps</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">42%</div>
-                    <div class="stat-label">met partners online</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">5K+</div>
-                    <div class="stat-label">survey responses analyzed</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">12</div>
-                    <div class="stat-label">peer-reviewed studies</div>
-                </div>
-            </div>
-            
-            <section>
-                <h2 class="section-title">Latest Research</h2>
-                <div class="grid-2">
-                    <div class="content-card">
-                        <span class="badge badge-new">New</span>
-                        <h3 class="card-title">Micromance: The Rise of Micro-interactions</h3>
-                        <div class="card-meta">
-                            <span><i class="bi bi-calendar"></i> March 2025</span>
-                            <span><i class="bi bi-clock"></i> 12 min read</span>
-                        </div>
-                        <p class="card-excerpt">
-                            How brief digital exchanges are shaping modern courtship. 
-                            An analysis of swipe-based interactions and their impact on 
-                            relationship formation.
-                        </p>
-                        <a href="{% url 'micromance' %}" class="cta-button" style="font-size: 0.9rem; padding: 0.5rem 1rem;">
-                            Read Study <i class="bi bi-arrow-up-right"></i>
-                        </a>
-                    </div>
-                    
-                    <div class="content-card">
-                        <span class="badge badge-featured">Featured</span>
-                        <h3 class="card-title">AI Matchmaking: Algorithms & Attraction</h3>
-                        <div class="card-meta">
-                            <span><i class="bi bi-calendar"></i> February 2025</span>
-                            <span><i class="bi bi-clock"></i> 18 min read</span>
-                        </div>
-                        <p class="card-excerpt">
-                            Examining how machine learning is transforming partner selection. 
-                            Does algorithmic compatibility predict long-term relationship success?
-                        </p>
-                        <a href="{% url 'ai_matchmaking' %}" class="cta-button" style="font-size: 0.9rem; padding: 0.5rem 1rem;">
-                            Read Study <i class="bi bi-arrow-up-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </section>
-            
-            <div class="feature-highlight">
-                <h3><i class="bi bi-shield-check"></i> Ethical Research Standards</h3>
-                <p>
-                    All our studies follow strict ethical guidelines, ensuring participant privacy, 
-                    data security, and transparent methodology. Our research is IRB-approved and 
-                    conducted with academic rigor.
-                </p>
-                <a href="{% url 'research_ethics' %}" style="color: #0066CC; text-decoration: none; font-weight: 600;">
-                    Read our ethics statement <i class="bi bi-arrow-right"></i>
+    <!-- HEADER - Matches homepage exactly -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between header-container">
+            <div class="flex items-center space-x-2">
+                <a href="/" class="flex items-center space-x-2">
+                    <!-- DH circle - hidden on mobile to match homepage -->
+                    <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg hidden sm:flex">DH</div>
+                    <span class="text-xl font-extrabold text-blue-900 tracking-tight">Dating Hub</span>
                 </a>
             </div>
-            {% endblock %}
+            
+            <!-- AI Recommendations button - matches homepage styling -->
+            <a href="/tools/dating-recommendations/" class="cta-pulse bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl font-bold flex items-center text-sm shadow-lg hover:shadow-xl transition-all">
+                <i class="bi bi-stars me-2"></i>
+                <span class="hidden xs:inline">AI Recommendations</span>
+                <span class="xs:hidden">AI Matchmaker</span>
+            </a>
         </div>
+    </header>
+
+    <main class="content-container">
+        {% block content %}{% endblock %}
     </main>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-title">
-                <h2>Dating Hub Research</h2>
-                <p>Independent research analyzing digital dating trends and relationship formation.</p>
+        <!-- SIMPLER FOOTER - Best for mobile -->
+    <footer class="bg-white border-t border-gray-100 pt-12 md:pt-16 pb-8 md:pb-10">
+        <div class="max-w-7xl mx-auto px-4">
+            <!-- Brand/description at top on mobile -->
+            <div class="mb-8 md:mb-12">
+                <div class="flex items-center space-x-2 mb-4">
+                    <span class="text-xl md:text-2xl font-extrabold text-blue-900">Dating Hub</span>
+                </div>
+                <p class="text-gray-500 text-sm md:text-base font-medium leading-relaxed max-w-xl">
+                    Data-driven insights for modern relationships across Australia.
+                </p>
             </div>
             
-            <div class="footer-columns">
-                <!-- LEFT COLUMN: Research -->
-                <div class="footer-column">
-                    <h3>Research</h3>
-                    <ul>
-                        <li><a href="{% url 'home' %}"><i class="bi bi-house"></i> Home</a></li>
-                        <li><a href="{% url 'micromance' %}"><i class="bi bi-heart"></i> Micromance</a></li>
-                        <li><a href="{% url 'ai_matchmaking' %}"><i class="bi bi-cpu"></i> AI Matchmaking</a></li>
-                        <li><a href="{% url 'research_index' %}"><i class="bi bi-journal-text"></i> Research Archive</a></li>
+            <!-- Links grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+                <div>
+                    <h4 class="font-extrabold text-blue-900 mb-4 text-base">Research</h4>
+                    <ul class="text-blue-600 text-sm font-bold space-y-2">
+                        <li><a href="/research/" class="hover:underline transition-colors">All Studies</a></li>
+                        <li><a href="/research/methodology/" class="hover:underline transition-colors">Methodology</a></li>
                     </ul>
                 </div>
                 
-                <!-- MIDDLE COLUMN: Resources -->
-                <div class="footer-column">
-                    <h3>Resources</h3>
-                    <ul>
-                       <li><a href="{% url 'data_library' %}"><i class="bi bi-database"></i> Data Library</a></li>
-                       <li><a href="{% url 'methodology' %}"><i class="bi bi-clipboard-data"></i> Methodology</a></li>
-                       <li><a href="{% url 'research_ethics' %}"><i class="bi bi-shield-check"></i> Research Ethics</a></li>
-                       <li><a href="{% url 'blog:blog_index' %}"><i class="bi bi-pencil-square"></i> Research Blog</a></li>
+                <div>
+                    <h4 class="font-extrabold text-blue-900 mb-4 text-base">Tools</h4>
+                    <ul class="text-blue-600 text-sm font-bold space-y-2">
+                        <li><a href="/tools/dating-recommendations/" class="hover:underline transition-colors">AI Matchmaker</a></li>
+                        <li><a href="/blog/" class="hover:underline transition-colors">Blog</a></li>
                     </ul>
                 </div>
                 
-                <!-- RIGHT COLUMN: Legal & Contact -->
-                <div class="footer-column">
-                    <h3>Connect</h3>
-                    <ul>
-                       <li><a href="{% url 'privacy' %}"><i class="bi bi-shield-lock"></i> Privacy Policy</a></li>
-                       <li><a href="{% url 'terms' %}"><i class="bi bi-file-text"></i> Terms of Use</a></li>
-                       <li><a href="{% url 'contact' %}"><i class="bi bi-envelope"></i> Contact Us</a></li>
-                       <!-- RSS Feed removed -->
+                <div>
+                    <h4 class="font-extrabold text-blue-900 mb-4 text-base">Connect</h4>
+                    <ul class="text-blue-600 text-sm font-bold space-y-2">
+                        <li><a href="/contact/" class="hover:underline transition-colors">Contact</a></li>
+                        <li><a href="/about/" class="hover:underline transition-colors">About</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-extrabold text-blue-900 mb-4 text-base">Legal</h4>
+                    <ul class="text-blue-600 text-sm font-bold space-y-2">
+                        <li><a href="/tools/privacy/" class="hover:underline transition-colors">Privacy Policy</a></li>
+                        <li><a href="/tools/terms/" class="hover:underline transition-colors">Terms of Service</a></li>
                     </ul>
                 </div>
             </div>
-            
-            <!-- IMPROVED FOOTER BOTTOM SECTION -->
-            <div class="footer-bottom">
-                <div class="footer-tagline">
-                    Digital Boundaries, <span>Human Connections</span>
-                </div>
-                <div class="footer-copyright">
-                    <div>&copy; 2025 Dating Hub Research. All rights reserved.</div>
-                    <div>
-                        <a href="mailto:info@dating-hub.com.au" class="footer-email">
-                            <i class="bi bi-envelope"></i> info@dating-hub.com.au
-                        </a>
-                    </div>
-                </div>
-            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="max-w-7xl mx-auto px-4 mt-12 md:mt-16 pt-8 md:pt-10 border-t border-gray-50 text-center">
+            <p class="text-xs text-gray-400 font-bold uppercase tracking-widest">© 2026 Dating Hub. All rights reserved.</p>
         </div>
     </footer>
 
     {% block extra_js %}{% endblock %}
-    
-    <script>
-        // Simple smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-        
-        // Add active class to current page nav items
-        document.addEventListener('DOMContentLoaded', function() {
-            const currentPath = window.location.pathname;
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                if (link.getAttribute('href') === currentPath) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
 </body>
 </html>
-
-

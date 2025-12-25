@@ -1,3 +1,4 @@
+# research/views.py - SIMPLIFIED
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.conf import settings
@@ -5,7 +6,8 @@ from django.contrib import messages
 
 # ===== HOME PAGE =====
 def home(request):
-    return render(request, 'home/index.html')
+    """New attractive standalone homepage"""
+    return render(request, 'home/index.html')  # Your pretty page
 
 # ===== RESEARCH PAGES =====
 def research_index(request):

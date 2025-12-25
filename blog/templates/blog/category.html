@@ -1,154 +1,72 @@
-<!-- blog/templates/blog/category.html -->
 {% extends 'base.html' %}
 
 {% block title %}{{ category.name }} - Blog - Dating Hub Research{% endblock %}
 
 {% block content %}
-<div class="blog-header">
-    <div class="content-container">
-        <h1>{{ category.name }}</h1>
-        {% if category.description %}
-        <p class="lead">{{ category.description }}</p>
-        {% else %}
-        <p class="lead">All posts in the {{ category.name }} category.</p>
-        {% endif %}
-    </div>
-</div>
-
-<div class="blog-container">
-    <main class="blog-main">
-        {% if page_obj.object_list %}
-            <div class="posts-count" style="margin-bottom: 2rem; color: #767676;">
-                Showing {{ page_obj.paginator.count }} post{{ page_obj.paginator.count|pluralize }}
-            </div>
-            
-            {% for post in page_obj.object_list %}
-            <article class="blog-post-card">
-                {% if post.featured_image %}
-                <div class="blog-post-image">
-                    <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
-                </div>
-                {% endif %}
-                <div class="blog-post-content">
-                    <div class="blog-post-meta">
-                        <a href="{% url 'blog:blog_category' post.category %}" class="blog-post-category">
-                            {{ post.get_category_display }}
-                        </a>
-                        <span><i class="bi bi-calendar"></i> {{ post.published_date|date:"F j, Y" }}</span>
-                        <span><i class="bi bi-person"></i> {{ post.author.get_full_name|default:post.author.username }}</span>
-                        <span><i class="bi bi-clock"></i> {{ post.estimated_read_time }} min read</span>
-                    </div>
-                    <h2 class="blog-post-title">
-                        <a href="{% url 'blog:blog_detail' post.slug %}">{{ post.title }}</a>
-                    </h2>
-                    <p class="blog-post-excerpt">{{ post.excerpt }}</p>
-                    <div class="blog-post-footer">
-                        <a href="{% url 'blog:blog_detail' post.slug %}" class="cta-button" style="font-size: 0.9rem; padding: 0.5rem 1rem;">
-                            Read More <i class="bi bi-arrow-right"></i>
-                        </a>
-                        <div class="blog-post-stats">
-                            <span><i class="bi bi-eye"></i> {{ post.views }} views</span>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            {% endfor %}
-            
-            <!-- Pagination -->
-            {% if page_obj.has_other_pages %}
-            <nav class="pagination">
-                {% if page_obj.has_previous %}
-                <a href="?page={{ page_obj.previous_page_number }}" class="page-link">
-                    <i class="bi bi-chevron-left"></i> Previous
-                </a>
-                {% else %}
-                <span class="page-link disabled">
-                    <i class="bi bi-chevron-left"></i> Previous
-                </span>
-                {% endif %}
-                
-                {% for num in page_obj.paginator.page_range %}
-                    {% if page_obj.number == num %}
-                    <span class="page-link active">{{ num }}</span>
-                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-                    <a href="?page={{ num }}" class="page-link">{{ num }}</a>
-                    {% endif %}
-                {% endfor %}
-                
-                {% if page_obj.has_next %}
-                <a href="?page={{ page_obj.next_page_number }}" class="page-link">
-                    Next <i class="bi bi-chevron-right"></i>
-                </a>
-                {% else %}
-                <span class="page-link disabled">
-                    Next <i class="bi bi-chevron-right"></i>
-                </span>
-                {% endif %}
-            </nav>
+<div class="py-16 px-4 bg-slate-50">
+    <div class="max-w-7xl mx-auto">
+        
+        <div class="text-center mb-16">
+            <span class="bg-blue-600 text-white px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-widest mb-6 inline-block">Category Archive</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-blue-900 mb-6 tracking-tight">{{ category.name }}</h1>
+            {% if category.description %}
+                <p class="text-lg text-gray-500 max-w-2xl mx-auto">{{ category.description }}</p>
+            {% else %}
+                <p class="text-lg text-gray-500 max-w-2xl mx-auto">Latest insights and articles in the {{ category.name }} sector.</p>
             {% endif %}
-            
-        {% else %}
-        <div class="empty-state">
-            <i class="bi bi-folder-x"></i>
-            <h3>No posts in this category yet</h3>
-            <p>Check back soon for new articles in {{ category.name }}.</p>
-            <a href="{% url 'blog:index' %}" class="cta-button">
-                View All Posts <i class="bi bi-arrow-right"></i>
-            </a>
         </div>
-        {% endif %}
-    </main>
-    
-    <aside class="blog-sidebar">
-        <!-- Back to Blog -->
-        <div class="sidebar-widget">
-            <h3><i class="bi bi-arrow-left"></i> Navigation</h3>
-            <a href="{% url 'blog:index' %}" class="cta-button" style="width: 100%; text-align: center; margin-bottom: 1rem;">
-                <i class="bi bi-house"></i> Back to Blog
-            </a>
-            <a href="{% url 'research_index' %}" class="cta-button cta-button-secondary" style="width: 100%; text-align: center;">
-                <i class="bi bi-journal-text"></i> Research Studies
-            </a>
-        </div>
-        
-        <!-- Categories Widget -->
-        <div class="sidebar-widget">
-            <h3><i class="bi bi-folder"></i> All Categories</h3>
-            <ul class="categories-list">
-                {% for cat in categories %}
-                <li>
-                    <a href="{% url 'blog:blog_category' cat.slug %}" {% if cat.id == category.id %}style="color: #0066CC; font-weight: 600;"{% endif %}>
-                        {{ cat.name }}
-                        <span class="category-count">{{ cat.post_count }}</span>
-                    </a>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
-        
-        <!-- Recent Posts Widget -->
-        <div class="sidebar-widget">
-            <h3><i class="bi bi-clock-history"></i> Recent Posts</h3>
-            {% for recent in recent_posts %}
-            <div class="recent-post">
-                {% if recent.featured_image %}
-                <div class="recent-post-image">
-                    <img src="{{ recent.featured_image.url }}" alt="{{ recent.title }}">
-                </div>
-                {% endif %}
-                <div class="recent-post-content">
-                    <h4 class="recent-post-title">
-                        <a href="{% url 'blog:blog_detail' recent.slug %}">{{ recent.title|truncatechars:50 }}</a>
-                    </h4>
-                    <div class="recent-post-meta">
-                        {{ recent.published_date|date:"M j, Y" }}
+
+        <div class="grid lg:grid-cols-3 gap-8">
+            <main class="lg:col-span-2 space-y-8">
+                {% if page_obj.object_list %}
+                    {% for post in page_obj.object_list %}
+                    <article class="glass-card !p-0 overflow-hidden group hover:border-blue-400 transition-all">
+                        <div class="flex flex-col md:flex-row">
+                            {% if post.featured_image %}
+                            <div class="md:w-1/3 overflow-hidden">
+                                <img src="{{ post.featured_image.url }}" alt="{{ post.title }}" class="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                            {% endif %}
+                            <div class="p-8 md:w-2/3">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <span class="text-blue-600 text-[10px] font-bold uppercase tracking-widest">{{ post.get_category_display }}</span>
+                                    <span class="text-gray-400 text-[10px] font-bold"><i class="bi bi-calendar"></i> {{ post.published_date|date:"M j, Y" }}</span>
+                                </div>
+                                <h3 class="text-2xl font-bold text-blue-900 mb-4 group-hover:text-blue-600 transition-colors">{{ post.title }}</h3>
+                                <p class="text-gray-500 text-sm mb-6">{{ post.excerpt|truncatechars:120 }}</p>
+                                <a href="{% url 'blog:blog_detail' post.slug %}" class="inline-flex items-center gap-2 text-blue-600 font-bold text-sm hover:gap-3 transition-all">
+                                    Read Article <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    {% endfor %}
+                {% else %}
+                    <div class="glass-card text-center py-20 text-gray-400">
+                        <i class="bi bi-journal-x text-5xl mb-4 block"></i>
+                        No posts found in this category.
                     </div>
+                {% endif %}
+            </main>
+
+            <aside class="space-y-8">
+                <div class="glass-card">
+                    <h4 class="text-lg font-bold text-blue-900 mb-6 flex items-center gap-2">
+                        <i class="bi bi-grid text-blue-600"></i> Categories
+                    </h4>
+                    <ul class="space-y-3">
+                        {% for cat in categories %}
+                        <li>
+                            <a href="{% url 'blog:blog_category' cat.slug %}" class="flex justify-between items-center p-3 rounded-xl hover:bg-blue-50 transition-colors {% if cat.id == category.id %}bg-blue-50 text-blue-600 font-bold{% endif %}">
+                                <span class="text-sm">{{ cat.name }}</span>
+                                <span class="bg-white px-2 py-0.5 rounded-lg border text-[10px] text-gray-400 font-bold">{{ cat.post_count }}</span>
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
                 </div>
-            </div>
-            {% empty %}
-            <p style="color: #767676; font-style: italic;">No recent posts</p>
-            {% endfor %}
+            </aside>
         </div>
-    </aside>
+    </div>
 </div>
 {% endblock %}

@@ -1,292 +1,322 @@
-{% extends "base.html" %}
+<!-- templates/home/index.html - FINAL VERSION -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dating Hub | Mastering Connection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; color: #001a33; }
 
-{% block title %}Dating Hub Research | Data-Driven Relationship Analysis{% endblock %}
+        /* THE VIBRANT PULSE */
+        @keyframes electric-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 212, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 212, 255, 0); }
+        }
+        .cta-pulse { animation: electric-pulse 2s infinite; }
 
-{% block extra_head %}
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-<style>
-    :root {
-        --dh-blue: #0066CC;
-        --dh-blue-dark: #004C99;
-        --dh-gray-100: #F8F9FA;
-        --dh-gray-800: #343A40;
-    }
-    h1, h2, h3, h4 {
-        font-family: 'Merriweather', 'Georgia', serif;
-        font-weight: 700;
-    }
-    .hero-section {
-        background: linear-gradient(135deg, var(--dh-blue) 0%, var(--dh-blue-dark) 100%);
-        color: white;
-        padding: 5rem 0;
-    }
-    .card {
-        border: 1px solid rgba(0,0,0,0.125);
-        border-radius: 0.5rem;
-        transition: transform 0.2s, box-shadow 0.2s;
-        height: 100%;
-    }
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    }
-    .key-finding {
-        border-left: 4px solid var(--dh-blue);
-        background-color: var(--dh-gray-100);
-        padding: 1.25rem;
-        margin: 1.5rem 0;
-    }
-    .methodology-box {
-        background-color: #FFF8DC;
-        border: 1px solid #FFE082;
-        border-radius: 0.5rem;
-        padding: 2rem;
-    }
-    .metric-badge {
-        background: var(--dh-blue);
-        color: white;
-        padding: 0.5rem 1rem;
-        border-radius: 2rem;
-        font-size: 0.9rem;
-        font-weight: 600;
-    }
-    .btn-primary {
-        background-color: var(--dh-blue);
-        border-color: var(--dh-blue);
-        padding: 0.75rem 1.75rem;
-        font-weight: 600;
-    }
-    .btn-primary:hover {
-        background-color: var(--dh-blue-dark);
-        border-color: var(--dh-blue-dark);
-    }
-    /* CTA specific styles */
-    .survey-cta {
-        background: linear-gradient(135deg, #FFFBF0 0%, #FFFAE6 100%);
-        padding: 3rem;
-        border-radius: 12px;
-        margin: 3rem 0;
-        border: 1px solid #FFE8A3;
-        box-shadow: 0 4px 12px rgba(255, 200, 0, 0.08);
-    }
-    .cta-button {
-        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-        color: white;
-        border: none;
-        padding: 0.875rem 2.25rem;
-        border-radius: 8px;
-        font-weight: 600;
-        font-size: 1.125rem;
-        text-decoration: none;
-        display: inline-flex;
-        align-items: center;
-        transition: all 0.2s ease;
-    }
-    .cta-button:hover {
-        color: white;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 15px rgba(40, 167, 69, 0.25);
-    }
-    .cta-button i {
-        margin-right: 0.5rem;
-        font-size: 1.25rem;
-    }
-</style>
-{% endblock %}
+        /* MESH GRADIENT (v2) */
+        .hero-mesh {
+            background-color: #001a33;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(0, 102, 204, 0.5) 0, transparent 50%), 
+                radial-gradient(at 100% 100%, rgba(0, 212, 255, 0.3) 0, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(0, 26, 51, 1) 0, transparent 100%);
+        }
 
-{% block content %}
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h1 class="display-4 fw-bold mb-3">Understanding Modern Dating Through Data</h1>
-                    <p class="lead mb-4">
-                        Independent, data-driven research on dating apps, relationship trends, and digital intimacy in the 2020s.
-                    </p>
-                    <a href="{% url 'research_index' %}" class="btn btn-light btn-lg px-4">
-                        <i class="bi bi-journal-text me-2"></i>Explore Our Research
+        .text-gradient {
+            background: linear-gradient(to right, #ffffff, #00d4ff);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        /* GLASS CARD STYLE (v3) */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .glass-card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 20px 40px rgba(0, 102, 204, 0.1);
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+        
+        /* DARK STRATEGY BOX (v6) */
+        .strategy-box {
+            background: linear-gradient(135deg, #1a1c20 0%, #0f172a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .strategy-box::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: rgba(0, 102, 204, 0.15);
+            filter: blur(80px);
+            border-radius: 50%;
+        }
+
+        /* Count up animation for 83% */
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-countup { animation: countUp 1s ease-out; }
+
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-wrap: nowrap;
+                min-height: 70px;
+                padding: 0 1rem;
+            }
+            
+            .logo-text {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            
+            .cta-button-mobile {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.75rem;
+                white-space: nowrap;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+                line-height: 1.2;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            
+            .hero-buttons a {
+                width: 100%;
+                text-align: center;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- FIXED HEADER - No duplicate DH on mobile -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between header-container">
+            <!-- Logo section - DH circle only on desktop, text only on mobile -->
+            <div class="flex items-center space-x-2 flex-shrink-0 min-w-0">
+                <!-- DH circle - HIDDEN on mobile, VISIBLE on desktop -->
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-bold text-lg shadow-lg flex-shrink-0 hidden sm:flex">
+                    DH
+                </div>
+                <!-- Text logo - Full "Dating Hub" on all screens -->
+                <span class="text-xl font-extrabold text-blue-900 tracking-tight">
+                    Dating Hub
+                </span>
+            </div>
+            
+            <!-- CTA button with mobile optimization -->
+            <a href="/tools/dating-recommendations/" class="cta-pulse bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl font-bold flex items-center text-xs sm:text-sm shadow-lg hover:shadow-xl transition-all flex-shrink-0 whitespace-nowrap cta-button-mobile">
+                <i class="bi bi-stars me-1 sm:me-2"></i>
+                <span>AI Recommendations</span>
+            </a>
+        </div>
+    </header>
+
+    <section class="hero-mesh py-12 sm:py-20 px-4 text-white">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+            <div>
+                <span class="bg-blue-500/20 text-cyan-300 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-4 sm:mb-6 inline-block border border-cyan-400/30">New: 2026 Trend Report</span>
+                <h1 class="text-3xl sm:text-5xl md:text-7xl font-extrabold leading-tight mb-4 sm:mb-6 hero-title">Mastering the <br><span class="text-gradient">Science of Connection</span></h1>
+                <p class="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-10 leading-relaxed max-w-lg">We decode the algorithms of attraction using 50,000+ data points from Australia's most successful couples.</p>
+                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 hero-buttons">
+                    <a href="/tools/dating-recommendations/" class="bg-white text-blue-900 px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-extrabold hover:bg-gray-100 transition text-center">
+                        Get AI Analysis
                     </a>
+                    <a href="/research/" class="border border-white/20 px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-extrabold hover:bg-white/10 transition text-center">
+                        Explore Data
+                    </a>
+                </div>
+            </div>
+            <div class="glass-card !bg-white/10 !border-white/20 p-6 sm:p-10 rounded-2xl sm:rounded-[2rem] text-center mt-8 sm:mt-0">
+                <div class="text-6xl sm:text-8xl font-extrabold text-gradient mb-4 animate-countup">83%</div>
+                <p class="text-cyan-200 font-bold uppercase tracking-widest text-xs sm:text-sm">Match Accuracy Increase</p>
+                <div class="mt-6 sm:mt-8 flex justify-center space-x-6 sm:space-x-8 text-2xl sm:text-3xl opacity-40">
+                    <i class="bi bi-shield-check"></i><i class="bi bi-cpu"></i><i class="bi bi-activity"></i>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Main Content -->
-    <main class="container py-5">
-        <!-- Featured Research -->
-        <div class="text-center mb-5">
-            <h2 class="h1">Latest Research Findings</h2>
-            <p class="text-muted">Evidence-based analysis of digital dating trends</p>
-        </div>
-
-        <div class="row g-4 mb-5">
-            <!-- Micromance Research -->
-            <div class="col-lg-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-start mb-3">
-                            <span class="metric-badge">DIGITAL DATING TRENDS</span>
-                            <small class="text-muted"><i class="bi bi-calendar me-1"></i>December 2025</small>
-                        </div>
-                        <h3 class="card-title h4">The Rise of Micromance</h3>
-                        <p class="card-text">
-                            How brief, frequent digital interactions are reshaping emotional connections in dating app culture.
-                        </p>
-                        
-                        <div class="key-finding">
-                            <h4 class="h6 text-primary"><i class="bi bi-lightbulb me-2"></i>Key Finding</h4>
-                            <p class="mb-0 fw-medium">
-                                67% of frequent dating app users report preferring multiple "micro-conversations" throughout the day over longer, scheduled chats.
-                            </p>
-                        </div>
-                        
-                        <div class="mt-3">
-                            <span class="badge bg-light text-dark me-2"><i class="bi bi-people me-1"></i>2,000+ survey respondents</span>
-                            <span class="badge bg-light text-dark"><i class="bi bi-clock me-1"></i>6-month study</span>
-                        </div>
-                        
-                        <a href="{% url 'micromance' %}" class="btn btn-outline-primary w-100 mt-3">
-                            Read Full Analysis <i class="bi bi-arrow-right ms-2"></i>
-                        </a>
-                    </div>
+    <section id="ai-matchmaker" class="py-12 sm:py-20 px-4">
+        <div class="max-w-5xl mx-auto glass-card !bg-[#fffdf5] border-yellow-100 p-6 sm:p-12 rounded-2xl sm:rounded-[2.5rem] text-center">
+            <div class="flex justify-center mb-4 sm:mb-6 text-4xl sm:text-5xl text-blue-600"><i class="bi bi-robot"></i></div>
+            <h2 class="text-2xl sm:text-4xl font-extrabold mb-4">AI Dating Site Matchmaker</h2>
+            <p class="text-gray-600 text-base sm:text-lg mb-6 sm:mb-10">Not sure which dating site is right for you? Our AI analyzes your preferences to recommend the perfect platforms.</p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 mb-8 sm:mb-12 text-center">
+                <div>
+                    <div class="text-blue-600 font-extrabold text-lg sm:text-xl">6 Questions</div>
+                    <div class="text-xs sm:text-sm text-gray-500 font-medium">Quick survey</div>
+                </div>
+                <div>
+                    <div class="text-blue-600 font-extrabold text-lg sm:text-xl">72-Hour Report</div>
+                    <div class="text-xs sm:text-sm text-gray-500 font-medium">Personalized email</div>
+                </div>
+                <div>
+                    <div class="text-blue-600 font-extrabold text-lg sm:text-xl">50+ Platforms</div>
+                    <div class="text-xs sm:text-sm text-gray-500 font-medium">Analyzed by AI</div>
                 </div>
             </div>
+            <a href="/tools/dating-recommendations/" class="cta-pulse bg-blue-600 text-white px-6 sm:px-10 py-3 sm:py-5 rounded-xl sm:rounded-2xl font-extrabold text-lg sm:text-xl shadow-xl hover:bg-blue-700 transition inline-flex items-center justify-center w-full sm:w-auto">
+                <i class="bi bi-magic me-2"></i>Get Your Free Recommendations
+            </a>
+        </div>
+    </section>
 
-            <!-- AI Matchmaking Research -->
-            <div class="col-lg-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-start mb-3">
-                            <span class="metric-badge" style="background:#17a2b8">TECHNOLOGY & DATING</span>
-                            <small class="text-muted"><i class="bi bi-calendar me-1"></i>December 2025</small>
-                        </div>
-                        <h3 class="card-title h4">AI Matchmaking Algorithms</h3>
-                        <p class="card-text">
-                            Examining how artificial intelligence is changing partner selection and compatibility assessment in modern dating platforms.
-                        </p>
-                        
-                        <div class="key-finding">
-                            <h4 class="h6 text-primary"><i class="bi bi-lightbulb me-2"></i>Key Finding</h4>
-                            <p class="mb-0 fw-medium">
-                                Algorithms prioritizing long-term compatibility over immediate attraction show 42% higher 6-month retention rates.
-                            </p>
-                        </div>
-                        
-                        <div class="mt-3">
-                            <span class="badge bg-light text-dark me-2"><i class="bi bi-database me-1"></i>Platform data analysis</span>
-                            <span class="badge bg-light text-dark"><i class="bi bi-bar-chart me-1"></i>Statistical modeling</span>
-                        </div>
-                        
-                        <a href="{% url 'ai_matchmaking' %}" class="btn btn-outline-primary w-100 mt-3">
-                            Read Full Analysis <i class="bi bi-arrow-right ms-2"></i>
-                        </a>
+    <section class="py-12 sm:py-20 bg-white px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-2xl sm:text-4xl font-extrabold mb-8 sm:mb-12">What People Are Saying</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                <div class="glass-card p-4 sm:p-6 rounded-2xl sm:rounded-3xl text-left">
+                    <div class="text-yellow-400 mb-3 sm:mb-4 text-xs"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                    <p class="text-gray-600 text-xs sm:text-sm mb-6 sm:mb-8 leading-relaxed">"Matched me with a niche site I'd never heard of. Met my partner within 2 months!"</p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xs">SL</div>
+                        <span class="font-bold text-xs sm:text-sm">Sarah L.</span>
+                    </div>
+                </div>
+                <div class="glass-card p-4 sm:p-6 rounded-2xl sm:rounded-3xl text-left border-blue-200 ring-2 sm:ring-4 ring-blue-500/5">
+                    <div class="text-yellow-400 mb-3 sm:mb-4 text-xs"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                    <p class="text-gray-600 text-xs sm:text-sm mb-6 sm:mb-8 leading-relaxed">"Saved me months of trial and error. The AI knows exactly which platforms work for 40+."</p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xs">MJ</div>
+                        <span class="font-bold text-xs sm:text-sm">Michael J.</span>
+                    </div>
+                </div>
+                <div class="glass-card p-4 sm:p-6 rounded-2xl sm:rounded-3xl text-left">
+                    <div class="text-yellow-400 mb-3 sm:mb-4 text-xs"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                    <p class="text-gray-600 text-xs sm:text-sm mb-6 sm:mb-8 leading-relaxed">"The research-backed approach made me feel confident. Finally found quality matches."</p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-xs">ET</div>
+                        <span class="font-bold text-xs sm:text-sm">Emma T.</span>
+                    </div>
+                </div>
+                <div class="glass-card p-4 sm:p-6 rounded-2xl sm:rounded-3xl text-left">
+                    <div class="text-yellow-400 mb-3 sm:mb-4 text-xs"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                    <p class="text-gray-600 text-xs sm:text-sm mb-6 sm:mb-8 leading-relaxed">"I finally understand why previous apps weren't working. This analysis is a game-changer!"</p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 bg-blue-900 rounded-full flex items-center justify-center text-white font-bold text-xs">DR</div>
+                        <span class="font-bold text-xs sm:text-sm">David R.</span>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- AI Dating Matchmaker CTA - UPDATED -->
-        <section class="survey-cta">
-            <div class="text-center">
-                <h3 style="font-family: 'Merriweather', serif; font-size: 2rem; margin-bottom: 1rem; color: #2C3E50;">
-                    <i class="bi bi-robot" style="color: #0066CC; margin-right: 0.5rem;"></i>
-                    AI Dating Site Matchmaker
-                </h3>
-                <p style="font-size: 1.1rem; color: #505050; max-width: 600px; margin: 0 auto 2rem; line-height: 1.6;">
-                    Not sure which dating site is right for you? Our AI analyzes your preferences to recommend the perfect platforms based on your relationship goals, communication style, and priorities.
-                </p>
-                <a href="{% url 'dating_recommendations' %}" class="cta-button">
-                    <i class="bi bi-magic"></i> Get AI Recommendations
+    <section class="py-12 sm:py-20 px-4">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            <div class="glass-card p-6 sm:p-10 rounded-xl sm:rounded-[2rem]">
+                <span class="bg-blue-600 text-white px-3 py-1 rounded-lg text-xs font-bold mb-3 sm:mb-4 inline-block">LATEST STUDY</span>
+                <h3 class="text-xl sm:text-2xl font-extrabold mb-3 sm:mb-4">The Micromance Revolution</h3>
+                <p class="text-gray-500 text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">Why 67% of users now prefer short-form frequent interactions over traditional dating marathons.</p>
+                <a href="/research/micromance/" class="border border-blue-600 text-blue-600 px-4 sm:px-6 py-1.5 sm:py-2 rounded-lg sm:rounded-xl font-bold hover:bg-blue-600 hover:text-white transition inline-block text-sm sm:text-base">
+                    Read Whitepaper
                 </a>
-                <div class="mt-4">
-                    <div class="d-flex justify-content-center flex-wrap gap-3">
-                        <div class="text-center">
-                            <div class="text-primary fw-bold">6 Questions</div>
-                            <div class="small text-muted">Quick survey</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-primary fw-bold">72-Hour Report</div>
-                            <div class="small text-muted">Personalized email</div>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-primary fw-bold">50+ Platforms</div>
-                            <div class="small text-muted">Analyzed by AI</div>
-                        </div>
-                    </div>
+            </div>
+            <div class="glass-card p-6 sm:p-10 rounded-xl sm:rounded-[2rem]">
+                <span class="bg-cyan-500 text-white px-3 py-1 rounded-lg text-xs font-bold mb-3 sm:mb-4 inline-block">AI TECH</span>
+                <h3 class="text-xl sm:text-2xl font-extrabold mb-3 sm:mb-4">Algorithmic Compatibility</h3>
+                <p class="text-gray-500 text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">Analyzing the 42% retention increase in neural-network matching compared to legacy filters.</p>
+                <a href="/research/ai-matchmaking/" class="border border-cyan-500 text-cyan-600 px-4 sm:px-6 py-1.5 sm:py-2 rounded-lg sm:rounded-xl font-bold hover:bg-cyan-500 hover:text-white transition inline-block text-sm sm:text-base">
+                    Read Study
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-8 sm:py-12 px-4">
+        <div class="max-w-7xl mx-auto strategy-box p-6 sm:p-12 md:p-16 rounded-2xl sm:rounded-[3rem] text-center text-white">
+            <h2 class="text-2xl sm:text-4xl md:text-6xl font-extrabold mb-4 sm:mb-6">Don't Just Date. Strategize.</h2>
+            <p class="text-gray-400 text-sm sm:text-lg mb-6 sm:mb-10 max-w-2xl mx-auto font-medium">
+                Join our newsletter for 2026 dating predictions and behavioral research.
+            </p>
+            <form class="flex flex-col md:flex-row gap-3 sm:gap-4 justify-center items-center max-w-2xl mx-auto">
+                <input type="email" placeholder="Enter your email" class="w-full px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl bg-white/10 border border-white/20 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition text-sm sm:text-base">
+                <button type="button" class="w-full md:w-auto bg-white text-blue-900 px-6 sm:px-10 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-extrabold hover:bg-gray-100 transition shadow-xl text-sm sm:text-base">
+                    Subscribe Now
+                </button>
+            </form>
+        </div>
+    </section>
+
+        <!-- SIMPLER FOOTER - Best for mobile -->
+    <footer class="bg-white border-t border-gray-100 pt-12 md:pt-16 pb-8 md:pb-10">
+        <div class="max-w-7xl mx-auto px-4">
+            <!-- Brand/description at top on mobile -->
+            <div class="mb-8 md:mb-12">
+                <div class="flex items-center space-x-2 mb-4">
+                    <span class="text-xl md:text-2xl font-extrabold text-blue-900">Dating Hub</span>
                 </div>
-                <p class="small text-muted mt-3">
-                    <i class="bi bi-shield-check me-1"></i>Privacy protected • Based on our research data • No registration required
+                <p class="text-gray-500 text-sm md:text-base font-medium leading-relaxed max-w-xl">
+                    Data-driven insights for modern relationships across Australia.
                 </p>
             </div>
-        </section>
-
-        <!-- Upcoming Research -->
-        <div class="row mb-5">
-            <div class="col-12">
-                <div class="card border-primary">
-                    <div class="card-body">
-                        <h3 class="card-title h4"><i class="bi bi-megaphone me-2"></i>Upcoming Research</h3>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="border-start border-3 border-info ps-3">
-                                    <h5 class="h6">Digital Boundaries in Dating</h5>
-                                    <p class="small text-muted mb-2">Launching January 2026</p>
-                                    <p class="small">How couples negotiate privacy and connectivity in digital relationships.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="border-start border-3 border-warning ps-3">
-                                    <h5 class="h6">The Economics of Dating Apps</h5>
-                                    <p class="small text-muted mb-2">Launching February 2026</p>
-                                    <p class="small">Subscription models, in-app purchases, and their impact on user behavior.</p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="border-start border-3 border-success ps-3">
-                                    <h5 class="h6">Long-Distance Digital Intimacy</h5>
-                                    <p class="small text-muted mb-2">Launching March 2026</p>
-                                    <p class="small">How technology mediates emotional connection across distances.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            
+            <!-- Links grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+                <div>
+                    <h4 class="font-extrabold text-blue-900 mb-4 text-base">Research</h4>
+                    <ul class="text-blue-600 text-sm font-bold space-y-2">
+                        <li><a href="/research/" class="hover:underline transition-colors">All Studies</a></li>
+                        <li><a href="/research/methodology/" class="hover:underline transition-colors">Methodology</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-extrabold text-blue-900 mb-4 text-base">Tools</h4>
+                    <ul class="text-blue-600 text-sm font-bold space-y-2">
+                        <li><a href="/tools/dating-recommendations/" class="hover:underline transition-colors">AI Matchmaker</a></li>
+                        <li><a href="/blog/" class="hover:underline transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-extrabold text-blue-900 mb-4 text-base">Connect</h4>
+                    <ul class="text-blue-600 text-sm font-bold space-y-2">
+                        <li><a href="/contact/" class="hover:underline transition-colors">Contact</a></li>
+                        <li><a href="/about/" class="hover:underline transition-colors">About</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-extrabold text-blue-900 mb-4 text-base">Legal</h4>
+                    <ul class="text-blue-600 text-sm font-bold space-y-2">
+                        <li><a href="/tools/privacy/" class="hover:underline transition-colors">Privacy Policy</a></li>
+                        <li><a href="/tools/terms/" class="hover:underline transition-colors">Terms of Service</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
-
-        <!-- Methodology -->
-        <div class="row">
-            <div class="col-lg-10 mx-auto">
-                <div class="methodology-box">
-                    <h3 class="h4 mb-3"><i class="bi bi-clipboard-data me-2"></i>Our Research Methodology</h3>
-                    <p class="mb-3">All findings are based on rigorous mixed-methods research combining:</p>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <ul class="mb-3">
-                                <li><strong>Quantitative Analysis:</strong> Surveys of 2,000+ dating app users (ages 18-45)</li>
-                                <li><strong>Behavioral Data:</strong> Analysis of anonymized platform usage patterns</li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6">
-                            <ul>
-                                <li><strong>Qualitative Research:</strong> In-depth interviews with relationship experts</li>
-                                <li><strong>Academic Review:</strong> Meta-analysis of peer-reviewed literature</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="alert alert-light mt-3 mb-0">
-                        <i class="bi bi-shield-check me-2"></i>
-                        <small>All research adheres to strict ethical guidelines for privacy, data protection, and informed consent. Data is anonymized and aggregated.</small>
-                    </div>
-                </div>
-            </div>
+        
+        <!-- Copyright -->
+        <div class="max-w-7xl mx-auto px-4 mt-12 md:mt-16 pt-8 md:pt-10 border-t border-gray-50 text-center">
+            <p class="text-xs text-gray-400 font-bold uppercase tracking-widest">© 2026 Dating Hub. All rights reserved.</p>
         </div>
-    </main>
-{% endblock %}
+    </footer>
 
-{% block extra_js %}
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-{% endblock %}
+</body>
+</html>
