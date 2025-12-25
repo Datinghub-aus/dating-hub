@@ -2,7 +2,7 @@ services:
   - type: web
     name: datinghub2026
     runtime: python
-    buildCommand: "./build.sh"
+    buildCommand: "chmod +x build.sh && ./build.sh"
     startCommand: "gunicorn datinghub.wsgi:application"
     envVars:
       - key: DATABASE_URL
