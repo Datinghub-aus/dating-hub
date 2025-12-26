@@ -1,35 +1,27 @@
+# render.yaml
 services:
   - type: web
-    name: datinghub2026
-    runtime: python
-    buildCommand: "chmod +x build.sh && ./build.sh"
-    startCommand: "gunicorn datinghub.wsgi:application"
+    name: datinghub
+    env: python
+    buildCommand: |
+      pip install -r requirements.txt
+      python manage.py collectstatic --noinput
+    startCommand: gunicorn datinghub_project.wsgi:application
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: datinghub_db
+          name: datinghub-db
           property: connectionString
       - key: SECRET_KEY
         generateValue: true
-      - key: WEB_CONCURRENCY
-        value: 4
       - key: DEBUG
         value: false
       - key: ALLOWED_HOSTS
-        value: datinghub2026.onrender.com
-      - key: BREVO_API_KEY
-        sync: false
-      - key: EMAIL_HOST_USER
-        sync: false
-      - key: EMAIL_HOST_PASSWORD
-        sync: false
-      - key: DEFAULT_FROM_EMAIL
-        value: recommendations@datinghub2026.com
-      - key: EMAIL_HOST
-        value: smtp-relay.brevo.com
-      - key: EMAIL_PORT
-        value: 587
+        value: datinghub2026.onrender.com,www.dating-hub.com.au,dating-hub.com.au
+    healthCheckPath: /health/
 
 databases:
-  - name: datinghub_db
+  - name: datinghub-db
+    databaseName: datinghub
+    user: datinghub_user
     plan: free
