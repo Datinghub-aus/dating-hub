@@ -3,16 +3,15 @@ import os
 from pathlib import Path
 import dj_database_url
 from decouple import config
+import sys
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# Use environment variable for production, fallback for development
-SECRET_KEY = config('SECRET_KEY', default='datinghub-' + os.urandom(32).hex() + '-2025-final-launch')
+SECRET_KEY = config('SECRET_KEY', default=''.join([f'datinghub-secure-{os.urandom(24).hex()}' for _ in range(2)]))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# Debug mode based on environment
 DEBUG = config('DEBUG', default=False, cast=bool)
 
 # Allowed hosts for production
@@ -44,7 +43,7 @@ INSTALLED_APPS = [
 # Middleware with Whitenoise for static files
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # Add this for static files
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -74,14 +73,36 @@ TEMPLATES = [
 WSGI_APPLICATION = 'datinghub_project.wsgi.application'
 
 # Database Configuration
-# Use PostgreSQL on Render, SQLite locally for development
-DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL', default='sqlite:///db.sqlite3'),
-        conn_max_age=600,
-        ssl_require=True,
-    )
-}
+# ======================
+
+# Get database URL from environment
+DATABASE_URL = config('DATABASE_URL', default=None)
+
+if DATABASE_URL and DATABASE_URL.startswith('postgres://'):
+    # Production: PostgreSQL with SSL
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=DATABASE_URL,
+            conn_max_age=600,
+            ssl_require=True,
+        )
+    }
+elif 'test' in sys.argv or 'pytest' in sys.modules:
+    # Test environment
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': ':memory:',
+        }
+    }
+else:
+    # Development: SQLite
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
@@ -107,11 +128,14 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # For production
-STATICFILES_DIRS = [BASE_DIR / 'static']  # For development
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [BASE_DIR / 'static']
 
-# Whitenoise configuration for static files
+# Whitenoise configuration
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+WHITENOISE_USE_FINDERS = True
+WHITENOISE_MANIFEST_STRICT = False
+WHITENOISE_MAX_AGE = 31536000  # 1 year for immutable files
 
 # Media files (uploaded content like blog images)
 MEDIA_URL = '/media/'
@@ -154,7 +178,7 @@ if not DEBUG:
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:8000',
     'http://127.0.0.1:8000',
-    'https://dating-hub-website.onrender.com',
+    'https://datinghub2026.onrender.com',
     'https://www.dating-hub.com.au',
     'https://dating-hub.com.au',
 ]
@@ -176,4 +200,23 @@ LOGGING = {
         'handlers': ['console'],
         'level': 'WARNING',
     },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+            'propagate': False,
+        },
+    },
 }
+
+# Render-specific settings
+if 'RENDER' in os.environ:
+    # Ensure static files work on Render
+    MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
+    
+    # Logging for Render
+    LOGGING['handlers']['render'] = {
+        'class': 'logging.StreamHandler',
+        'formatter': 'verbose',
+    }
+    LOGGING['root']['handlers'] = ['render']

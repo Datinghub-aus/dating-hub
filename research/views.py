@@ -3,8 +3,9 @@ from django.core.mail import send_mail
 from django.conf import settings
 from django.contrib import messages
 
-# ===== HOME PAGE =====
+# ===== HOME PAGES =====
 def home(request):
+    """NEW attractive landing page"""
     return render(request, 'home/index.html')
 
 # ===== RESEARCH PAGES =====
@@ -36,8 +37,8 @@ def privacy(request):
 def terms(request):
     return render(request, 'tools/terms.html')
 
-def contact(request):
-    return render(request, 'tools/contact.html')
+#def contact(request):
+#    return render(request, 'tools/contact.html')
 
 # ===== AI DATING RECOMMENDATIONS SURVEY =====
 def dating_recommendations_survey(request):
@@ -58,7 +59,7 @@ def dating_recommendations_survey(request):
             survey_type = "Skipped Survey - Basic Recommendations"
             answers = None
         else:
-            # User completed survey - UPDATED WITH GENDER FIELD
+            # User completed survey
             survey_type = "Completed Survey - Personalized Recommendations"
             answers = {
                 'gender': request.POST.get('gender', ''),
@@ -83,10 +84,9 @@ def thank_you_page(request):
     return render(request, 'tools/thank_you.html')
 
 def send_confirmation_email(email, name, survey_type, answers):
-    """Send confirmation email - YOU WILL REPLACE THIS LATER"""
+    """Send confirmation email"""
     subject = "Dating Site Recommendations - Coming Soon!"
     
-    # Basic email for now - you'll replace with proper template later
     message = f"""Hi {name if name else 'there'},
 
 Thank you for using our AI Dating Site Matchmaker!
@@ -109,25 +109,5 @@ Dating Hub Research Team
         message,
         settings.DEFAULT_FROM_EMAIL,
         [email],
-        fail_silently=False,
-    )
-    
-    # OPTIONAL: Also send to yourself to know someone signed up
-    admin_message = f"""New Dating Recommendations Request:
-
-Email: {email}
-Name: {name if name else 'Not provided'}
-Type: {survey_type}
-
-Answers: {answers if answers else 'Survey skipped'}
-
-Send recommendations within 72 hours.
-"""
-    
-    send_mail(
-        "New Dating Recommendations Request",
-        admin_message,
-        settings.DEFAULT_FROM_EMAIL,
-        [settings.DEFAULT_FROM_EMAIL],  # Send to yourself
         fail_silently=False,
     )

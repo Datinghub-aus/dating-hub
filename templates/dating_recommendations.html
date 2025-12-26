@@ -20,7 +20,7 @@
         <!-- Survey Form -->
         <div class="col-lg-8 mx-auto">
             <div class="content-card">
-                <form method="POST" action="{% url 'dating_recommendations' %}">
+                <form method="POST" action="{% url 'research:dating_recommendations' %}">
                     {% csrf_token %}
                     
                     <!-- Question 1 -->
@@ -190,7 +190,7 @@
                 <!-- Skip Survey Option -->
                 <div class="text-center mt-5 pt-4 border-top">
                     <p class="mb-3">Prefer to skip the survey?</p>
-                    <form method="POST" action="{% url 'dating_recommendations' %}">
+                    <form method="POST" action="{% url 'research:dating_recommendations' %}">
                         {% csrf_token %}
                         <input type="hidden" name="skip_survey" value="true">
                         <div class="row justify-content-center">

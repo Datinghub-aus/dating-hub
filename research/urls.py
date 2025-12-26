@@ -3,11 +3,13 @@ from django.urls import path
 from django.views.generic import TemplateView
 from . import views
 
+app_name = 'research'
+
 urlpatterns = [
     # Home page
     path('', views.home, name='home'),
     
-    # About page
+    # About page - CORRECT
     path('about/', TemplateView.as_view(template_name='pages/about/index.html'), name='about'),
     
     # Research pages
@@ -22,7 +24,8 @@ urlpatterns = [
     path('tools/data-library/', views.data_library, name='data_library'),
     path('tools/privacy/', views.privacy, name='privacy'),
     path('tools/terms/', views.terms, name='terms'),
-    path('contact/', views.contact, name='contact'),
+    # FIX THIS LINE:
+    path('contact/', TemplateView.as_view(template_name='pages/contact/index.html'), name='contact'),
     
     # AI Dating Survey
     path('tools/dating-recommendations/', views.dating_recommendations_survey, name='dating_recommendations'),

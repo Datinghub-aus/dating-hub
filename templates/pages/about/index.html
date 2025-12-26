@@ -1,57 +1,184 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
-{% block title %}Our Research Methodology | Dating Hub Research{% endblock %}
-
-{% block breadcrumb_items %}
-<li class="breadcrumb-item"><a href="/">Home</a></li>
-<li class="breadcrumb-item active" aria-current="page">Methodology</li>
-{% endblock %}
+{% block title %}About Dating Hub | Data-Driven Relationship Research{% endblock %}
 
 {% block content %}
-<div class="row">
-    <div class="col-lg-8 mx-auto">
-        <h1 class="display-5 fw-bold mb-4">Our Research Methodology</h1>
-        
-        <div class="methodology-box mb-5">
-            <h2 class="h4"><i class="bi bi-clipboard-data me-2"></i>Research Philosophy</h2>
-            <p>We believe relationship research should be rigorous, transparent, and ethically conducted. Our methodology combines quantitative precision with qualitative depth to understand the nuanced realities of modern dating.</p>
-        </div>
+<div class="glass-card">
+    <!-- Hero Section -->
+    <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold text-blue-900 mb-4">About Dating Hub</h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Data-driven insights for modern relationships across Australia.
+        </p>
+    </div>
 
-        <div class="row g-4">
-            <div class="col-md-6">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h3 class="card-title h5"><i class="bi bi-bar-chart me-2"></i>Quantitative Methods</h3>
-                        <ul class="mt-3">
-                            <li class="mb-2">Large-scale surveys (1,000-5,000 participants)</li>
-                            <li class="mb-2">Statistical analysis of behavioral data</li>
-                            <li class="mb-2">Longitudinal tracking studies</li>
-                            <li>Regression and correlation analysis</li>
-                        </ul>
-                    </div>
+    <!-- Mission & Vision -->
+    <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl border border-blue-200">
+            <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                <i class="bi bi-bullseye text-blue-600 text-2xl"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-blue-900 mb-4">Our Mission</h2>
+            <p class="text-gray-700 leading-relaxed">
+                To transform how Australians understand and navigate modern relationships through rigorous, 
+                evidence-based research that bridges academic insight with real-world application.
+            </p>
+        </div>
+        
+        <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl border border-purple-200">
+            <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                <i class="bi bi-eye text-purple-600 text-2xl"></i>
+            </div>
+            <h2 class="text-2xl font-bold text-purple-900 mb-4">Our Vision</h2>
+            <p class="text-gray-700 leading-relaxed">
+                A future where relationship decisions are informed by data, where patterns are understood 
+                through research, and where Australians have access to transparent insights about modern dating.
+            </p>
+        </div>
+    </div>
+
+    <!-- What We Do -->
+    <div class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">What We Do</h2>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-blue-300 transition-colors">
+                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <i class="bi bi-clipboard-data text-blue-600 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-blue-900 mb-3">Original Research</h3>
+                <p class="text-gray-600">
+                    Conducting large-scale studies on dating behaviors, platform usage, and relationship trends across Australia.
+                </p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-green-300 transition-colors">
+                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                    <i class="bi bi-tools text-green-600 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-green-900 mb-3">Data Tools</h3>
+                <p class="text-gray-600">
+                    Developing practical tools like our AI Matchmaker to help individuals make informed relationship decisions.
+                </p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-xl border border-gray-200 hover:border-purple-300 transition-colors">
+                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                    <i class="bi bi-graph-up-arrow text-purple-600 text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-purple-900 mb-3">Trend Analysis</h3>
+                <p class="text-gray-600">
+                    Tracking and analyzing emerging patterns in digital dating, communication styles, and relationship dynamics.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Our Approach -->
+    <div class="bg-gradient-to-r from-gray-50 to-white p-8 rounded-2xl border border-gray-200 mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">Our Approach</h2>
+        
+        <div class="space-y-6">
+            <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                    <i class="bi bi-shield-check text-blue-600"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-blue-900 mb-2">Ethical Rigor</h3>
+                    <p class="text-gray-700">
+                        All research undergoes independent ethics review. We prioritize participant privacy, data security, and transparent methodology.
+                    </p>
                 </div>
             </div>
             
-            <div class="col-md-6">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h3 class="card-title h5"><i class="bi bi-chat-dots me-2"></i>Qualitative Methods</h3>
-                        <ul class="mt-3">
-                            <li class="mb-2">In-depth interviews (45-90 minutes)</li>
-                            <li class="mb-2">Focus group discussions</li>
-                            <li class="mb-2">Content analysis of user communications</li>
-                            <li>Thematic and narrative analysis</li>
-                        </ul>
-                    </div>
+            <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                    <i class="bi bi-bar-chart text-green-600"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-green-900 mb-2">Methodological Excellence</h3>
+                    <p class="text-gray-700">
+                        Combining quantitative precision with qualitative depth using validated instruments and peer-reviewed protocols.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                    <i class="bi bi-chat-square-text text-purple-600"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-purple-900 mb-2">Real-World Relevance</h3>
+                    <p class="text-gray-700">
+                        Research designed to address practical questions faced by Australians navigating modern dating landscapes.
+                    </p>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="mt-5">
-            <h2 class="h4">Ethical Standards</h2>
-            <div class="alert alert-light">
-                <h5 class="h6"><i class="bi bi-shield-check me-2"></i>Participant Protection</h5>
-                <p class="mb-0 small">All research undergoes ethics review. Participants provide informed consent, data is anonymized, and sensitive information is protected with encryption.</p>
+    <!-- Team Overview -->
+    <div class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Our Research Team</h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="text-center">
+                <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="bi bi-person-badge text-blue-600 text-2xl"></i>
+                </div>
+                <h3 class="font-bold text-blue-900 mb-1">Data Scientists</h3>
+                <p class="text-sm text-gray-600">Statistical analysis & machine learning</p>
+            </div>
+            
+            <div class="text-center">
+                <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="bi bi-clipboard-heart text-green-600 text-2xl"></i>
+                </div>
+                <h3 class="font-bold text-green-900 mb-1">Relationship Researchers</h3>
+                <p class="text-sm text-gray-600">Psychology & social science expertise</p>
+            </div>
+            
+            <div class="text-center">
+                <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="bi bi-laptop text-purple-600 text-2xl"></i>
+                </div>
+                <h3 class="font-bold text-purple-900 mb-1">Technology Analysts</h3>
+                <p class="text-sm text-gray-600">Platform & digital behavior specialists</p>
+            </div>
+            
+            <div class="text-center">
+                <div class="w-20 h-20 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="bi bi-people text-amber-600 text-2xl"></i>
+                </div>
+                <h3 class="font-bold text-amber-900 mb-1">Ethics Committee</h3>
+                <p class="text-sm text-gray-600">Independent review & oversight</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Impact Stats -->
+    <div class="bg-gradient-to-r from-cyan-50 to-blue-50 p-8 rounded-2xl border border-cyan-200">
+        <h2 class="text-2xl font-bold text-cyan-900 mb-6 text-center">Our Impact</h2>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="text-center">
+                <p class="text-3xl font-bold text-cyan-900 mb-1">15,000+</p>
+                <p class="text-sm font-semibold text-cyan-700">Research Participants</p>
+            </div>
+            
+            <div class="text-center">
+                <p class="text-3xl font-bold text-blue-900 mb-1">25+</p>
+                <p class="text-sm font-semibold text-blue-700">Published Studies</p>
+            </div>
+            
+            <div class="text-center">
+                <p class="text-3xl font-bold text-green-900 mb-1">6</p>
+                <p class="text-sm font-semibold text-green-700">Research Domains</p>
+            </div>
+            
+            <div class="text-center">
+                <p class="text-3xl font-bold text-purple-900 mb-1">100%</p>
+                <p class="text-sm font-semibold text-purple-700">Open Methodology</p>
             </div>
         </div>
     </div>

@@ -1,9 +1,47 @@
 {% extends "base.html" %}
 
+{% block meta %}
+<meta name="description" content="Research Ethics Framework: Principles, Protocols, and Participant Protection Standards. Document DHR-ETH-2024 from Dating Hub Research Team.">
+<meta name="keywords" content="research ethics, participant protection, data privacy, informed consent, ethical standards, research compliance">
+<meta property="og:title" content="Research Ethics | Dating Hub Research">
+<meta property="og:description" content="Ethical standards framework for Dating Hub Research studies, including participant protection protocols and data privacy standards.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="article:published_time" content="2024-12-01T00:00:00+00:00">
+<meta property="article:modified_time" content="{% now 'c' %}">
+<meta property="article:author" content="Dating Hub Research Team">
+<meta property="article:section" content="Ethics">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Research Ethics | Dating Hub Research">
+<meta name="twitter:description" content="Ethical standards and participant protection protocols for research studies.">
+{% endblock %}
+
+{% block structured_data %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "name": "Research Ethics Framework: Principles, Protocols, and Participant Protection Standards",
+  "description": "Ethical standards framework document outlining research ethics principles, protocols, and participant protection standards for Dating Hub Research studies.",
+  "author": {
+    "@type": "Organization",
+    "name": "Dating Hub Research Team",
+    "url": "https://dating-hub.com.au"
+  },
+  "datePublished": "2024-12-01",
+  "keywords": "research ethics, participant protection, data privacy, informed consent",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ request.build_absolute_uri }}"
+  }
+}
+</script>
+{% endblock %}
+
 {% block title %}Research Ethics | Dating Hub Research{% endblock %}
 
 {% block content %}
-<div class="content-container">
+<div class="content-container glass-card">
     <article class="research-article">
         <!-- Ethics Header -->
         <header class="research-header">
@@ -33,48 +71,60 @@
             
             <div class="research-details">
                 <div class="detail-item">
-                    <i class="bi bi-shield-check"></i>
+                    <i class="bi bi-shield-check" aria-hidden="true"></i>
                     <span><strong>Last Review:</strong> December 2024</span>
                 </div>
                 <div class="detail-item">
-                    <i class="bi bi-calendar"></i>
+                    <i class="bi bi-calendar" aria-hidden="true"></i>
                     <span><strong>Next Review:</strong> December 2025</span>
                 </div>
                 <div class="detail-item">
-                    <i class="bi bi-file-earmark-text"></i>
+                    <i class="bi bi-file-earmark-text" aria-hidden="true"></i>
                     <span><strong>Related Documents:</strong> DHR-METH-2024, DHR-DP-2024</span>
                 </div>
             </div>
             
             <div class="transparency-notice">
-                <p><i class="bi bi-info-circle"></i> <strong>Commitment:</strong> All Dating Hub Research studies adhere to these ethical standards. Violations can be reported to ethics@dating-hub.com.au</p>
+                <p><i class="bi bi-info-circle" aria-hidden="true"></i> <strong>Commitment:</strong> All Dating Hub Research studies adhere to these ethical standards. Violations can be reported to ethics@dating-hub.com.au</p>
             </div>
         </header>
 
         <!-- Introduction -->
         <section class="research-section">
-            <h2><i class="bi bi-book"></i> Introduction & Purpose</h2>
+            <h2><i class="bi bi-book" aria-hidden="true"></i> Introduction & Purpose</h2>
             
             <h3>1.1 Ethical Framework Foundation</h3>
             <p>This document establishes the ethical standards governing all research conducted by Dating Hub Research. Our framework is built upon internationally recognized principles of research ethics while adapting to the unique considerations of digital relationship research.</p>
             
             <div class="principles-box">
-                <h4>Core Ethical Principles:</h4>
+                <h3>Core Ethical Principles:</h3>
                 <div class="principles-grid">
                     <div class="principle-card">
-                        <h5><i class="bi bi-person-check"></i> Respect for Persons</h5>
+                        <div class="principle-icon">
+                            <i class="bi bi-person-check" aria-hidden="true"></i>
+                        </div>
+                        <h4>Respect for Persons</h4>
                         <p>Autonomy, informed consent, and protection of vulnerable populations</p>
                     </div>
                     <div class="principle-card">
-                        <h5><i class="bi bi-heart"></i> Beneficence</h5>
+                        <div class="principle-icon">
+                            <i class="bi bi-heart" aria-hidden="true"></i>
+                        </div>
+                        <h4>Beneficence</h4>
                         <p>Maximizing benefits while minimizing potential harms to participants</p>
                     </div>
                     <div class="principle-card">
-                        <h5><i class="bi bi-shield"></i> Justice</h5>
+                        <div class="principle-icon">
+                            <i class="bi bi-shield" aria-hidden="true"></i>
+                        </div>
+                        <h4>Justice</h4>
                         <p>Fair distribution of research burdens and benefits across populations</p>
                     </div>
                     <div class="principle-card">
-                        <h5><i class="bi bi-eye"></i> Transparency</h5>
+                        <div class="principle-icon">
+                            <i class="bi bi-eye" aria-hidden="true"></i>
+                        </div>
+                        <h4>Transparency</h4>
                         <p>Clear disclosure of methods, limitations, and potential conflicts</p>
                     </div>
                 </div>
@@ -86,62 +136,76 @@
 
         <!-- Participant Protection -->
         <section class="research-section">
-            <h2><i class="bi bi-shield-check"></i> Participant Protection Protocols</h2>
+            <h2><i class="bi bi-shield-check" aria-hidden="true"></i> Participant Protection Protocols</h2>
             
             <h3>2.1 Informed Consent Requirements</h3>
-            <table class="research-table">
-                <thead>
-                    <tr>
-                        <th>Element</th>
-                        <th>Standard Requirement</th>
-                        <th>Digital Adaptation</th>
-                        <th>Verification Method</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Information Disclosure</strong></td>
-                        <td>Study purpose, procedures, risks, benefits, alternatives</td>
-                        <td>Clear digital presentation, scroll confirmation, FAQ section</td>
-                        <td>Completion check, comprehension questions</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Voluntary Participation</strong></td>
-                        <td>No coercion, right to withdraw without penalty</td>
-                        <td>Easy opt-out mechanisms, no data retention penalties</td>
-                        <td>Withdrawal tracking, exit survey option</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Understanding</strong></td>
-                        <td>Participant comprehension of key elements</td>
-                        <td>Simplified language, interactive explanations</td>
-                        <td>Knowledge check questions, clarification option</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Documentation</strong></td>
-                        <td>Signed consent form</td>
-                        <td>Digital signature, checkbox confirmation with timestamp</td>
-                        <td>Automated logging, participant copy provision</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-responsive">
+                <table class="research-table">
+                    <thead>
+                        <tr>
+                            <th>Element</th>
+                            <th>Standard Requirement</th>
+                            <th>Digital Adaptation</th>
+                            <th>Verification Method</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Information Disclosure</strong></td>
+                            <td>Study purpose, procedures, risks, benefits, alternatives</td>
+                            <td>Clear digital presentation, scroll confirmation, FAQ section</td>
+                            <td>Completion check, comprehension questions</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Voluntary Participation</strong></td>
+                            <td>No coercion, right to withdraw without penalty</td>
+                            <td>Easy opt-out mechanisms, no data retention penalties</td>
+                            <td>Withdrawal tracking, exit survey option</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Understanding</strong></td>
+                            <td>Participant comprehension of key elements</td>
+                            <td>Simplified language, interactive explanations</td>
+                            <td>Knowledge check questions, clarification option</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Documentation</strong></td>
+                            <td>Signed consent form</td>
+                            <td>Digital signature, checkbox confirmation with timestamp</td>
+                            <td>Automated logging, participant copy provision</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             
             <h3>2.2 Vulnerable Populations Protection</h3>
             <div class="protection-grid">
                 <div class="protection-card">
-                    <h5><i class="bi bi-person-plus"></i> Minors</h5>
+                    <div class="protection-icon">
+                        <i class="bi bi-person-plus" aria-hidden="true"></i>
+                    </div>
+                    <h4>Minors</h4>
                     <p>Excluded from all studies. Age verification through multiple methods. Minimum participant age: 18 years.</p>
                 </div>
                 <div class="protection-card">
-                    <h5><i class="bi bi-heart-pulse"></i> Emotionally Vulnerable</h5>
+                    <div class="protection-icon">
+                        <i class="bi bi-heart-pulse" aria-hidden="true"></i>
+                    </div>
+                    <h4>Emotionally Vulnerable</h4>
                     <p>Screening for recent relationship trauma. Exit resources provided. Option to skip sensitive questions.</p>
                 </div>
                 <div class="protection-card">
-                    <h5><i class="bi bi-translate"></i> Non-Native Speakers</h5>
+                    <div class="protection-icon">
+                        <i class="bi bi-translate" aria-hidden="true"></i>
+                    </div>
+                    <h4>Non-Native Speakers</h4>
                     <p>Clear language requirements. Translation available for key consent elements. Comprehension checks.</p>
                 </div>
                 <div class="protection-card">
-                    <h5><i class="bi bi-phone"></i> Technologically Limited</h5>
+                    <div class="protection-icon">
+                        <i class="bi bi-phone" aria-hidden="true"></i>
+                    </div>
+                    <h4>Technologically Limited</h4>
                     <p>Alternative participation methods. Technical support. No exclusion based on digital literacy.</p>
                 </div>
             </div>
@@ -185,85 +249,113 @@
 
         <!-- Data Privacy & Security -->
         <section class="research-section">
-            <h2><i class="bi bi-lock"></i> Data Privacy & Security Standards</h2>
+            <h2><i class="bi bi-lock" aria-hidden="true"></i> Data Privacy & Security Standards</h2>
             
             <h3>3.1 Data Protection Principles</h3>
             <div class="data-principles">
-                <div class="principle-item">
-                    <h5><i class="bi bi-eye-slash"></i> Anonymization Protocol</h5>
-                    <ul>
-                        <li><strong>Direct Identifiers:</strong> Names, emails, phone numbers removed immediately</li>
-                        <li><strong>Indirect Identifiers:</strong> Rare demographics aggregated or generalized</li>
-                        <li><strong>Pseudonymization:</strong> Study IDs replace personal identifiers</li>
-                        <li><strong>Re-identification Protection:</strong> Data combinations limited to prevent identification</li>
-                    </ul>
+                <div class="principle-detail">
+                    <div class="principle-header">
+                        <div class="principle-icon">
+                            <i class="bi bi-eye-slash" aria-hidden="true"></i>
+                        </div>
+                        <h4>Anonymization Protocol</h4>
+                    </div>
+                    <div class="principle-content">
+                        <ul>
+                            <li><strong>Direct Identifiers:</strong> Names, emails, phone numbers removed immediately</li>
+                            <li><strong>Indirect Identifiers:</strong> Rare demographics aggregated or generalized</li>
+                            <li><strong>Pseudonymization:</strong> Study IDs replace personal identifiers</li>
+                            <li><strong>Re-identification Protection:</strong> Data combinations limited to prevent identification</li>
+                        </ul>
+                    </div>
                 </div>
                 
-                <div class="principle-item">
-                    <h5><i class="bi bi-shield-lock"></i> Security Measures</h5>
-                    <ul>
-                        <li><strong>Encryption:</strong> Data encrypted at rest and in transit (AES-256)</li>
-                        <li><strong>Access Control:</strong> Role-based permissions, multi-factor authentication</li>
-                        <li><strong>Audit Logging:</strong> All data access tracked and reviewed quarterly</li>
-                        <li><strong>Data Minimization:</strong> Only necessary data collected and retained</li>
-                    </ul>
+                <div class="principle-detail">
+                    <div class="principle-header">
+                        <div class="principle-icon">
+                            <i class="bi bi-shield-lock" aria-hidden="true"></i>
+                        </div>
+                        <h4>Security Measures</h4>
+                    </div>
+                    <div class="principle-content">
+                        <ul>
+                            <li><strong>Encryption:</strong> Data encrypted at rest and in transit (AES-256)</li>
+                            <li><strong>Access Control:</strong> Role-based permissions, multi-factor authentication</li>
+                            <li><strong>Audit Logging:</strong> All data access tracked and reviewed quarterly</li>
+                            <li><strong>Data Minimization:</strong> Only necessary data collected and retained</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             
             <h3>3.2 Data Retention & Deletion</h3>
-            <table class="research-table">
-                <thead>
-                    <tr>
-                        <th>Data Type</th>
-                        <th>Retention Period</th>
-                        <th>Deletion Protocol</th>
-                        <th>Exceptions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Raw Response Data</strong></td>
-                        <td>6 months post-study</td>
-                        <td>Secure deletion, verification required</td>
-                        <td>Required for audit purposes</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Anonymized Research Data</strong></td>
-                        <td>5 years minimum</td>
-                        <td>Available for replication requests</td>
-                        <td>Public dataset availability</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Consent Documentation</strong></td>
-                        <td>7 years</td>
-                        <td>Archival storage, limited access</td>
-                        <td>Legal requirement</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Analytical Outputs</strong></td>
-                        <td>Indefinite</td>
-                        <td>Published findings preserved</td>
-                        <td>Scientific record</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-responsive">
+                <table class="research-table">
+                    <thead>
+                        <tr>
+                            <th>Data Type</th>
+                            <th>Retention Period</th>
+                            <th>Deletion Protocol</th>
+                            <th>Exceptions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Raw Response Data</strong></td>
+                            <td>6 months post-study</td>
+                            <td>Secure deletion, verification required</td>
+                            <td>Required for audit purposes</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Anonymized Research Data</strong></td>
+                            <td>5 years minimum</td>
+                            <td>Available for replication requests</td>
+                            <td>Public dataset availability</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Consent Documentation</strong></td>
+                            <td>7 years</td>
+                            <td>Archival storage, limited access</td>
+                            <td>Legal requirement</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Analytical Outputs</strong></td>
+                            <td>Indefinite</td>
+                            <td>Published findings preserved</td>
+                            <td>Scientific record</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             
             <h3>3.3 Participant Data Rights</h3>
             <div class="rights-grid">
                 <div class="right-card">
-                    <h5><i class="bi bi-download"></i> Access Right</h5>
+                    <div class="right-icon">
+                        <i class="bi bi-download" aria-hidden="true"></i>
+                    </div>
+                    <h4>Access Right</h4>
                     <p>Participants may request copies of their data within 30 days</p>
                 </div>
                 <div class="right-card">
-                    <h5><i class="bi bi-trash"></i> Deletion Right</h5>
+                    <div class="right-icon">
+                        <i class="bi bi-trash" aria-hidden="true"></i>
+                    </div>
+                    <h4>Deletion Right</h4>
                     <p>Participants may request data deletion (with exceptions for published research)</p>
                 </div>
                 <div class="right-card">
-                    <h5><i class="bi bi-pencil"></i> Correction Right</h5>
+                    <div class="right-icon">
+                        <i class="bi bi-pencil" aria-hidden="true"></i>
+                    </div>
+                    <h4>Correction Right</h4>
                     <p>Participants may request correction of inaccurate personal data</p>
                 </div>
                 <div class="right-card">
-                    <h5><i class="bi bi-slash-circle"></i> Withdrawal Right</h5>
+                    <div class="right-icon">
+                        <i class="bi bi-slash-circle" aria-hidden="true"></i>
+                    </div>
+                    <h4>Withdrawal Right</h4>
                     <p>Participants may withdraw consent at any time without penalty</p>
                 </div>
             </div>
@@ -271,121 +363,211 @@
 
         <!-- Research Integrity -->
         <section class="research-section">
-            <h2><i class="bi bi-check-circle"></i> Research Integrity Standards</h2>
+            <h2><i class="bi bi-check-circle" aria-hidden="true"></i> Research Integrity Standards</h2>
             
             <h3>4.1 Methodological Rigor</h3>
             <div class="integrity-standards">
-                <div class="standard-item">
-                    <h5><i class="bi bi-clipboard-data"></i> Transparency Requirements</h5>
-                    <ul>
-                        <li>Full disclosure of methodology in all publications</li>
-                        <li>Clear reporting of limitations and potential biases</li>
-                        <li>Data availability statements for replication</li>
-                        <li>Funding sources and conflicts of interest disclosed</li>
-                    </ul>
+                <div class="integrity-card">
+                    <div class="integrity-header">
+                        <div class="integrity-icon">
+                            <i class="bi bi-clipboard-data" aria-hidden="true"></i>
+                        </div>
+                        <h4>Transparency Requirements</h4>
+                    </div>
+                    <div class="integrity-content">
+                        <ul>
+                            <li>Full disclosure of methodology in all publications</li>
+                            <li>Clear reporting of limitations and potential biases</li>
+                            <li>Data availability statements for replication</li>
+                            <li>Funding sources and conflicts of interest disclosed</li>
+                        </ul>
+                    </div>
                 </div>
                 
-                <div class="standard-item">
-                    <h5><i class="bi bi-bar-chart"></i> Statistical Standards</h5>
-                    <ul>
-                        <li>Pre-registration of analysis plans when feasible</li>
-                        <li>Appropriate statistical methods for research questions</li>
-                        <li>Clear reporting of effect sizes and confidence intervals</li>
-                        <li>Correction for multiple comparisons when applicable</li>
-                    </ul>
+                <div class="integrity-card">
+                    <div class="integrity-header">
+                        <div class="integrity-icon">
+                            <i class="bi bi-bar-chart" aria-hidden="true"></i>
+                        </div>
+                        <h4>Statistical Standards</h4>
+                    </div>
+                    <div class="integrity-content">
+                        <ul>
+                            <li>Pre-registration of analysis plans when feasible</li>
+                            <li>Appropriate statistical methods for research questions</li>
+                            <li>Clear reporting of effect sizes and confidence intervals</li>
+                            <li>Correction for multiple comparisons when applicable</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             
             <h3>4.2 Publication Ethics</h3>
             <div class="publication-ethics">
-                <div class="ethics-item">
-                    <strong>Originality:</strong> All research represents original work unless explicitly cited
+                <div class="ethics-card">
+                    <div class="ethics-icon">
+                        <i class="bi bi-file-earmark-text" aria-hidden="true"></i>
+                    </div>
+                    <div class="ethics-content">
+                        <h4>Originality</h4>
+                        <p>All research represents original work unless explicitly cited</p>
+                    </div>
                 </div>
-                <div class="ethics-item">
-                    <strong>Authorship:</strong> Contributorship follows CRediT taxonomy standards
+                <div class="ethics-card">
+                    <div class="ethics-icon">
+                        <i class="bi bi-person-badge" aria-hidden="true"></i>
+                    </div>
+                    <div class="ethics-content">
+                        <h4>Authorship</h4>
+                        <p>Contributorship follows CRediT taxonomy standards</p>
+                    </div>
                 </div>
-                <div class="ethics-item">
-                    <strong>Peer Review:</strong> All studies undergo internal review before publication
+                <div class="ethics-card">
+                    <div class="ethics-icon">
+                        <i class="bi bi-eye" aria-hidden="true"></i>
+                    </div>
+                    <div class="ethics-content">
+                        <h4>Peer Review</h4>
+                        <p>All studies undergo internal review before publication</p>
+                    </div>
                 </div>
-                <div class="ethics-item">
-                    <strong>Corrections:</strong> Errors are corrected promptly with clear documentation
+                <div class="ethics-card">
+                    <div class="ethics-icon">
+                        <i class="bi bi-patch-check" aria-hidden="true"></i>
+                    </div>
+                    <div class="ethics-content">
+                        <h4>Corrections</h4>
+                        <p>Errors are corrected promptly with clear documentation</p>
+                    </div>
                 </div>
             </div>
             
             <h3>4.3 Conflict of Interest Management</h3>
-            <p>All research team members must disclose potential conflicts including:</p>
-            <ul>
-                <li>Financial interests in dating platforms or related companies</li>
-                <li>Personal relationships that could influence research</li>
-                <li>Previous employment or consulting in relevant industries</li>
-                <li>Funding sources that could create perceived bias</li>
-            </ul>
-            <p><strong>Disclosure Protocol:</strong> All conflicts are documented and published alongside research findings.</p>
+            <div class="conflict-management">
+                <p>All research team members must disclose potential conflicts including:</p>
+                <ul>
+                    <li>Financial interests in dating platforms or related companies</li>
+                    <li>Personal relationships that could influence research</li>
+                    <li>Previous employment or consulting in relevant industries</li>
+                    <li>Funding sources that could create perceived bias</li>
+                </ul>
+                <div class="disclosure-note">
+                    <i class="bi bi-info-circle" aria-hidden="true"></i>
+                    <p><strong>Disclosure Protocol:</strong> All conflicts are documented and published alongside research findings.</p>
+                </div>
+            </div>
         </section>
 
         <!-- Implementation & Compliance -->
         <section class="research-section">
-            <h2><i class="bi bi-gear"></i> Implementation & Compliance</h2>
+            <h2><i class="bi bi-gear" aria-hidden="true"></i> Implementation & Compliance</h2>
             
             <h3>5.1 Training Requirements</h3>
             <div class="training-grid">
                 <div class="training-card">
-                    <h5><i class="bi bi-person-video"></i> Initial Training</h5>
+                    <div class="training-icon">
+                        <i class="bi bi-person-video" aria-hidden="true"></i>
+                    </div>
+                    <h4>Initial Training</h4>
                     <p>All research team members complete ethics training before project involvement</p>
                 </div>
                 <div class="training-card">
-                    <h5><i class="bi bi-arrow-clockwise"></i> Annual Refresher</h5>
+                    <div class="training-icon">
+                        <i class="bi bi-arrow-clockwise" aria-hidden="true"></i>
+                    </div>
+                    <h4>Annual Refresher</h4>
                     <p>Yearly ethics updates and case study reviews</p>
                 </div>
                 <div class="training-card">
-                    <h5><i class="bi bi-shield-exclamation"></i> Incident Response</h5>
+                    <div class="training-icon">
+                        <i class="bi bi-shield-exclamation" aria-hidden="true"></i>
+                    </div>
+                    <h4>Incident Response</h4>
                     <p>Protocol-specific training for handling ethical concerns</p>
                 </div>
             </div>
             
             <h3>5.2 Monitoring & Enforcement</h3>
-            <div class="monitoring">
-                <div class="monitoring-item">
-                    <h5><i class="bi bi-clipboard-check"></i> Protocol Audits</h5>
+            <div class="monitoring-grid">
+                <div class="monitoring-card">
+                    <div class="monitoring-icon">
+                        <i class="bi bi-clipboard-check" aria-hidden="true"></i>
+                    </div>
+                    <h4>Protocol Audits</h4>
                     <p>Quarterly review of consent processes and data handling</p>
                 </div>
-                <div class="monitoring-item">
-                    <h5><i class="bi bi-people"></i> Participant Feedback</h5>
+                <div class="monitoring-card">
+                    <div class="monitoring-icon">
+                        <i class="bi bi-people" aria-hidden="true"></i>
+                    </div>
+                    <h4>Participant Feedback</h4>
                     <p>Regular surveys of participant experience and ethical concerns</p>
                 </div>
-                <div class="monitoring-item">
-                    <h5><i class="bi bi-megaphone"></i> Reporting Mechanism</h5>
+                <div class="monitoring-card">
+                    <div class="monitoring-icon">
+                        <i class="bi bi-megaphone" aria-hidden="true"></i>
+                    </div>
+                    <h4>Reporting Mechanism</h4>
                     <p>Anonymous reporting channel for ethical concerns: ethics@dating-hub.com.au</p>
                 </div>
             </div>
             
             <h3>5.3 Document Maintenance</h3>
-            <div class="document-info">
-                <p><strong>Current Version:</strong> 2.1 (Effective December 2024)</p>
-                <p><strong>Next Scheduled Review:</strong> December 2025</p>
-                <p><strong>Revision Process:</strong> Annual review by Ethics Committee, with updates based on regulatory changes, technological developments, and incident learnings.</p>
-                <p><strong>Distribution:</strong> Available to all research participants and publicly on our website.</p>
+            <div class="document-maintenance">
+                <div class="document-info">
+                    <h4>Current Version</h4>
+                    <p>2.1 (Effective December 2024)</p>
+                </div>
+                <div class="document-info">
+                    <h4>Next Scheduled Review</h4>
+                    <p>December 2025</p>
+                </div>
+                <div class="document-info">
+                    <h4>Revision Process</h4>
+                    <p>Annual review by Ethics Committee, with updates based on regulatory changes, technological developments, and incident learnings.</p>
+                </div>
+                <div class="document-info">
+                    <h4>Distribution</h4>
+                    <p>Available to all research participants and publicly on our website.</p>
+                </div>
             </div>
         </section>
 
         <!-- Contact & Resources -->
         <div class="resources-box">
-            <h4><i class="bi bi-info-circle"></i> Contact & Additional Resources</h4>
+            <h3><i class="bi bi-info-circle" aria-hidden="true"></i> Contact & Additional Resources</h3>
             <div class="resources-content">
-                <div class="resource-item">
-                    <h5>Ethics Committee Contact</h5>
-                    <p><i class="bi bi-envelope"></i> ethics@dating-hub.com.au</p>
-                    <p><i class="bi bi-clock"></i> Response within 5 business days</p>
+                <div class="resource-contact">
+                    <div class="contact-icon">
+                        <i class="bi bi-envelope" aria-hidden="true"></i>
+                    </div>
+                    <div class="contact-content">
+                        <h4>Ethics Committee Contact</h4>
+                        <p>ethics@dating-hub.com.au</p>
+                        <p class="small">Response within 5 business days</p>
+                    </div>
                 </div>
-                <div class="resource-item">
-                    <h5>Participant Support</h5>
-                    <p><i class="bi bi-telephone"></i> Study-related concerns: support@dating-hub.com.au</p>
-                    <p><i class="bi bi-heart"></i> Emotional support referrals available</p>
+                
+                <div class="resource-contact">
+                    <div class="contact-icon">
+                        <i class="bi bi-telephone" aria-hidden="true"></i>
+                    </div>
+                    <div class="contact-content">
+                        <h4>Participant Support</h4>
+                        <p>Study-related concerns: support@dating-hub.com.au</p>
+                        <p class="small">Emotional support referrals available</p>
+                    </div>
                 </div>
-                <div class="resource-item">
-                    <h5>Related Documents</h5>
-                    <p><i class="bi bi-file-earmark-text"></i> <a href="{% url 'methodology' %}">Research Methodology</a></p>
-                    <p><i class="bi bi-file-earmark-lock"></i> <a href="{% url 'privacy' %}">Privacy Policy</a></p>
+                
+                <div class="resource-contact">
+                    <div class="contact-icon">
+                        <i class="bi bi-folder" aria-hidden="true"></i>
+                    </div>
+                    <div class="contact-content">
+                        <h4>Related Documents</h4>
+                        <p><a href="{% url 'research:methodology' %}" class="resource-link">Research Methodology</a></p>
+                        <p><a href="{% url 'research:privacy' %}" class="resource-link">Privacy Policy</a></p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -393,15 +575,24 @@
 </div>
 
 <style>
+    /* Include all base CSS from micromance.html */
+    /* Adding specific styles for research ethics page */
+    
+    /* Principles Box */
     .principles-box {
-        margin: 2rem 0;
+        margin: 1.5rem 0;
+    }
+    
+    .principles-box h3 {
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
     }
     
     .principles-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.5rem;
-        margin: 1.5rem 0;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin: 1rem 0;
     }
     
     .principle-card {
@@ -413,19 +604,23 @@
         box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
     
-    .principle-card h5 {
+    .principle-icon {
+        font-size: 2rem;
         color: #0066CC;
         margin-bottom: 0.75rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
     }
     
+    .principle-card h4 {
+        color: #0066CC;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+    }
+    
+    /* Protection Grid */
     .protection-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.5rem;
+        grid-template-columns: 1fr;
+        gap: 1rem;
         margin: 1.5rem 0;
     }
     
@@ -434,17 +629,23 @@
         border: 1px solid #E0E0E0;
         border-radius: 8px;
         padding: 1.5rem;
+        text-align: center;
         box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
     
-    .protection-card h5 {
+    .protection-icon {
+        font-size: 2rem;
         color: #0066CC;
         margin-bottom: 0.75rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
     }
     
+    .protection-card h4 {
+        color: #0066CC;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+    }
+    
+    /* Risk Assessment */
     .risk-assessment {
         display: flex;
         flex-direction: column;
@@ -461,9 +662,10 @@
     .risk-header {
         display: flex;
         align-items: center;
-        gap: 1rem;
-        padding: 1rem 1.5rem;
+        gap: 0.75rem;
+        padding: 1rem;
         font-weight: 600;
+        flex-wrap: wrap;
     }
     
     .risk-level {
@@ -489,11 +691,13 @@
     }
     
     .risk-content {
-        padding: 1rem 1.5rem;
+        padding: 1rem;
         background: #f8f9fa;
         border-top: 1px solid #E0E0E0;
+        font-size: 0.95rem;
     }
     
+    /* Data Principles */
     .data-principles {
         display: flex;
         flex-direction: column;
@@ -501,7 +705,7 @@
         margin: 1.5rem 0;
     }
     
-    .principle-item {
+    .principle-detail {
         background: white;
         border: 1px solid #E0E0E0;
         border-radius: 8px;
@@ -509,18 +713,39 @@
         box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
     
-    .principle-item h5 {
-        color: #0066CC;
-        margin-bottom: 1rem;
+    .principle-header {
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
     }
     
+    .principle-icon {
+        font-size: 1.5rem;
+        color: #0066CC;
+    }
+    
+    .principle-detail h4 {
+        color: #0066CC;
+        margin: 0;
+        font-size: 1.1rem;
+    }
+    
+    .principle-content ul {
+        padding-left: 1.25rem;
+        margin: 0;
+    }
+    
+    .principle-content li {
+        margin-bottom: 0.5rem;
+        font-size: 0.95rem;
+    }
+    
+    /* Rights Grid */
     .rights-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.5rem;
+        grid-template-columns: 1fr;
+        gap: 1rem;
         margin: 1.5rem 0;
     }
     
@@ -533,15 +758,19 @@
         box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
     
-    .right-card h5 {
+    .right-icon {
+        font-size: 2rem;
         color: #0066CC;
         margin-bottom: 0.75rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
     }
     
+    .right-card h4 {
+        color: #0066CC;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+    }
+    
+    /* Integrity Standards */
     .integrity-standards {
         display: flex;
         flex-direction: column;
@@ -549,7 +778,7 @@
         margin: 1.5rem 0;
     }
     
-    .standard-item {
+    .integrity-card {
         background: white;
         border: 1px solid #E0E0E0;
         border-radius: 8px;
@@ -557,33 +786,96 @@
         box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
     
-    .standard-item h5 {
-        color: #0066CC;
-        margin-bottom: 1rem;
+    .integrity-header {
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
     }
     
+    .integrity-icon {
+        font-size: 1.5rem;
+        color: #0066CC;
+    }
+    
+    .integrity-card h4 {
+        color: #0066CC;
+        margin: 0;
+        font-size: 1.1rem;
+    }
+    
+    /* Publication Ethics */
     .publication-ethics {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr;
         gap: 1rem;
         margin: 1.5rem 0;
     }
     
-    .ethics-item {
-        padding: 1rem;
+    .ethics-card {
+        background: white;
+        border: 1px solid #E0E0E0;
+        border-radius: 8px;
+        padding: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    
+    .ethics-icon {
+        font-size: 1.5rem;
+        color: #0066CC;
+        flex-shrink: 0;
+    }
+    
+    .ethics-content h4 {
+        color: #0066CC;
+        margin-bottom: 0.25rem;
+        font-size: 1rem;
+    }
+    
+    /* Conflict Management */
+    .conflict-management {
         background: #f0f7ff;
-        border-radius: 6px;
-        border-left: 4px solid #0066CC;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+    
+    .conflict-management ul {
+        padding-left: 1.25rem;
+        margin: 1rem 0;
+    }
+    
+    .conflict-management li {
+        margin-bottom: 0.5rem;
         font-size: 0.95rem;
     }
     
+    .disclosure-note {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        margin-top: 1rem;
+        padding: 1rem;
+        background: white;
+        border-radius: 6px;
+        border: 1px solid #E0E0E0;
+    }
+    
+    .disclosure-note i {
+        color: #0066CC;
+        font-size: 1.25rem;
+        flex-shrink: 0;
+        margin-top: 0.125rem;
+    }
+    
+    /* Training Grid */
     .training-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.5rem;
+        grid-template-columns: 1fr;
+        gap: 1rem;
         margin: 1.5rem 0;
     }
     
@@ -596,73 +888,271 @@
         box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
     
-    .training-card h5 {
+    .training-icon {
+        font-size: 2rem;
         color: #0066CC;
         margin-bottom: 0.75rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
     }
     
-    .monitoring {
+    .training-card h4 {
+        color: #0066CC;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+    }
+    
+    /* Monitoring Grid */
+    .monitoring-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.5rem;
+        grid-template-columns: 1fr;
+        gap: 1rem;
         margin: 1.5rem 0;
     }
     
-    .monitoring-item {
+    .monitoring-card {
         background: white;
         border: 1px solid #E0E0E0;
         border-radius: 8px;
         padding: 1.5rem;
+        text-align: center;
         box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
     
-    .monitoring-item h5 {
+    .monitoring-icon {
+        font-size: 2rem;
         color: #0066CC;
         margin-bottom: 0.75rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
+    }
+    
+    .monitoring-card h4 {
+        color: #0066CC;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+    }
+    
+    /* Document Maintenance */
+    .document-maintenance {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin: 1.5rem 0;
     }
     
     .document-info {
         background: #f8f9fa;
-        padding: 1.5rem;
         border-radius: 8px;
+        padding: 1.25rem;
         border-left: 4px solid #0066CC;
-        margin: 1.5rem 0;
     }
     
+    .document-info h4 {
+        color: #0066CC;
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+    }
+    
+    /* Resources Box */
     .resources-box {
         background: #f0f7ff;
         border: 1px solid #b8d4ff;
         border-radius: 8px;
-        padding: 2rem;
-        margin-top: 3rem;
+        padding: 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .resources-box h3 {
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 1.25rem;
     }
     
     .resources-content {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
         margin-top: 1.5rem;
     }
     
-    .resource-item {
+    .resource-contact {
         background: white;
         border-radius: 8px;
         padding: 1.5rem;
         box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
     }
     
-    .resource-item h5 {
+    .contact-icon {
+        font-size: 1.5rem;
         color: #0066CC;
-        margin-bottom: 1rem;
+        flex-shrink: 0;
+        margin-top: 0.125rem;
     }
     
-    /* Include all base CSS from previous research pages */
+    .contact-content h4 {
+        color: #0066CC;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+    }
+    
+    .small {
+        font-size: 0.875rem;
+        color: #666;
+        margin-top: 0.25rem;
+    }
+    
+    .resource-link {
+        color: #0066CC;
+        font-weight: 600;
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+        transition: border-color 0.2s;
+    }
+    
+    .resource-link:hover {
+        border-bottom-color: #0066CC;
+    }
+    
+    /* Mobile First Adjustments */
+    @media (max-width: 767px) {
+        .principle-card,
+        .protection-card,
+        .right-card,
+        .training-card,
+        .monitoring-card {
+            padding: 1rem;
+        }
+        
+        .principle-icon,
+        .protection-icon,
+        .right-icon,
+        .training-icon,
+        .monitoring-icon {
+            font-size: 1.5rem;
+        }
+        
+        .principle-detail,
+        .integrity-card {
+            padding: 1rem;
+        }
+        
+        .ethics-card {
+            padding: 1rem;
+            gap: 0.75rem;
+        }
+        
+        .risk-header {
+            padding: 0.875rem;
+        }
+        
+        .risk-content {
+            padding: 0.875rem;
+        }
+        
+        .conflict-management {
+            padding: 1rem;
+        }
+        
+        .document-info {
+            padding: 1rem;
+        }
+        
+        .resource-contact {
+            padding: 1rem;
+        }
+    }
+    
+    /* Tablet Styles */
+    @media (min-width: 768px) {
+        .principles-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .protection-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .rights-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .publication-ethics {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .training-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        .monitoring-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        .document-maintenance {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .resources-content {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .resource-contact:last-child {
+            grid-column: 1 / -1;
+        }
+    }
+    
+    /* Desktop Styles */
+    @media (min-width: 1024px) {
+        .principles-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        
+        .protection-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        
+        .rights-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        
+        .publication-ethics {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        
+        .document-maintenance {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        
+        .resources-content {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
 </style>
+
+<script>
+function copyCitation(button) {
+    const citationText = document.querySelector('.citation-text p').innerText;
+    navigator.clipboard.writeText(citationText).then(function() {
+        const originalText = button.innerHTML;
+        button.innerHTML = '<i class="bi bi-check" aria-hidden="true"></i> Copied!';
+        button.style.background = '#28a745';
+        
+        setTimeout(function() {
+            button.innerHTML = originalText;
+            button.style.background = '#0066CC';
+        }, 2000);
+    }).catch(function(err) {
+        console.error('Failed to copy: ', err);
+        button.innerHTML = '<i class="bi bi-x" aria-hidden="true"></i> Failed';
+        button.style.background = '#dc3545';
+        
+        setTimeout(function() {
+            button.innerHTML = '<i class="bi bi-clipboard" aria-hidden="true"></i> Copy Citation';
+            button.style.background = '#0066CC';
+        }, 2000);
+    });
+}
+</script>
 {% endblock %}

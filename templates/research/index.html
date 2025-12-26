@@ -1,79 +1,895 @@
 {% extends "base.html" %}
 
-{% block title %}Research Studies | Dating Hub Research{% endblock %}
-
-{% block breadcrumb_items %}
-<li class="breadcrumb-item active" aria-current="page">Research</li>
+{% block meta %}
+<meta name="description" content="Dating Hub Research: Data-driven analysis of modern dating trends, digital relationships, and matchmaking algorithms. Independent research studies on digital dating behavior.">
+<meta name="keywords" content="dating research, relationship studies, digital dating trends, matchmaking algorithms, dating statistics, relationship psychology">
+<meta property="og:title" content="Research | Dating Hub">
+<meta property="og:description" content="Data-driven analysis of modern dating trends, digital relationships, and matchmaking algorithms from Dating Hub Research.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="article:author" content="Dating Hub Research Team">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Research | Dating Hub">
+<meta name="twitter:description" content="Research studies on modern dating trends and digital relationships.">
 {% endblock %}
 
+{% block structured_data %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Dating Hub Research Studies",
+  "description": "Collection of independent research studies on modern dating trends, digital relationships, and matchmaking algorithms.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dating Hub Research Team",
+    "url": "https://dating-hub.com.au"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "ResearchStudy",
+          "name": "The Rise of Micromance",
+          "url": "https://dating-hub.com.au/research/micromance/",
+          "description": "Study on brief digital interactions reshaping emotional connections in dating app culture."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "ResearchStudy",
+          "name": "AI Matchmaking Algorithms",
+          "url": "https://dating-hub.com.au/research/ai-matchmaking/",
+          "description": "Analysis of AI-driven matchmaking algorithms and compatibility prediction."
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "ResearchStudy",
+          "name": "Digital Boundaries in Dating",
+          "url": "https://dating-hub.com.au/research/digital-boundaries/",
+          "description": "Study on negotiating privacy and connectivity in technology-mediated relationships."
+        }
+      }
+    ]
+  }
+}
+</script>
+{% endblock %}
+
+{% block title %}Research | Dating Hub{% endblock %}
+
 {% block content %}
-<div class="text-center mb-5">
-    <h1 class="display-5 fw-bold">Research Studies</h1>
-    <p class="lead text-muted">Comprehensive analysis of modern dating trends and behaviors</p>
-</div>
-
-<div class="row g-4">
-    <!-- Study 1 -->
-    <div class="col-lg-4 col-md-6">
-        <div class="card h-100">
-            <div class="card-body">
-                <span class="metric-badge mb-3">DIGITAL TRENDS</span>
-                <h3 class="card-title h5">The Rise of Micromance</h3>
-                <p class="card-text small">How brief digital interactions reshape emotional connections in app-based dating.</p>
-                <div class="mt-3">
-                    <span class="badge bg-light text-dark me-2">2025 Study</span>
-                    <span class="badge bg-light text-dark">15 min read</span>
+<div class="research-index-container glass-card">
+    <!-- Hero Section -->
+    <section class="research-hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Dating Hub Research</h1>
+            <p class="hero-subtitle">Data-driven analysis of modern dating trends, digital relationships, and matchmaking algorithms.</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">3,200+</span>
+                    <span class="stat-label">Study Participants</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Research Studies</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">12</span>
+                    <span class="stat-label">Month Studies</span>
                 </div>
             </div>
-            <div class="card-footer bg-transparent border-top-0">
-                <a href="{% url 'micromance' %}" class="btn btn-outline-primary w-100">Read Study</a>
-            </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Study 2 -->
-    <div class="col-lg-4 col-md-6">
-        <div class="card h-100">
-            <div class="card-body">
-                <span class="metric-badge mb-3" style="background:#17a2b8">TECHNOLOGY</span>
-                <h3 class="card-title h5">AI Matchmaking Algorithms</h3>
-                <p class="card-text small">How artificial intelligence changes partner selection and compatibility assessment.</p>
-                <div class="mt-3">
-                    <span class="badge bg-light text-dark me-2">2025 Study</span>
-                    <span class="badge bg-light text-dark">20 min read</span>
+    <!-- Featured Studies -->
+    <section class="featured-studies">
+        <h2 class="section-title">Featured Studies</h2>
+        <p class="section-subtitle">Latest independent research on digital dating behavior</p>
+        
+        <div class="studies-grid">
+            <article class="study-card featured">
+                <div class="study-badge featured-badge">
+                    <span>Featured</span>
                 </div>
-            </div>
-            <div class="card-footer bg-transparent border-top-0">
-                <a href="{% url 'ai_matchmaking' %}" class="btn btn-outline-primary w-100">Read Study</a>
-            </div>
+                <div class="study-content">
+                    <div class="study-category">
+                        <span class="category-tag digital">Digital Dating Trends</span>
+                        <span class="study-date">December 2025</span>
+                    </div>
+                    <h3 class="study-title">The Micromance Revolution</h3>
+                    <p class="study-description">How brief, frequent digital interactions are reshaping emotional connections in dating app culture.</p>
+                    <div class="study-stats">
+                        <div class="mini-stat">
+                            <i class="bi bi-people" aria-hidden="true"></i>
+                            <span>n=2,150</span>
+                        </div>
+                        <div class="mini-stat">
+                            <i class="bi bi-clock" aria-hidden="true"></i>
+                            <span>12 months</span>
+                        </div>
+                    </div>
+                    <a href="{% url 'research:micromance' %}" class="study-link" aria-label="Read The Micromance Revolution study">
+                        Read Study
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            
+            <article class="study-card">
+                <div class="study-content">
+                    <div class="study-category">
+                        <span class="category-tag tech">Technology & Dating</span>
+                        <span class="study-date">December 2025</span>
+                    </div>
+                    <h3 class="study-title">AI Matchmaking Algorithms</h3>
+                    <p class="study-description">Examining how artificial intelligence is changing partner selection and compatibility assessment.</p>
+                    <div class="study-stats">
+                        <div class="mini-stat">
+                            <i class="bi bi-people" aria-hidden="true"></i>
+                            <span>n=3,200</span>
+                        </div>
+                        <div class="mini-stat">
+                            <i class="bi bi-clock" aria-hidden="true"></i>
+                            <span>6 months</span>
+                        </div>
+                    </div>
+                    <a href="{% url 'research:ai_matchmaking' %}" class="study-link" aria-label="Read AI Matchmaking Algorithms study">
+                        Read Study
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
+            
+            <article class="study-card">
+                <div class="study-content">
+                    <div class="study-category">
+                        <span class="category-tag psychology">Relationship Psychology</span>
+                        <span class="study-date">January 2026</span>
+                    </div>
+                    <h3 class="study-title">Digital Boundaries in Relationships</h3>
+                    <p class="study-description">How couples negotiate privacy and connectivity in digital relationships.</p>
+                    <div class="study-stats">
+                        <div class="mini-stat">
+                            <i class="bi bi-people" aria-hidden="true"></i>
+                            <span>n=1,800+</span>
+                        </div>
+                        <div class="mini-stat">
+                            <i class="bi bi-clock" aria-hidden="true"></i>
+                            <span>12 months</span>
+                        </div>
+                    </div>
+                    <a href="{% url 'research:digital_boundaries' %}" class="study-link" aria-label="Read Digital Boundaries in Relationships study">
+                        Read Study
+                        <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </article>
         </div>
-    </div>
+    </section>
 
-    <!-- Study 3 -->
-    <div class="col-lg-4 col-md-6">
-        <div class="card h-100">
-            <div class="card-body">
-                <span class="metric-badge mb-3" style="background:#28a745">RELATIONSHIPS</span>
-                <h3 class="card-title h5">Digital Boundaries in Dating</h3>
-                <p class="card-text small">How couples negotiate privacy, connectivity, and digital intimacy in modern relationships.</p>
-                <div class="mt-3">
-                    <span class="badge bg-light text-dark me-2">2025 Study</span>
-                    <span class="badge bg-light text-dark">18 min read</span>
-                </div>
-            </div>
-            <div class="card-footer bg-transparent border-top-0">
-                <a href="{% url 'digital_boundaries' %}" class="btn btn-outline-primary w-100">Read Study</a>
-            </div>
+    <!-- All Research Studies -->
+    <section class="all-studies">
+        <div class="section-header">
+            <h2 class="section-title">All Research Studies</h2>
+            <a href="{% url 'research:methodology' %}" class="methodology-link">
+                <i class="bi bi-clipboard-data" aria-hidden="true"></i>
+                View Methodology
+            </a>
         </div>
-    </div>
+        
+        <div class="studies-list">
+            <article class="study-list-item">
+                <div class="study-list-header">
+                    <h3 class="study-list-title">
+                        <a href="{% url 'research:micromance' %}">The Rise of Micromance</a>
+                    </h3>
+                    <div class="study-list-meta">
+                        <span class="study-date">December 2025</span>
+                        <span class="study-category">Digital Dating Trends</span>
+                    </div>
+                </div>
+                <p class="study-list-description">67% of frequent dating app users prefer multiple "micro-conversations" throughout the day.</p>
+                <a href="{% url 'research:micromance' %}" class="study-list-link" aria-label="Read The Rise of Micromance study">
+                    Read Full Study
+                    <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </a>
+            </article>
+            
+            <article class="study-list-item">
+                <div class="study-list-header">
+                    <h3 class="study-list-title">
+                        <a href="{% url 'research:ai_matchmaking' %}">AI Matchmaking Success Rates</a>
+                    </h3>
+                    <div class="study-list-meta">
+                        <span class="study-date">December 2025</span>
+                        <span class="study-category">Technology & Dating</span>
+                    </div>
+                </div>
+                <p class="study-list-description">Algorithms prioritizing long-term compatibility show 42% higher 6-month retention rates.</p>
+                <a href="{% url 'research:ai_matchmaking' %}" class="study-list-link" aria-label="Read AI Matchmaking Success Rates study">
+                    Read Full Study
+                    <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </a>
+            </article>
+            
+            <article class="study-list-item">
+                <div class="study-list-header">
+                    <h3 class="study-list-title">
+                        <a href="{% url 'research:digital_boundaries' %}">Digital Boundaries in Relationships</a>
+                    </h3>
+                    <div class="study-list-meta">
+                        <span class="study-date">Upcoming • January 2026</span>
+                        <span class="study-category">Relationship Psychology</span>
+                    </div>
+                </div>
+                <p class="study-list-description">How couples negotiate privacy and connectivity in digital relationships.</p>
+                <a href="{% url 'research:digital_boundaries' %}" class="study-list-link" aria-label="Read Digital Boundaries in Relationships study">
+                    Read Full Study
+                    <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </a>
+            </article>
+            
+            <article class="study-list-item">
+                <div class="study-list-header">
+                    <h3 class="study-list-title">
+                        <a href="{% url 'research:methodology' %}">Research Methodology</a>
+                    </h3>
+                    <div class="study-list-meta">
+                        <span class="study-date">Methodology</span>
+                        <span class="study-category">Research Standards</span>
+                    </div>
+                </div>
+                <p class="study-list-description">Our mixed-methods approach combining surveys, behavioral data, and expert interviews.</p>
+                <a href="{% url 'research:methodology' %}" class="study-list-link" aria-label="View Research Methodology">
+                    View Methodology
+                    <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </a>
+            </article>
+            
+            <article class="study-list-item">
+                <div class="study-list-header">
+                    <h3 class="study-list-title">
+                        <a href="{% url 'research:research_ethics' %}">Research Ethics Framework</a>
+                    </h3>
+                    <div class="study-list-meta">
+                        <span class="study-date">Ethical Standards</span>
+                        <span class="study-category">Compliance</span>
+                    </div>
+                </div>
+                <p class="study-list-description">Principles, protocols, and participant protection standards for all research studies.</p>
+                <a href="{% url 'research:research_ethics' %}" class="study-list-link" aria-label="View Research Ethics Framework">
+                    View Ethics
+                    <i class="bi bi-arrow-right" aria-hidden="true"></i>
+                </a>
+            </article>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="research-cta">
+        <div class="cta-content">
+            <div class="cta-icon">
+                <i class="bi bi-robot" aria-hidden="true"></i>
+            </div>
+            <h2 class="cta-title">Get Personalized Recommendations</h2>
+            <p class="cta-description">Not sure which dating site is right for you? Our AI analyzes your preferences to recommend the perfect platforms.</p>
+            <a href="{% url 'research:dating_recommendations' %}" class="cta-button" aria-label="Try AI Matchmaker for personalized dating recommendations">
+                <i class="bi bi-robot" aria-hidden="true"></i>
+                Try AI Matchmaker
+            </a>
+            <p class="cta-note">
+                <i class="bi bi-shield-check" aria-hidden="true"></i>
+                Privacy-first analysis • No personal data stored
+            </p>
+        </div>
+    </section>
+
+    <!-- Research Categories -->
+    <section class="research-categories">
+        <h2 class="section-title">Research Categories</h2>
+        <div class="categories-grid">
+            <a href="#digital-trends" class="category-card">
+                <div class="category-icon">
+                    <i class="bi bi-phone" aria-hidden="true"></i>
+                </div>
+                <h3 class="category-title">Digital Trends</h3>
+                <p class="category-description">Mobile dating behavior and app usage patterns</p>
+            </a>
+            
+            <a href="#algorithm-analysis" class="category-card">
+                <div class="category-icon">
+                    <i class="bi bi-cpu" aria-hidden="true"></i>
+                </div>
+                <h3 class="category-title">Algorithm Analysis</h3>
+                <p class="category-description">Matchmaking systems and compatibility prediction</p>
+            </a>
+            
+            <a href="#relationship-psychology" class="category-card">
+                <div class="category-icon">
+                    <i class="bi bi-heart" aria-hidden="true"></i>
+                </div>
+                <h3 class="category-title">Relationship Psychology</h3>
+                <p class="category-description">Emotional connection and communication patterns</p>
+            </a>
+            
+            <a href="#methodology" class="category-card">
+                <div class="category-icon">
+                    <i class="bi bi-clipboard-data" aria-hidden="true"></i>
+                </div>
+                <h3 class="category-title">Methodology</h3>
+                <p class="category-description">Research standards and data analysis protocols</p>
+            </a>
+        </div>
+    </section>
 </div>
 
-<div class="row mt-5">
-    <div class="col-lg-8 mx-auto">
-        <div class="alert alert-info">
-            <h4 class="alert-heading h5"><i class="bi bi-info-circle me-2"></i>About Our Research</h4>
-            <p class="mb-0 small">Each study undergoes rigorous review, employs mixed-methods research, and follows strict ethical guidelines for data privacy and participant consent.</p>
-        </div>
-    </div>
-</div>
+<style>
+    /* Research Index Styles */
+    .research-index-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 0.5rem;
+    }
+    
+    /* Hero Section */
+    .research-hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 16px;
+        padding: 2rem 1.5rem;
+        margin-bottom: 3rem;
+        color: white;
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+        font-family: 'Merriweather', serif;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+        opacity: 0.9;
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+    }
+    
+    .hero-stats {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+        margin-top: 1.5rem;
+    }
+    
+    .stat-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .stat-number {
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+    }
+    
+    .stat-label {
+        font-size: 0.875rem;
+        opacity: 0.8;
+    }
+    
+    /* Section Styles */
+    .section-title {
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: #1D1D1D;
+        font-family: 'Merriweather', serif;
+    }
+    
+    .section-subtitle {
+        color: #666;
+        margin-bottom: 2rem;
+        font-size: 1rem;
+    }
+    
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .methodology-link {
+        color: #0066CC;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.95rem;
+    }
+    
+    .methodology-link:hover {
+        text-decoration: underline;
+    }
+    
+    /* Featured Studies */
+    .featured-studies {
+        margin-bottom: 3rem;
+    }
+    
+    .studies-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    
+    .study-card {
+        background: white;
+        border: 1px solid #E0E0E0;
+        border-radius: 12px;
+        padding: 1.5rem;
+        position: relative;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .study-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+    
+    .study-card.featured {
+        border: 2px solid #0066CC;
+    }
+    
+    .study-badge {
+        position: absolute;
+        top: -12px;
+        left: 1.5rem;
+        background: #0066CC;
+        color: white;
+        padding: 0.25rem 1rem;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+    
+    .study-category {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .category-tag {
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+    
+    .category-tag.digital {
+        background: #e7f1ff;
+        color: #0066CC;
+    }
+    
+    .category-tag.tech {
+        background: #d4edda;
+        color: #155724;
+    }
+    
+    .category-tag.psychology {
+        background: #fff3cd;
+        color: #856404;
+    }
+    
+    .study-date {
+        font-size: 0.875rem;
+        color: #666;
+    }
+    
+    .study-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+        color: #1D1D1D;
+        line-height: 1.3;
+    }
+    
+    .study-description {
+        color: #666;
+        margin-bottom: 1rem;
+        line-height: 1.5;
+    }
+    
+    .study-stats {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .mini-stat {
+        display: flex;
+        align-items: center;
+        gap: 0.375rem;
+        font-size: 0.875rem;
+        color: #666;
+    }
+    
+    .mini-stat i {
+        color: #0066CC;
+    }
+    
+    .study-link {
+        color: #0066CC;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.95rem;
+        transition: gap 0.2s;
+    }
+    
+    .study-link:hover {
+        gap: 0.75rem;
+    }
+    
+    /* All Studies List */
+    .all-studies {
+        margin-bottom: 3rem;
+    }
+    
+    .studies-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .study-list-item {
+        background: white;
+        border: 1px solid #E0E0E0;
+        border-radius: 8px;
+        padding: 1.25rem;
+        transition: border-color 0.2s;
+    }
+    
+    .study-list-item:hover {
+        border-color: #0066CC;
+    }
+    
+    .study-list-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 0.5rem;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .study-list-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin: 0;
+    }
+    
+    .study-list-title a {
+        color: #1D1D1D;
+        text-decoration: none;
+    }
+    
+    .study-list-title a:hover {
+        color: #0066CC;
+    }
+    
+    .study-list-meta {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.25rem;
+    }
+    
+    .study-list-description {
+        color: #666;
+        margin-bottom: 0.75rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    .study-list-link {
+        color: #0066CC;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.875rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.375rem;
+    }
+    
+    /* CTA Section */
+    .research-cta {
+        background: linear-gradient(135deg, #f0f7ff 0%, #e7f1ff 100%);
+        border-radius: 16px;
+        padding: 2rem 1.5rem;
+        margin-bottom: 3rem;
+        text-align: center;
+        border: 1px solid #b8d4ff;
+    }
+    
+    .cta-icon {
+        font-size: 2.5rem;
+        color: #0066CC;
+        margin-bottom: 1rem;
+    }
+    
+    .cta-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+        color: #1D1D1D;
+    }
+    
+    .cta-description {
+        color: #666;
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .cta-button {
+        background: linear-gradient(135deg, #0066CC 0%, #004080 100%);
+        color: white;
+        border: 2px solid #004080;
+        padding:  1rem 2rem;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        min-height: 56px;
+        min-width: 56px;
+        box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .cta-button:hover {
+        background: linear-gradient(135deg, #0052a3 0%, #003366 100%);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0, 102, 204, 0.4);
+        border-color: #003366;
+    }
+    
+    .cta-button:active {
+        transform: translateY(-1px);
+        box-shadow: 0 3px 10px rgba(0, 102, 204, 0.3);
+    }
+
+    .cta-button:focus {
+       outline: 3px solid rgba(0, 102, 204, 0.5);
+       outline-offset: 3px;
+    }
+
+/* For even better visibility, add a text shadow on smaller screens */
+    @media (max-width: 768px) {
+    .cta-button {
+        font-size: 1rem;
+        padding: 0.875rem 1.5rem;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .cta-button {
+        background: #0066CC;
+        border: 3px solid #000;
+        color: #FFF;
+    }
+    
+    .cta-button:hover {
+        background: #004080;
+        border-color: #000;
+    }
+}
+    
+      
+    /* Research Categories */
+    .research-categories {
+        margin-bottom: 2rem;
+    }
+    
+    .categories-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+    
+    .category-card {
+        background: white;
+        border: 1px solid #E0E0E0;
+        border-radius: 12px;
+        padding: 1.5rem;
+        text-align: center;
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .category-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        border-color: #0066CC;
+    }
+    
+    .category-icon {
+        font-size: 2rem;
+        color: #0066CC;
+        margin-bottom: 1rem;
+    }
+    
+    .category-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: #1D1D1D;
+    }
+    
+    .category-description {
+        color: #666;
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+    
+    /* Mobile First Adjustments */
+    @media (max-width: 767px) {
+        .research-hero {
+            padding: 1.5rem 1rem;
+        }
+        
+        .hero-title {
+            font-size: 1.75rem;
+        }
+        
+        .hero-subtitle {
+            font-size: 1rem;
+        }
+        
+        .hero-stats {
+            gap: 1.5rem;
+        }
+        
+        .stat-number {
+            font-size: 1.5rem;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+        }
+        
+        .study-card {
+            padding: 1.25rem;
+        }
+        
+        .cta-button {
+            padding: 0.75rem 1.5rem;
+            font-size: 0.95rem;
+        }
+    }
+    
+    /* Tablet Styles */
+    @media (min-width: 768px) {
+        .research-index-container {
+            padding: 2rem 1rem;
+        }
+        
+        .research-hero {
+            padding: 3rem 2rem;
+        }
+        
+        .hero-title {
+            font-size: 2.5rem;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .studies-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .study-card.featured {
+            grid-column: 1 / -1;
+        }
+        
+        .categories-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    }
+    
+    /* Desktop Styles */
+    @media (min-width: 1024px) {
+        .research-index-container {
+            padding: 3rem 2rem;
+        }
+        
+        .studies-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        .study-card.featured {
+            grid-column: span 2;
+        }
+        
+        .categories-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+        }
+    }
+    
+    /* Accessibility */
+    @media (prefers-reduced-motion: reduce) {
+        .study-card:hover,
+        .category-card:hover,
+        .cta-button:hover {
+            transform: none;
+        }
+    }
+    
+    /* Print Styles */
+    @media print {
+        .research-hero,
+        .research-cta,
+        .research-categories {
+            break-inside: avoid;
+        }
+        
+        .study-link,
+        .study-list-link,
+        .cta-button {
+            display: none;
+        }
+        
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+    }
+</style>
 {% endblock %}

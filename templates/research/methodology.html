@@ -1,937 +1,233 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
 {% block title %}Research Methodology | Dating Hub Research{% endblock %}
 
 {% block content %}
-<div class="content-container">
-    <article class="research-article">
-        <!-- Methodology Header -->
-        <header class="research-header">
-            <div class="research-metadata">
-                <span class="badge badge-new">Methodological Framework</span>
-                <span class="badge">Research Standards</span>
-                <span class="badge">Quality Assurance</span>
-                <span class="badge">Document ID: DHR-METH-2024</span>
-            </div>
-            
-            <h1 class="research-title">Research Methodology Framework: Standards, Protocols, and Quality Assurance Procedures</h1>
-            
-            <div class="research-authors">
-                <div class="author-item">
-                    <strong>Framework Lead:</strong> Research Methods Committee
-                </div>
-                <div class="author-item">
-                    <strong>Statistical Standards:</strong> Quantitative Analysis Group
-                </div>
-                <div class="author-item">
-                    <strong>Qualitative Standards:</strong> Qualitative Analysis Committee
-                </div>
-                <div class="author-item">
-                    <strong>Version:</strong> 3.1 (Effective December 2024)
-                </div>
-            </div>
-            
-            <div class="research-details">
-                <div class="detail-item">
-                    <i class="bi bi-shield-check"></i>
-                    <span><strong>Last Review:</strong> December 2024</span>
-                </div>
-                <div class="detail-item">
-                    <i class="bi bi-calendar"></i>
-                    <span><strong>Next Review:</strong> June 2025</span>
-                </div>
-                <div class="detail-item">
-                    <i class="bi bi-file-earmark-text"></i>
-                    <span><strong>Related Documents:</strong> DHR-ETH-2024, DHR-DP-2024</span>
-                </div>
-            </div>
-            
-            <div class="transparency-notice">
-                <p><i class="bi bi-info-circle"></i> <strong>Commitment:</strong> All Dating Hub Research studies adhere to these methodological standards. Protocols are available for academic verification.</p>
-            </div>
-        </header>
+<div class="glass-card">
+    <!-- Protocol Header -->
+    <div class="mb-8">
+        <div class="flex items-center gap-2 mb-3">
+            <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-xs font-bold rounded-full">Protocol: DHR-METH-2024 v2.1</span>
+            <span class="inline-block px-3 py-1 bg-green-100 text-green-800 text-xs font-bold rounded-full">IRB Approved</span>
+            <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 text-xs font-bold rounded-full">Full Transparency</span>
+        </div>
+        
+        <h1 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Research Methodology Framework</h1>
+        <p class="text-lg text-gray-700 mb-2">Transparent, rigorous methodological standards for dating and relationship research</p>
+        <p class="text-sm text-gray-500"><i class="bi bi-calendar me-1"></i> Last Updated: December 2024</p>
+    </div>
 
-        <!-- Introduction -->
-        <section class="research-section">
-            <h2><i class="bi bi-book"></i> Introduction & Framework Overview</h2>
-            
-            <h3>1.1 Methodological Philosophy</h3>
-            <p>Our research approach is grounded in pragmatic mixed-methods philosophy, recognizing that understanding complex human behaviors requires both quantitative precision and qualitative depth. We prioritize methodological rigor, transparency, and real-world applicability in all our studies.</p>
-            
-            <div class="philosophy-grid">
-                <div class="philosophy-card">
-                    <h5><i class="bi bi-bar-chart"></i> Quantitative Precision</h5>
-                    <p>Statistical rigor, measurement validity, and generalizable findings from representative samples</p>
-                </div>
-                <div class="philosophy-card">
-                    <h5><i class="bi bi-chat-dots"></i> Qualitative Depth</h5>
-                    <p>Rich contextual understanding, participant perspectives, and nuanced behavioral insights</p>
-                </div>
-                <div class="philosophy-card">
-                    <h5><i class="bi bi-arrows-angle-contract"></i> Methodological Integration</h5>
-                    <p>Strategic combination of methods to address research questions from multiple angles</p>
-                </div>
-                <div class="philosophy-card">
-                    <h5><i class="bi bi-eye"></i> Transparency Commitment</h5>
-                    <p>Full disclosure of methods, limitations, and analytical decisions for verification</p>
-                </div>
-            </div>
-            
-            <h3>1.2 Research Design Principles</h3>
-            <table class="research-table">
-                <thead>
-                    <tr>
-                        <th>Principle</th>
-                        <th>Description</th>
-                        <th>Implementation</th>
-                        <th>Quality Control</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Appropriateness</strong></td>
-                        <td>Methods matched to research questions</td>
-                        <td>Design justification in all protocols</td>
-                        <td>Peer review of design choices</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Rigor</strong></td>
-                        <td>Methodological thoroughness and precision</td>
-                        <td>Standardized protocols, pilot testing</td>
-                        <td>Protocol adherence monitoring</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Transparency</strong></td>
-                        <td>Clear documentation of all procedures</td>
-                        <td>Detailed methodology sections</td>
-                        <td>External audit capability</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Replicability</strong></td>
-                        <td>Studies can be reproduced by others</td>
-                        <td>Data and code availability</td>
-                        <td>Replication studies encouraged</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Ethical Compliance</strong></td>
-                        <td>Adherence to ethical standards</td>
-                        <td>IRB-equivalent review process</td>
-                        <td>Regular ethics audits</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+    <!-- Key Metrics Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+        <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-5 rounded-xl text-center border border-blue-200">
+            <p class="text-3xl font-bold text-blue-900 mb-1">4</p>
+            <p class="text-sm font-semibold text-blue-600">Phase Framework</p>
+            <p class="text-xs text-blue-500 mt-1">Systematic research approach</p>
+        </div>
+        <div class="bg-gradient-to-br from-green-50 to-green-100 p-5 rounded-xl text-center border border-green-200">
+            <p class="text-3xl font-bold text-green-900 mb-1">6+</p>
+            <p class="text-sm font-semibold text-green-600">Validation Steps</p>
+            <p class="text-xs text-green-500 mt-1">Quality assurance checks</p>
+        </div>
+        <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-5 rounded-xl text-center border border-purple-200">
+            <p class="text-3xl font-bold text-purple-900 mb-1">100%</p>
+            <p class="text-sm font-semibold text-purple-600">Transparency</p>
+            <p class="text-xs text-purple-500 mt-1">Open methodology</p>
+        </div>
+        <div class="bg-gradient-to-br from-amber-50 to-amber-100 p-5 rounded-xl text-center border border-amber-200">
+            <p class="text-2xl font-bold text-amber-900 mb-1">IRB</p>
+            <p class="text-sm font-semibold text-amber-600">Ethical Review</p>
+            <p class="text-xs text-amber-500 mt-1">Independent approval</p>
+        </div>
+    </div>
 
-        <!-- Quantitative Methods -->
-        <section class="research-section">
-            <h2><i class="bi bi-bar-chart"></i> Quantitative Research Standards</h2>
+    <!-- Philosophy Section -->
+    <div class="mb-10">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+            <i class="bi bi-lightbulb text-amber-600"></i>
+            Methodological Philosophy
+        </h2>
+        <div class="bg-gradient-to-r from-amber-50 to-white p-6 rounded-xl border border-amber-200">
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Our research follows a <strong class="text-amber-700">4-phase framework</strong> designed to ensure scientific rigor, ethical compliance, and practical relevance in dating and relationship studies. We combine quantitative and qualitative methods with transparent reporting standards.
+            </p>
             
-            <h3>2.1 Survey Design & Administration</h3>
-            <div class="methods-detail">
-                <div class="method-item">
-                    <h5><i class="bi bi-clipboard-check"></i> Instrument Development</h5>
-                    <ul>
-                        <li><strong>Item Generation:</strong> Based on literature review and expert consultation</li>
-                        <li><strong>Pilot Testing:</strong> All instruments tested with 50-100 participants before main study</li>
-                        <li><strong>Psychometric Validation:</strong> Reliability (α > 0.70) and validity testing</li>
-                        <li><strong>Translation:</strong> Back-translation procedure for multi-language studies</li>
-                        <li><strong>Digital Adaptation:</strong> Optimized for mobile and desktop completion</li>
-                    </ul>
+            <div class="grid md:grid-cols-2 gap-4 mt-6">
+                <div class="p-4 bg-white rounded-lg border border-gray-200">
+                    <h3 class="font-bold text-blue-900 mb-2 flex items-center gap-2">
+                        <i class="bi bi-eye text-blue-600"></i>
+                        Transparency
+                    </h3>
+                    <p class="text-sm text-gray-600">All methodologies are fully documented and available for peer review</p>
                 </div>
-                
-                <div class="method-item">
-                    <h5><i class="bi bi-people"></i> Sampling Procedures</h5>
-                    <ul>
-                        <li><strong>Target Population:</strong> Clear definition of inclusion/exclusion criteria</li>
-                        <li><strong>Sample Size Justification:</strong> Power analysis (1-β ≥ 0.80, α = 0.05)</li>
-                        <li><strong>Recruitment Channels:</strong> Multiple sources to reduce sampling bias</li>
-                        <li><strong>Demographic Balancing:</strong> Quota sampling for key demographic groups</li>
-                        <li><strong>Response Rate Monitoring:</strong> Tracking and reporting completion rates</li>
-                    </ul>
+                <div class="p-4 bg-white rounded-lg border border-gray-200">
+                    <h3 class="font-bold text-green-900 mb-2 flex items-center gap-2">
+                        <i class="bi bi-repeat text-green-600"></i>
+                        Reproducibility
+                    </h3>
+                    <p class="text-sm text-gray-600">Studies can be independently verified using our published protocols</p>
                 </div>
-            </div>
-            
-            <h3>2.2 Data Collection Protocols</h3>
-            <table class="research-table">
-                <thead>
-                    <tr>
-                        <th>Method</th>
-                        <th>Applications</th>
-                        <th>Quality Controls</th>
-                        <th>Common Studies</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Cross-sectional Surveys</strong></td>
-                        <td>Prevalence estimates, attitude measurement</td>
-                        <td>Attention checks, completion time monitoring</td>
-                        <td>Platform usage patterns, demographic studies</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Longitudinal Panels</strong></td>
-                        <td>Change over time, causal inference</td>
-                        <td>Attrition analysis, consistency checks</td>
-                        <td>Relationship development, behavior change</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Experimental Designs</strong></td>
-                        <td>Causal testing, intervention evaluation</td>
-                        <td>Randomization checks, manipulation validation</td>
-                        <td>Platform feature testing, A/B testing</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Ecological Momentary Assessment</strong></td>
-                        <td>Real-time behavior tracking</td>
-                        <td>Compliance monitoring, timestamp validation</td>
-                        <td>Daily interaction patterns, emotional states</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <h3>2.3 Statistical Analysis Standards</h3>
-            <div class="statistical-standards">
-                <div class="standard-card">
-                    <h5><i class="bi bi-calculator"></i> Analysis Software & Tools</h5>
-                    <ul>
-                        <li><strong>Primary:</strong> R 4.2.1+ (tidyverse, lme4, ggplot2)</li>
-                        <li><strong>Secondary:</strong> Python 3.11+ (pandas, scikit-learn, statsmodels)</li>
-                        <li><strong>Specialized:</strong> Mplus for structural equation modeling</li>
-                        <li><strong>Documentation:</strong> RMarkdown/Jupyter notebooks for reproducibility</li>
-                    </ul>
+                <div class="p-4 bg-white rounded-lg border border-gray-200">
+                    <h3 class="font-bold text-purple-900 mb-2 flex items-center gap-2">
+                        <i class="bi bi-shield-check text-purple-600"></i>
+                        Ethical Integrity
+                    </h3>
+                    <p class="text-sm text-gray-600">All research complies with international ethical standards</p>
                 </div>
-                
-                <div class="standard-card">
-                    <h5><i class="bi bi-graph-up"></i> Statistical Reporting Standards</h5>
-                    <ul>
-                        <li><strong>Effect Sizes:</strong> Cohen's d, η², OR with confidence intervals</li>
-                        <li><strong>Significance:</strong> Exact p-values, not threshold reporting</li>
-                        <li><strong>Assumptions:</strong> Tests of statistical assumptions reported</li>
-                        <li><strong>Missing Data:</strong> Handling procedures explicitly described</li>
-                        <li><strong>Multiple Comparisons:</strong> Corrections applied when appropriate</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <h3>2.4 Common Analytical Approaches</h3>
-            <div class="analytical-grid">
-                <div class="analytical-card">
-                    <h5><i class="bi bi-diagram-3"></i> Regression Analysis</h5>
-                    <p>Multiple regression, logistic regression, hierarchical linear modeling for longitudinal data</p>
-                </div>
-                <div class="analytical-card">
-                    <h5><i class="bi bi-venn"></i> Factor Analysis</h5>
-                    <p>Exploratory and confirmatory factor analysis for scale validation</p>
-                </div>
-                <div class="analytical-card">
-                    <h5><i class="bi bi-bezier"></i> Structural Equation Modeling</h5>
-                    <p>Path analysis, mediation, and moderation testing</p>
-                </div>
-                <div class="analytical-card">
-                    <h5><i class="bi bi-pie-chart"></i> Cluster Analysis</h5>
-                    <p>K-means, hierarchical clustering for typology development</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Qualitative Methods -->
-        <section class="research-section">
-            <h2><i class="bi bi-chat-dots"></i> Qualitative Research Standards</h2>
-            
-            <h3>3.1 Data Collection Methods</h3>
-            <div class="qualitative-methods">
-                <div class="qualitative-card">
-                    <h5><i class="bi bi-mic"></i> In-depth Interviews</h5>
-                    <div class="method-details">
-                        <p><strong>Duration:</strong> 45-90 minutes</p>
-                        <p><strong>Sample Size:</strong> 15-30 per study (theoretical saturation)</p>
-                        <p><strong>Protocol:</strong> Semi-structured with topic guide</p>
-                        <p><strong>Recording:</strong> Audio with verbatim transcription</p>
-                        <p><strong>Analysis:</strong> Thematic analysis, grounded theory</p>
-                    </div>
-                </div>
-                
-                <div class="qualitative-card">
-                    <h5><i class="bi bi-people"></i> Focus Groups</h5>
-                    <div class="method-details">
-                        <p><strong>Size:</strong> 6-8 participants per group</p>
-                        <p><strong>Number:</strong> 4-6 groups per study</p>
-                        <p><strong>Moderation:</strong> Trained facilitator with assistant</p>
-                        <p><strong>Setting:</strong> In-person or virtual with breakout rooms</p>
-                        <p><strong>Analysis:</strong> Interaction analysis, consensus mapping</p>
-                    </div>
-                </div>
-                
-                <div class="qualitative-card">
-                    <h5><i class="bi bi-journal"></i> Diary Studies</h5>
-                    <div class="method-details">
-                        <p><strong>Duration:</strong> 7-30 days</p>
-                        <p><strong>Format:</strong> Digital diaries with prompts</p>
-                        <p><strong>Frequency:</strong> Daily or event-contingent entries</p>
-                        <p><strong>Content:</strong> Text, photos, audio recordings</p>
-                        <p><strong>Analysis:</strong> Content analysis, narrative analysis</p>
-                    </div>
-                </div>
-            </div>
-            
-            <h3>3.2 Analytical Approaches</h3>
-            <table class="research-table">
-                <thead>
-                    <tr>
-                        <th>Method</th>
-                        <th>Purpose</th>
-                        <th>Software</th>
-                        <th>Validation</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Thematic Analysis</strong></td>
-                        <td>Identify, analyze, and report patterns in data</td>
-                        <td>NVivo, Dedoose, MAXQDA</td>
-                        <td>Inter-coder reliability (κ ≥ 0.70), member checking</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Grounded Theory</strong></td>
-                        <td>Develop theory grounded in data</td>
-                        <td>ATLAS.ti, NVivo</td>
-                        <td>Theoretical saturation, constant comparison</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Content Analysis</strong></td>
-                        <td>Systematic coding of text content</td>
-                        <td>QCAmap, WordStat</td>
-                        <td>Coding consistency, Krippendorff's alpha</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Narrative Analysis</strong></td>
-                        <td>Examine stories and personal accounts</td>
-                        <td>Manual analysis with framework matrices</td>
-                        <td>Peer debriefing, audit trail</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <h3>3.3 Quality Criteria in Qualitative Research</h3>
-            <div class="quality-criteria">
-                <div class="criterion-item">
-                    <h5><i class="bi bi-check-circle"></i> Credibility</h5>
-                    <p>Prolonged engagement, peer debriefing, member checking, triangulation</p>
-                </div>
-                <div class="criterion-item">
-                    <h5><i class="bi bi-arrow-repeat"></i> Transferability</h5>
-                    <p>Thick description, purposive sampling, context detail</p>
-                </div>
-                <div class="criterion-item">
-                    <h5><i class="bi bi-file-text"></i> Dependability</h5>
-                    <p>Audit trail, code-recode consistency, stepwise replication</p>
-                </div>
-                <div class="criterion-item">
-                    <h5><i class="bi bi-eye"></i> Confirmability</h5>
-                    <p>Reflexivity, audit trail, triangulation, peer examination</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Mixed Methods -->
-        <section class="research-section">
-            <h2><i class="bi bi-arrows-angle-contract"></i> Mixed-Methods Integration</h2>
-            
-            <h3>4.1 Integration Strategies</h3>
-            <div class="integration-strategies">
-                <div class="strategy-card">
-                    <h5><i class="bi bi-arrow-right"></i> Sequential Design</h5>
-                    <div class="strategy-details">
-                        <p><strong>Description:</strong> One method informs or follows another</p>
-                        <p><strong>Example:</strong> Survey identifies patterns → Interviews explain mechanisms</p>
-                        <p><strong>Purpose:</strong> Explanation, elaboration, confirmation</p>
-                        <p><strong>Analysis:</strong> Connecting phase, building between methods</p>
-                    </div>
-                </div>
-                
-                <div class="strategy-card">
-                    <h5><i class="bi bi-arrows"></i> Concurrent Design</h5>
-                    <div class="strategy-details">
-                        <p><strong>Description:</strong> Methods implemented simultaneously</p>
-                        <p><strong>Example:</strong> Survey and interviews conducted in parallel</p>
-                        <p><strong>Purpose:</strong> Triangulation, complementarity</p>
-                        <p><strong>Analysis:</strong> Comparison, merging datasets</p>
-                    </div>
-                </div>
-                
-                <div class="strategy-card">
-                    <h5><i class="bi bi-arrow-repeat"></i> Transformative Design</h5>
-                    <div class="strategy-details">
-                        <p><strong>Description:</strong> Methods embedded within theoretical framework</p>
-                        <p><strong>Example:</strong> Feminist or critical theory guiding both quantitative and qualitative components</p>
-                        <p><strong>Purpose:</strong> Theoretical development, social change</p>
-                        <p><strong>Analysis:</strong> Theoretical integration, perspective blending</p>
-                    </div>
-                </div>
-            </div>
-            
-            <h3>4.2 Integration Analysis Techniques</h3>
-            <div class="integration-techniques">
-                <div class="technique-item">
-                    <h5><i class="bi bi-file-earmark-spreadsheet"></i> Data Transformation</h5>
-                    <p>Qualitative data quantified or quantitative data qualified for integrated analysis</p>
-                </div>
-                <div class="technique-item">
-                    <h5><i class="bi bi-vector-pen"></i> Joint Displays</h5>
-                    <p>Visual representations connecting quantitative and qualitative findings</p>
-                </div>
-                <div class="technique-item">
-                    <h5><i class="bi bi-puzzle"></i> Meta-inference</h5>
-                    <p>Integration of inferences from both methodological strands</p>
-                </div>
-                <div class="technique-item">
-                    <h5><i class="bi bi-diagram-3"></i> Case Development</h5>
-                    <p>Using quantitative data to select cases for qualitative follow-up</p>
-                </div>
-            </div>
-            
-            <h3>4.3 Quality in Mixed Methods</h3>
-            <div class="mixed-quality">
-                <div class="quality-item">
-                    <strong>Design Quality:</strong> Appropriate mixed methods design for research questions
-                </div>
-                <div class="quality-item">
-                    <strong>Interpretive Rigor:</strong> Credible integration and meta-inferences
-                </div>
-                <div class="quality-item">
-                    <strong>Inference Quality:</strong> Valid conclusions from integrated findings
-                </div>
-                <div class="quality-item">
-                    <strong>Reporting Quality:</strong> Clear description of integration processes
-                </div>
-            </div>
-        </section>
-
-        <!-- Quality Assurance -->
-        <section class="research-section">
-            <h2><i class="bi bi-clipboard-check"></i> Quality Assurance Framework</h2>
-            
-            <h3>5.1 Pre-Study Quality Controls</h3>
-            <div class="pre-study-controls">
-                <div class="control-card">
-                    <h5><i class="bi bi-file-earmark-check"></i> Protocol Development</h5>
-                    <ul>
-                        <li>Standardized protocol templates</li>
-                        <li>Peer review of study design</li>
-                        <li>Pilot testing requirements</li>
-                        <li>Ethics review completion</li>
-                    </ul>
-                </div>
-                
-                <div class="control-card">
-                    <h5><i class="bi bi-tools"></i> Instrument Validation</h5>
-                    <ul>
-                        <li>Psychometric testing for new measures</li>
-                        <li>Cognitive interviewing for survey items</li>
-                        <li>Translation validation for multi-language studies</li>
-                        <li>Digital usability testing</li>
-                    </ul>
-                </div>
-                
-                <div class="control-card">
-                    <h5><i class="bi bi-people"></i> Researcher Training</h5>
-                    <ul>
-                        <li>Method-specific training certification</li>
-                        <li>Interviewer/facilitator calibration</li>
-                        <li>Data collection protocol certification</li>
-                        <li>Annual refresher training</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <h3>5.2 During-Study Monitoring</h3>
-            <table class="research-table">
-                <thead>
-                    <tr>
-                        <th>Monitoring Aspect</th>
-                        <th>Metrics</th>
-                        <th>Thresholds</th>
-                        <th>Corrective Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Data Quality</strong></td>
-                        <td>Completion rates, attention check performance, response patterns</td>
-                        <td>≥70% completion, ≥80% attention checks</td>
-                        <td>Survey refinement, additional quality checks</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Participant Experience</strong></td>
-                        <td>Completion time, feedback scores, dropout rates</td>
-                        <td>Reasonable time, ≥4/5 satisfaction</td>
-                        <td>Protocol adjustment, support enhancement</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Protocol Adherence</strong></td>
-                        <td>Interview guide coverage, standardization checks</td>
-                        <td>≥90% protocol adherence</td>
-                        <td>Retraining, supervision enhancement</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Sample Representation</strong></td>
-                        <td>Demographic balance, recruitment targets</td>
-                        <td>Within 10% of population parameters</td>
-                        <td>Recruitment strategy adjustment</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <h3>5.3 Post-Study Verification</h3>
-            <div class="post-study-verification">
-                <div class="verification-item">
-                    <h5><i class="bi bi-clipboard-data"></i> Data Validation</h5>
-                    <p>10% random sample re-analysis, outlier examination, consistency checks</p>
-                </div>
-                <div class="verification-item">
-                    <h5><i class="bi bi-file-earmark-text"></i> Analytical Review</h5>
-                    <p>Independent statistical review, assumption checking, sensitivity analysis</p>
-                </div>
-                <div class="verification-item">
-                    <h5><i class="bi bi-people"></i> Peer Review</h5>
-                    <p>Internal review board assessment, external expert consultation</p>
-                </div>
-                <div class="verification-item">
-                    <h5><i class="bi bi-share"></i> Transparency Documentation</h5>
-                    <p>Full methodological disclosure, data availability, code sharing</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Implementation & Resources -->
-        <section class="research-section">
-            <h2><i class="bi bi-gear"></i> Implementation & Resources</h2>
-            
-            <h3>6.1 Training & Certification</h3>
-            <div class="training-resources">
-                <div class="resource-card">
-                    <h5><i class="bi bi-person-video"></i> Researcher Training Program</h5>
-                    <ul>
-                        <li><strong>Core Curriculum:</strong> 40-hour methodological foundations</li>
-                        <li><strong>Specialization Tracks:</strong> Quantitative, qualitative, mixed methods</li>
-                        <li><strong>Certification:</strong> Competency assessment and certification</li>
-                        <li><strong>Continuing Education:</strong> Annual updates and skill enhancement</li>
-                    </ul>
-                </div>
-                
-                <div class="resource-card">
-                    <h5><i class="bi bi-tools"></i> Methodological Toolkit</h5>
-                    <ul>
-                        <li><strong>Protocol Templates:</strong> Standardized study design documents</li>
-                        <li><strong>Analysis Scripts:</strong> Verified R and Python code templates</li>
-                        <li><strong>Quality Checklists:</strong> Step-by-step quality assurance guides</li>
-                        <li><strong>Reporting Templates:</strong> Standardized results presentation formats</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <h3>6.2 Verification & Replication</h3>
-            <div class="verification-process">
-                <div class="process-item">
-                    <h5><i class="bi bi-database"></i> Data Availability</h5>
-                    <p>Anonymized datasets available in our <a href="{% url 'data_library' %}">Data Library</a> for verification and secondary analysis</p>
-                </div>
-                <div class="process-item">
-                    <h5><i class="bi bi-code-slash"></i> Analytical Transparency</h5>
-                    <p>Analysis code available upon request for replication purposes</p>
-                </div>
-                <div class="process-item">
-                    <h5><i class="bi bi-file-earmark-text"></i> Methodological Documentation</h5>
-                    <p>Detailed protocols and instruments available to academic researchers</p>
-                </div>
-            </div>
-            
-            <h3>6.3 Continuous Improvement</h3>
-            <div class="improvement-framework">
-                <div class="improvement-item">
-                    <h5><i class="bi bi-arrow-clockwise"></i> Regular Review Cycle</h5>
-                    <p>Biannual methodology review and update based on new developments and learnings</p>
-                </div>
-                <div class="improvement-item">
-                    <h5><i class="bi bi-chat-left"></i> Feedback Integration</h5>
-                    <p>Participant and researcher feedback systematically incorporated into methodology refinement</p>
-                </div>
-                <div class="improvement-item">
-                    <h5><i class="bi bi-graph-up"></i> Performance Metrics</h5>
-                    <p>Tracking of study quality indicators and methodological effectiveness</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact & Support -->
-        <div class="resources-box">
-            <h4><i class="bi bi-info-circle"></i> Methodology Support & Contact</h4>
-            <div class="resources-content">
-                <div class="resource-item">
-                    <h5>Methodology Committee Contact</h5>
-                    <p><i class="bi bi-envelope"></i> methodology@dating-hub.com.au</p>
-                    <p><i class="bi bi-clock"></i> Response within 3 business days</p>
-                </div>
-                <div class="resource-item">
-                    <h5>Research Collaboration</h5>
-                    <p><i class="bi bi-people"></i> Academic collaboration inquiries welcome</p>
-                    <p><i class="bi bi-file-earmark-text"></i> Protocol review requests accepted</p>
-                </div>
-                <div class="resource-item">
-                    <h5>Related Documents</h5>
-                    <p><i class="bi bi-shield-check"></i> <a href="{% url 'research_ethics' %}">Research Ethics Framework</a></p>
-                    <p><i class="bi bi-database"></i> <a href="{% url 'data_library' %}">Data Library Access</a></p>
+                <div class="p-4 bg-white rounded-lg border border-gray-200">
+                    <h3 class="font-bold text-cyan-900 mb-2 flex items-center gap-2">
+                        <i class="bi bi-bullseye text-cyan-600"></i>
+                        Practical Relevance
+                    </h3>
+                    <p class="text-sm text-gray-600">Findings are grounded in real-world dating experiences</p>
                 </div>
             </div>
         </div>
-    </article>
-</div>
+    </div>
 
-<style>
-    .philosophy-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.5rem;
-        margin: 1.5rem 0;
-    }
-    
-    .philosophy-card {
-        background: white;
-        border: 1px solid #E0E0E0;
-        border-radius: 8px;
-        padding: 1.5rem;
-        text-align: center;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    
-    .philosophy-card h5 {
-        color: #0066CC;
-        margin-bottom: 0.75rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-    }
-    
-    .methods-detail {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        margin: 1.5rem 0;
-    }
-    
-    .method-item {
-        background: white;
-        border: 1px solid #E0E0E0;
-        border-radius: 8px;
-        padding: 1.5rem;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    
-    .method-item h5 {
-        color: #0066CC;
-        margin-bottom: 1rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    
-    .statistical-standards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
-        margin: 1.5rem 0;
-    }
-    
-    .standard-card {
-        background: white;
-        border: 1px solid #E0E0E0;
-        border-radius: 8px;
-        padding: 1.5rem;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    
-    .standard-card h5 {
-        color: #0066CC;
-        margin-bottom: 1rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    
-    .analytical-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.5rem;
-        margin: 1.5rem 0;
-    }
-    
-    .analytical-card {
-        background: white;
-        border: 1px solid #E0E0E0;
-        border-radius: 8px;
-        padding: 1.5rem;
-        text-align: center;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    
-    .analytical-card h5 {
-        color: #0066CC;
-        margin-bottom: 0.75rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-    }
-    
-    .qualitative-methods {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
-        margin: 1.5rem 0;
-    }
-    
-    .qualitative-card {
-        background: white;
-        border: 1px solid #E0E0E0;
-        border-radius: 8px;
-        padding: 1.5rem;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    
-    .qualitative-card h5 {
-        color: #0066CC;
-        margin-bottom: 1rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    
-    .method-details {
-        font-size: 0.95rem;
-    }
-    
-    .method-details p {
-        margin-bottom: 0.5rem;
-        padding-left: 0.5rem;
-        border-left: 2px solid #E0E0E0;
-    }
-    
-    .quality-criteria {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.5rem;
-        margin: 1.5rem 0;
-    }
-    
-    .criterion-item {
-        background: white;
-        border: 1px solid #E0E0E0;
-        border-radius: 8px;
-        padding: 1.5rem;
-        text-align: center;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    
-    .criterion-item h5 {
-        color: #0066CC;
-        margin-bottom: 0.75rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-    }
-    
-    .integration-strategies {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
-        margin: 1.5rem 0;
-    }
-    
-    .strategy-card {
-        background: white;
-        border: 1px solid #E0E0E0;
-        border-radius: 8px;
-        padding: 1.5rem;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    
-    .strategy-card h5 {
-        color: #0066CC;
-        margin-bottom: 1rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    
-    .strategy-details {
-        font-size: 0.95rem;
-    }
-    
-    .strategy-details p {
-        margin-bottom: 0.5rem;
-        padding-left: 0.5rem;
-        border-left: 2px solid #E0E0E0;
-    }
-    
-    .integration-techniques {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.5rem;
-        margin: 1.5rem 0;
-    }
-    
-    .technique-item {
-        background: white;
-        border: 1px solid #E0E0E0;
-        border-radius: 8px;
-        padding: 1.5rem;
-        text-align: center;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    
-    .technique-item h5 {
-        color: #0066CC;
-        margin-bottom: 0.75rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-    }
-    
-    .mixed-quality {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        margin: 1.5rem 0;
-    }
-    
-    .quality-item {
-        padding: 1rem;
-        background: #f0f7ff;
-        border-radius: 6px;
-        border-left: 4px solid #0066CC;
-        font-size: 0.95rem;
-    }
-    
-    .pre-study-controls {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
-        margin: 1.5rem 0;
-    }
-    
-    .control-card {
-        background: white;
-        border: 1px solid #E0E0E0;
-        border-radius: 8px;
-        padding: 1.5rem;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    
-    .control-card h5 {
-        color: #0066CC;
-        margin-bottom: 1rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    
-    .post-study-verification {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1.5rem;
-        margin: 1.5rem 0;
-    }
-    
-    .verification-item {
-        background: white;
-        border: 1px solid #E0E0E0;
-        border-radius: 8px;
-        padding: 1.5rem;
-        text-align: center;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    
-    .verification-item h5 {
-        color: #0066CC;
-        margin-bottom: 0.75rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-    }
-    
-    .training-resources {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
-        margin: 1.5rem 0;
-    }
-    
-    .resource-card {
-        background: white;
-        border: 1px solid #E0E0E0;
-        border-radius: 8px;
-        padding: 1.5rem;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    
-    .resource-card h5 {
-        color: #0066CC;
-        margin-bottom: 1rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    
-    .verification-process {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
-        margin: 1.5rem 0;
-    }
-    
-    .process-item {
-        background: white;
-        border: 1px solid #E0E0E0;
-        border-radius: 8px;
-        padding: 1.5rem;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    
-    .process-item h5 {
-        color: #0066CC;
-        margin-bottom: 0.75rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    
-    .improvement-framework {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
-        margin: 1.5rem 0;
-    }
-    
-    .improvement-item {
-        background: white;
-        border: 1px solid #E0E0E0;
-        border-radius: 8px;
-        padding: 1.5rem;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-    
-    .improvement-item h5 {
-        color: #0066CC;
-        margin-bottom: 0.75rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    
-    /* Include all base CSS from previous research pages */
-</style>
+    <!-- 4-Phase Framework -->
+    <div class="mb-10">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+            <i class="bi bi-diagram-3 text-purple-600"></i>
+            4-Phase Research Framework
+        </h2>
+        <p class="text-gray-600 mb-6">Systematic approach from hypothesis formulation to publication and replication</p>
+        
+        <div class="space-y-6">
+            <div class="flex gap-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                    <span class="font-bold text-blue-900">1</span>
+                </div>
+                <div class="flex-grow">
+                    <h3 class="font-bold text-blue-900 text-lg mb-2">Design & Protocol Development</h3>
+                    <p class="text-gray-700">Formulating research questions, designing study protocols, and obtaining ethical approval.</p>
+                </div>
+            </div>
+            
+            <div class="flex gap-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                    <span class="font-bold text-green-900">2</span>
+                </div>
+                <div class="flex-grow">
+                    <h3 class="font-bold text-green-900 text-lg mb-2">Data Collection & Validation</h3>
+                    <p class="text-gray-700">Implementing rigorous data collection methods with continuous quality validation.</p>
+                </div>
+            </div>
+            
+            <div class="flex gap-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                    <span class="font-bold text-purple-900">3</span>
+                </div>
+                <div class="flex-grow">
+                    <h3 class="font-bold text-purple-900 text-lg mb-2">Analysis & Interpretation</h3>
+                    <p class="text-gray-700">Applying statistical and qualitative analysis with multiple validation checks.</p>
+                </div>
+            </div>
+            
+            <div class="flex gap-4">
+                <div class="flex-shrink-0 w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center">
+                    <span class="font-bold text-amber-900">4</span>
+                </div>
+                <div class="flex-grow">
+                    <h3 class="font-bold text-amber-900 text-lg mb-2">Publication & Replication</h3>
+                    <p class="text-gray-700">Transparent reporting and supporting independent replication studies.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Methods Comparison -->
+    <div class="mb-10">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">Research Methods</h2>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+            <!-- Quantitative Methods -->
+            <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl border border-blue-200">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                        <i class="bi bi-bar-chart text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900">Quantitative Methods</h3>
+                </div>
+                <ul class="space-y-3">
+                    <li class="flex items-center gap-2">
+                        <i class="bi bi-check-circle text-green-500"></i>
+                        <span class="text-gray-700">Large-scale surveys (1,000–5,000 participants)</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="bi bi-check-circle text-green-500"></i>
+                        <span class="text-gray-700">Statistical analysis of behavioral data</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="bi bi-check-circle text-green-500"></i>
+                        <span class="text-gray-700">Longitudinal tracking studies</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="bi bi-check-circle text-green-500"></i>
+                        <span class="text-gray-700">Regression and correlation analysis</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Qualitative Methods -->
+            <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl border border-purple-200">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                        <i class="bi bi-chat-dots text-purple-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-purple-900">Qualitative Methods</h3>
+                </div>
+                <ul class="space-y-3">
+                    <li class="flex items-center gap-2">
+                        <i class="bi bi-check-circle text-green-500"></i>
+                        <span class="text-gray-700">In-depth interviews (45–90 minutes)</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="bi bi-check-circle text-green-500"></i>
+                        <span class="text-gray-700">Focus group discussions</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="bi bi-check-circle text-green-500"></i>
+                        <span class="text-gray-700">Content analysis of user communications</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <i class="bi bi-check-circle text-green-500"></i>
+                        <span class="text-gray-700">Thematic and narrative analysis</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ethical Standards -->
+    <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-xl border border-green-200">
+        <h2 class="text-xl font-bold text-green-900 mb-4 flex items-center gap-2">
+            <i class="bi bi-shield-check text-green-600"></i>
+            Ethical Standards
+        </h2>
+        <div class="space-y-3">
+            <div class="flex items-start gap-3">
+                <i class="bi bi-check-circle-fill text-green-500 mt-1"></i>
+                <div>
+                    <p class="font-semibold text-green-800">Participant Protection</p>
+                    <p class="text-green-700 text-sm">All research undergoes ethics review. Participants provide informed consent, data is anonymized, and sensitive information is protected with encryption.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <i class="bi bi-check-circle-fill text-green-500 mt-1"></i>
+                <div>
+                    <p class="font-semibold text-green-800">Data Security</p>
+                    <p class="text-green-700 text-sm">All personal data is encrypted, stored securely, and only accessible to authorized research team members.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-3">
+                <i class="bi bi-check-circle-fill text-green-500 mt-1"></i>
+                <div>
+                    <p class="font-semibold text-green-800">Transparency & Accountability</p>
+                    <p class="text-green-700 text-sm">Full methodology disclosure, conflict of interest management, and independent review board oversight.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

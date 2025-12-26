@@ -1,201 +1,91 @@
 {% extends "base.html" %}
 
-{% block title %}Privacy Policy | Dating Hub Research{% endblock %}
-
-{% block extra_head %}
-<style>
-    .policy-header {
-        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        padding: 4rem 0;
-        margin-bottom: 3rem;
-        border-bottom: 1px solid #E0E0E0;
-    }
-    
-    .policy-content {
-        max-width: 900px;
-        margin: 0 auto 4rem;
-        padding: 0 1rem;
-    }
-</style>
-{% endblock %}
+{% block title %}Privacy Policy | Dating Hub{% endblock %}
 
 {% block content %}
-<header class="policy-header">
-    <div class="content-container">
-        <h1 class="policy-title">Privacy Policy</h1>
-        <p class="section-subtitle">How we collect, use, and protect research data and website visitor information.</p>
-    </div>
-</header>
-
-<div class="policy-content">
-    <div class="policy-section">
-        <h2 class="policy-subtitle">1. Scope & Application</h2>
-        <p>This Privacy Policy governs data handling practices for Dating Hub Research ("we," "us," or "our") across all research activities, website interactions, and data processing operations. It applies to:</p>
-        <ul class="policy-list">
-            <li>Research participants in our studies</li>
-            <li>Website visitors and users</li>
-            <li>Academic collaborators and data requesters</li>
-            <li>Newsletter subscribers and research updates recipients</li>
-        </ul>
-    </div>
-
-    <div class="policy-section">
-        <h2 class="policy-subtitle">2. Research Data Collection & Processing</h2>
-        <p>Our primary data collection occurs through voluntary research participation. We adhere to strict ethical guidelines:</p>
+<div class="glass-card">
+    <h1 class="text-3xl font-extrabold mb-6">Privacy Policy</h1>
+    
+    <div class="prose prose-lg max-w-none">
+        <p class="text-gray-600 mb-8"><strong>Effective Date:</strong> December 2025</p>
         
-        <h3>2.1 Participant Data Collection</h3>
-        <ul class="policy-list">
-            <li><strong>Voluntary Participation:</strong> All research participation requires informed consent</li>
-            <li><strong>Anonymization Protocol:</strong> Personal identifiers are removed during data processing</li>
-            <li><strong>Data Categories:</strong> We collect demographic, behavioral, and attitudinal data relevant to dating and relationship research</li>
-            <li><strong>Storage Duration:</strong> Research data is retained for 7 years as per academic standards</li>
+        <h2 class="text-2xl font-bold mt-8 mb-4">1. Information We Collect</h2>
+        <p class="mb-4">When you use Dating Hub Research services, including our AI Dating Site Matchmaker, we may collect:</p>
+        <ul class="list-disc pl-6 mb-6 space-y-2">
+            <li><strong>Contact Information:</strong> Email address, name (optional)</li>
+            <li><strong>Survey Responses:</strong> Your answers to dating preference questions (gender, age range, relationship goals, communication style, values, deal-breakers)</li>
+            <li><strong>Technical Data:</strong> IP address, browser type, device information, pages visited</li>
+            <li><strong>Usage Data:</strong> Time spent on site, click patterns, survey completion rates</li>
         </ul>
         
-        <h3>2.2 Data Protection Measures</h3>
-        <table class="policy-table">
-            <thead>
-                <tr>
-                    <th>Protection Measure</th>
-                    <th>Description</th>
-                    <th>Implementation</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Encryption</td>
-                    <td>All sensitive data encrypted at rest and in transit</td>
-                    <td>AES-256 encryption standard</td>
-                </tr>
-                <tr>
-                    <td>Access Controls</td>
-                    <td>Role-based access to research data</td>
-                    <td>Minimum necessary principle</td>
-                </tr>
-                <tr>
-                    <td>Data Minimization</td>
-                    <td>Collect only essential data for research objectives</td>
-                    <td>Study-specific data collection protocols</td>
-                </tr>
-                <tr>
-                    <td>Regular Audits</td>
-                    <td>Quarterly security and privacy assessments</td>
-                    <td>Internal and external audits</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="policy-section">
-        <h2 class="policy-subtitle">3. Website Analytics & Tracking</h2>
-        <p>We use limited analytics to understand website usage while respecting visitor privacy:</p>
+        <h2 class="text-2xl font-bold mt-8 mb-4">2. How We Use Your Information</h2>
+        <ul class="list-disc pl-6 mb-6 space-y-2">
+            <li><strong>AI Analysis:</strong> To analyze your preferences and generate personalized dating platform recommendations</li>
+            <li><strong>Service Delivery:</strong> To send your 72-hour personalized report via email</li>
+            <li><strong>Research:</strong> To improve our matching algorithms (using anonymized, aggregated data)</li>
+            <li><strong>Communication:</strong> To send service updates and research insights (with opt-out option)</li>
+            <li><strong>Analytics:</strong> To understand user behavior and improve our website experience</li>
+        </ul>
         
-        <div class="policy-note">
-            <strong>Note:</strong> We do not use cross-site tracking, behavioral advertising, or third-party cookies.
+        <h2 class="text-2xl font-bold mt-8 mb-4">3. Data Protection & Security</h2>
+        <p class="mb-4">We implement appropriate security measures including:</p>
+        <ul class="list-disc pl-6 mb-6 space-y-2">
+            <li>SSL encryption for all data transmission</li>
+            <li>Secure storage of personal information</li>
+            <li>Regular security assessments and updates</li>
+            <li>Access controls and authentication protocols</li>
+            <li>Data anonymization for research purposes</li>
+        </ul>
+        
+        <h2 class="text-2xl font-bold mt-8 mb-4">4. Third-Party Services</h2>
+        <p class="mb-4">We use trusted third-party services:</p>
+        <ul class="list-disc pl-6 mb-6 space-y-2">
+            <li><strong>Brevo:</strong> For email delivery of your personalized recommendations</li>
+            <li><strong>Analytics Tools:</strong> For understanding website usage patterns</li>
+            <li><strong>Hosting Services:</strong> For secure data storage and website operation</li>
+        </ul>
+        <p class="mb-6">These services have their own privacy policies governing data handling.</p>
+        
+        <h2 class="text-2xl font-bold mt-8 mb-4">5. Your Rights (Australian Privacy Principles)</h2>
+        <p class="mb-4">Under Australian privacy law, you have the right to:</p>
+        <ul class="list-disc pl-6 mb-6 space-y-2">
+            <li>Access your personal information we hold</li>
+            <li>Correct inaccurate or incomplete information</li>
+            <li>Request deletion of your personal data (subject to legal requirements)</li>
+            <li>Opt-out of marketing communications at any time</li>
+            <li>Withdraw consent for data processing</li>
+            <li>Lodge a complaint with the Office of the Australian Information Commissioner</li>
+        </ul>
+        
+        <h2 class="text-2xl font-bold mt-8 mb-4">6. Data Retention</h2>
+        <p class="mb-6">We retain your personal information only as long as necessary to:</p>
+        <ul class="list-disc pl-6 mb-6 space-y-2">
+            <li>Provide the services you requested (sending recommendations)</li>
+            <li>Comply with legal obligations</li>
+            <li>Resolve disputes</li>
+            <li>Enforce our agreements</li>
+        </ul>
+        <p class="mb-6">Survey data is anonymized for research purposes after 12 months.</p>
+        
+        <h2 class="text-2xl font-bold mt-8 mb-4">7. Children's Privacy</h2>
+        <p class="mb-6">Our services are not intended for individuals under 18 years of age. We do not knowingly collect personal information from children.</p>
+        
+        <h2 class="text-2xl font-bold mt-8 mb-4">8. International Data Transfers</h2>
+        <p class="mb-6">As an Australian-based service, we store data primarily in Australia. Some third-party services may process data outside Australia with appropriate safeguards.</p>
+        
+        <h2 class="text-2xl font-bold mt-8 mb-4">9. Changes to This Policy</h2>
+        <p class="mb-6">We may update this privacy policy periodically. The updated version will be indicated by an updated "Effective Date" at the top of this page.</p>
+        
+        <h2 class="text-2xl font-bold mt-8 mb-4">10. Contact Us</h2>
+        <p class="mb-4">For privacy-related inquiries, requests, or complaints:</p>
+        <ul class="list-disc pl-6 mb-6 space-y-2">
+            <li>Email: info@dating-hub.com.au</li>
+        </ul>
+        
+        <div class="mt-12 p-6 bg-blue-50 rounded-xl border border-blue-100">
+            <h3 class="font-bold text-lg mb-3 text-blue-800">Important Notice</h3>
+            <p class="text-blue-700 text-sm">This privacy policy applies to Dating Hub Research services only. When we recommend dating platforms, those services have their own privacy policies. We encourage you to review the privacy practices of any dating platform you choose to use.</p>
         </div>
-        
-        <h3>3.1 Cookies & Local Storage</h3>
-        <ul class="policy-list">
-            <li><strong>Essential Cookies:</strong> Required for site functionality (session management)</li>
-            <li><strong>Analytics Cookies:</strong> Anonymous usage statistics (IP anonymized)</li>
-            <li><strong>Preference Cookies:</strong> Remember user settings (language, theme)</li>
-            <li><strong>Opt-Out:</strong> Cookie preferences can be managed in browser settings</li>
-        </ul>
-        
-        <h3>3.2 Third-Party Services</h3>
-        <p>We use limited third-party services with strong privacy commitments:</p>
-        <ul class="policy-list">
-            <li><strong>Analytics:</strong> Self-hosted Plausible Analytics (GDPR compliant)</li>
-            <li><strong>Hosting:</strong> Australian-based servers with local data storage</li>
-            <li><strong>Email:</strong> Encrypted email services for research communications</li>
-        </ul>
-    </div>
-
-    <div class="policy-section">
-        <h2 class="policy-subtitle">4. Data Sharing & Publication</h2>
-        <p>Research data is shared responsibly following academic standards:</p>
-        
-        <h3>4.1 Academic Sharing</h3>
-        <ul class="policy-list">
-            <li>Anonymized datasets available for academic research</li>
-            <li>Data sharing agreements required for sensitive datasets</li>
-            <li>Attribution required: "Dating Hub Research [Year]. [Dataset Name]"</li>
-            <li>Commercial use requires separate licensing agreements</li>
-        </ul>
-        
-        <h3>4.2 Publication Standards</h3>
-        <p>All published research undergoes privacy review to ensure:</p>
-        <ul class="policy-list">
-            <li>No personally identifiable information in publications</li>
-            <li>Statistical disclosure control for small sample sizes</li>
-            <li>Aggregate reporting to prevent re-identification</li>
-            <li>Ethical review board approval for all studies</li>
-        </ul>
-    </div>
-
-    <div class="policy-section">
-        <h2 class="policy-subtitle">5. Your Rights & Controls</h2>
-        <p>Depending on your jurisdiction, you may have rights regarding your data:</p>
-        
-        <ul class="policy-list">
-            <li><strong>Access:</strong> Request information about data we hold about you</li>
-            <li><strong>Correction:</strong> Request corrections to inaccurate data</li>
-            <li><strong>Deletion:</strong> Request deletion of your data where applicable</li>
-            <li><strong>Restriction:</strong> Request limitations on data processing</li>
-            <li><strong>Portability:</strong> Request data in structured, machine-readable format</li>
-            <li><strong>Objection:</strong> Object to certain types of data processing</li>
-        </ul>
-        
-        <div class="policy-note">
-            <strong>Research Participants:</strong> Please contact us using your study participant ID for data-related requests.
-        </div>
-    </div>
-
-    <div class="policy-section">
-        <h2 class="policy-subtitle">6. International Data Transfers</h2>
-        <p>As an Australian-based research organization with international collaborators:</p>
-        <ul class="policy-list">
-            <li>Primary data storage in Australian data centers</li>
-            <li>International transfers only with adequate safeguards</li>
-            <li>Standard Contractual Clauses for EU/UK data transfers</li>
-            <li>Cross-border research collaborations with data protection agreements</li>
-        </ul>
-    </div>
-
-    <div class="policy-section">
-        <h2 class="policy-subtitle">7. Children's Privacy</h2>
-        <p>Our research focuses on adult populations (18+ years):</p>
-        <ul class="policy-list">
-            <li>We do not knowingly collect data from individuals under 18</li>
-            <li>Age verification in research participant screening</li>
-            <li>Website content intended for adult audiences</li>
-            <li>Parental consent required for any exceptional youth-focused research</li>
-        </ul>
-    </div>
-
-    <div class="policy-section">
-        <h2 class="policy-subtitle">8. Contact & Complaints</h2>
-        <p>For privacy inquiries, data requests, or complaints:</p>
-        
-        <div class="policy-update">
-            <div class="update-badge">Primary Contact</div>
-            <p><strong>Privacy Officer</strong><br>
-            Dating Hub Research<br>
-            Email: <a href="mailto:privacy@dating-hub.com.au">privacy@dating-hub.com.au</a><br>
-            Postal: Privacy Officer, Dating Hub Research, [Address]</p>
-            
-            <p><strong>Response Time:</strong> We aim to respond within 30 days of receipt.</p>
-        </div>
-        
-        <p><strong>Regulatory Authority:</strong> If unsatisfied with our response, you may contact the Office of the Australian Information Commissioner (OAIC) or your local data protection authority.</p>
-    </div>
-
-    <div class="policy-update">
-        <div class="update-badge">Document Information</div>
-        <p><strong>Effective Date:</strong> December 1, 2025</p>
-        <p><strong>Last Updated:</strong> December 15, 2025</p>
-        <p><strong>Next Review:</strong> December 2026 (annual review)</p>
-        <p><strong>Version:</strong> 3.2</p>
-        <p><strong>Change History:</strong> Updated international transfer protocols, added data retention details, enhanced participant rights section.</p>
     </div>
 </div>
 {% endblock %}
