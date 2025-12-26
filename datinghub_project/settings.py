@@ -8,7 +8,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY', default='dev-secret-key-change-in-production')
 DEBUG = config('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    '.onrender.com',  # This covers all Render subdomains
+    'dating-hub.com.au',
+    'www.dating-hub.com.au',  # Also add www version if you'll use it
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
