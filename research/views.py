@@ -16,16 +16,16 @@ def micromance(request):
     return render(request, 'research/micromance.html')
 
 def ai_matchmaking(request):
-    return render(request, 'research/ai-matchmaking.html')
+    return render(request, 'research/ai_matchmaking.html')
 
 def methodology(request):
     return render(request, 'research/methodology.html')
 
 def research_ethics(request):
-    return render(request, 'research/research-ethics.html')
+    return render(request, 'research/research_ethics.html')
 
 def digital_boundaries(request):
-    return render(request, 'research/digital-boundaries.html')
+    return render(request, 'research/digital_boundaries.html')
 
 # ===== TOOLS/LEGAL PAGES =====
 def data_library(request):
@@ -81,7 +81,7 @@ def dating_recommendations_survey(request):
 
 def thank_you_page(request):
     """Thank you page after survey submission"""
-    return render(request, 'tools/thank_you.html')
+    return render(request, 'research/thank_you.html')  # ✅ CORRECTED PATH
 
 def send_confirmation_email(email, name, survey_type, answers):
     """Send confirmation email"""
