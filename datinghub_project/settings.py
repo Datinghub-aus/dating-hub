@@ -14,7 +14,7 @@ ALLOWED_HOSTS = [
     '.onrender.com',  # This covers all Render subdomains
     'dating-hub.com.au',
     'www.dating-hub.com.au',  # Also add www version if you'll use it
-
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
