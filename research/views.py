@@ -57,9 +57,8 @@ def terms(request):
 
 # ===== AI DATING RECOMMENDATIONS SURVEY =====
 def dating_recommendations_survey(request):
-    """AI Dating Site Matchmaker Survey - Saves to database"""
+    """AI Dating Site Matchmaker Survey - TEMPORARY: No database save"""
     if request.method == 'POST':
-        # Get form data
         email = request.POST.get('email', '').strip()
         name = request.POST.get('name', '').strip()
         skip_survey = request.POST.get('skip_survey', '')
@@ -69,44 +68,28 @@ def dating_recommendations_survey(request):
             messages.error(request, 'Please provide a valid email address.')
             return render(request, 'tools/dating_recommendations.html')
         
-        # Determine survey type and answers
+        # Prepare data
         if skip_survey:
             survey_type = 'skipped'
             answers = None
         else:
             survey_type = 'completed'
             answers = {
-                'gender': request.POST.get('gender', 'Not specified'),
-                'q1': request.POST.get('q1', 'Not answered'),
-                'q2': request.POST.get('q2', 'Not answered'),
-                'q3': request.POST.get('q3', 'Not answered'),
-                'q4': request.POST.get('q4', 'Not answered'),
-                'q5': request.POST.get('q5', 'Not answered'),
-                'q6': request.POST.get('q6', 'Not answered')
+                'gender': request.POST.get('gender', ''),
+                'q1': request.POST.get('q1', ''),
+                'q2': request.POST.get('q2', ''),
+                'q3': request.POST.get('q3', ''),
+                'q4': request.POST.get('q4', ''),
+                'q5': request.POST.get('q5', ''),
+                'q6': request.POST.get('q6', '')
             }
         
-        # ✅ SAVE TO DATABASE
-        try:
-            submission = SurveySubmission.objects.create(
-                name=name if name else None,
-                email=email,
-                survey_type=survey_type,
-                answers=answers
-            )
-            submission_id = submission.id
-            print(f"✅ Survey saved to database with ID: {submission_id}")
-        except Exception as e:
-            # Log error but don't crash for user
-            submission_id = None
-            print(f"⚠️ Database save error (continuing anyway): {e}")
+        # TEMPORARY: Skip database, just send emails
+        # Emails will still work even without database
+        send_confirmation_email(email, name, survey_type, answers, submission_id=None)
         
-        # Send emails (user + admin)
-        send_confirmation_email(email, name, survey_type, answers, submission_id)
-        
-        # Redirect to thank you page
         return redirect('research:thank_you_page')
     
-    # GET request - show the form
     return render(request, 'tools/dating_recommendations.html')
 
 def thank_you_page(request):
