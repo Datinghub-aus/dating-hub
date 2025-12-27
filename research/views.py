@@ -18,7 +18,7 @@ def home(request):
             messages.success(request, 'Thanks for subscribing! Check your email for confirmation.')
             
             # Redirect to avoid form resubmission on refresh
-            return redirect('home')
+            return redirect('research:home')
         else:
             messages.error(request, 'Please enter a valid email address.')
     
