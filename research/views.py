@@ -57,7 +57,7 @@ def terms(request):
 
 # ===== AI DATING RECOMMENDATIONS SURVEY =====
 def dating_recommendations_survey(request):
-    """AI Dating Site Matchmaker Survey - TEMPORARY: No database save"""
+    """AI Dating Site Matchmaker Survey - WITH database save"""
     if request.method == 'POST':
         email = request.POST.get('email', '').strip()
         name = request.POST.get('name', '').strip()
@@ -84,17 +84,26 @@ def dating_recommendations_survey(request):
                 'q6': request.POST.get('q6', '')
             }
         
-        # TEMPORARY: Skip database, just send emails
-        # Emails will still work even without database
-        send_confirmation_email(email, name, survey_type, answers, submission_id=None)
+        # ✅ SAVE TO DATABASE (now that it's fixed!)
+        try:
+            from .models import SurveySubmission
+            submission = SurveySubmission.objects.create(
+                name=name if name else None,
+                email=email,
+                survey_type=survey_type,
+                answers=answers
+            )
+            submission_id = submission.id
+        except Exception as e:
+            # If database fails, continue anyway (but log it)
+            submission_id = None
+            print(f"Database save failed: {e}")
+        
+        send_confirmation_email(email, name, survey_type, answers, submission_id)
         
         return redirect('research:thank_you_page')
     
     return render(request, 'tools/dating_recommendations.html')
-
-def thank_you_page(request):
-    """Thank you page after SURVEY submission"""
-    return render(request, 'research/thank_you.html')
 
 # ===== EMAIL FUNCTIONS =====
 def send_confirmation_email(email, name, survey_type, answers, submission_id=None):
