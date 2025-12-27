@@ -105,6 +105,11 @@ def dating_recommendations_survey(request):
     
     return render(request, 'tools/dating_recommendations.html')
 
+# ===== THANK YOU PAGE =====
+def thank_you_page(request):
+    """Display thank you page after survey submission"""
+    return render(request, 'tools/thank_you.html')
+
 # ===== EMAIL FUNCTIONS =====
 def send_confirmation_email(email, name, survey_type, answers, submission_id=None):
     """
