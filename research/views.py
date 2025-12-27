@@ -5,7 +5,23 @@ from django.contrib import messages
 
 # ===== HOME PAGES =====
 def home(request):
-    """NEW attractive landing page"""
+    """NEW attractive landing page with newsletter signup"""
+    if request.method == 'POST' and 'newsletter_email' in request.POST:
+        # Newsletter signup form was submitted
+        email = request.POST.get('newsletter_email', '').strip()
+        
+        if email and '@' in email:
+            # Send NEWSLETTER welcome email (different from survey email)
+            send_newsletter_welcome_email(email)
+            
+            # Add success message
+            messages.success(request, 'Thanks for subscribing! Check your email for confirmation.')
+            
+            # Redirect to avoid form resubmission on refresh
+            return redirect('home')
+        else:
+            messages.error(request, 'Please enter a valid email address.')
+    
     return render(request, 'home/index.html')
 
 # ===== RESEARCH PAGES =====
@@ -36,9 +52,6 @@ def privacy(request):
 
 def terms(request):
     return render(request, 'tools/terms.html')
-
-#def contact(request):
-#    return render(request, 'tools/contact.html')
 
 # ===== AI DATING RECOMMENDATIONS SURVEY =====
 def dating_recommendations_survey(request):
@@ -71,21 +84,22 @@ def dating_recommendations_survey(request):
                 'q6': request.POST.get('q6', '')
             }
         
-        # Send confirmation email
+        # Send SURVEY confirmation email
         send_confirmation_email(email, name, survey_type, answers)
         
-        messages.success(request, 'Your dating site recommendations will arrive within 72 hours! Check your email.')
+        # Redirect to the thank you page for SURVEY submissions
         return redirect('thank_you_page')
     
     return render(request, 'tools/dating_recommendations.html')
 
 def thank_you_page(request):
-    """Thank you page after survey submission"""
-    return render(request, 'research/thank_you.html')  # ✅ CORRECTED PATH
+    """Thank you page after SURVEY submission"""
+    return render(request, 'research/thank_you.html')
 
+# ===== EMAIL FUNCTIONS =====
 def send_confirmation_email(email, name, survey_type, answers):
-    """Send confirmation email"""
-    subject = "Dating Site Recommendations - Coming Soon!"
+    """Send confirmation email for SURVEY submissions"""
+    subject = "Your Dating Site Recommendations Are Being Prepared"
     
     message = f"""Hi {name if name else 'there'},
 
@@ -95,10 +109,44 @@ We've received your request for dating site recommendations.
 
 {survey_type}
 
-Our team will analyze your preferences and send personalized recommendations within 72 hours.
+Our team is currently analyzing your preferences and will send personalized recommendations within 72 hours.
 
 In the meantime, you can browse our research:
 https://dating-hub.com.au/research/
+
+Best regards,
+Dating Hub Research Team
+"""
+    
+    send_mail(
+        subject,
+        message,
+        settings.DEFAULT_FROM_EMAIL,
+        [email],
+        fail_silently=False,
+    )
+
+def send_newsletter_welcome_email(email):
+    """Send welcome email for NEWSLETTER signups (from homepage)"""
+    subject = "Welcome to Dating Hub's 2026 Dating Predictions!"
+    
+    message = f"""Welcome to Dating Hub's exclusive newsletter!
+
+Thank you for subscribing to "Don't Just Date. Strategize."
+
+You'll now receive:
+• 2026 dating trend predictions
+• Behavioral research insights
+• Platform algorithm updates
+• Success stories and case studies
+
+Our first newsletter will arrive in your inbox soon.
+
+In the meantime, explore our latest research:
+https://dating-hub.com.au/research/
+
+You can also try our AI Dating Site Matchmaker to get personalized platform recommendations:
+https://dating-hub.com.au/tools/dating-recommendations/
 
 Best regards,
 Dating Hub Research Team
