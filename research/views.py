@@ -84,20 +84,8 @@ def dating_recommendations_survey(request):
                 'q6': request.POST.get('q6', '')
             }
         
-        # ✅ SAVE TO DATABASE (now that it's fixed!)
-        try:
-            from .models import SurveySubmission
-            submission = SurveySubmission.objects.create(
-                name=name if name else None,
-                email=email,
-                survey_type=survey_type,
-                answers=answers
-            )
-            submission_id = submission.id
-        except Exception as e:
-            # If database fails, continue anyway (but log it)
-            submission_id = None
-            print(f"Database save failed: {e}")
+        # ⚠️ TEMPORARY: Database COMPLETELY disabled (no try/except)
+        submission_id = None
         
         send_confirmation_email(email, name, survey_type, answers, submission_id)
         
