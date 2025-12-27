@@ -138,6 +138,10 @@
         <div class="{% if message.tags == 'success' %}bg-green-50 text-green-800 border-green-200{% else %}bg-red-50 text-red-800 border-red-200{% endif %} 
                     border px-4 py-3 rounded-lg text-sm font-medium text-center">
             {{ message }}
+            <!-- FIXED LINE 99: Changed from {% url 'home' %} to / -->
+            <div class="mt-2">
+                <a href="/" class="text-blue-600 hover:underline text-sm">Return to Home</a>
+            </div>
         </div>
         {% endfor %}
     </div>
@@ -241,7 +245,7 @@
                     <div class="text-yellow-400 mb-3 sm:mb-4 text-xs"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
                     <p class="text-gray-600 text-xs sm:text-sm mb-6 sm:mb-8 leading-relaxed">"The research-backed approach made me feel confident. Finally found quality matches."</p>
                     <div class="flex items-center space-x-3">
-                        <div class="w-8 h-8 sm:w-10 sm:h-10 bg-cyan-500 rounded-full flex items-center justify-content: center; text-white font-bold text-xs">ET</div>
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-xs">ET</div>
                         <span class="font-bold text-xs sm:text-sm">Emma T.</span>
                     </div>
                 </div>
@@ -284,7 +288,7 @@
             <p class="text-gray-400 text-sm sm:text-lg mb-6 sm:mb-10 max-w-2xl mx-auto font-medium">
                 Join our newsletter for 2026 dating predictions and behavioral research.
             </p>
-            <!-- UPDATED LINE 227: Changed from {% url 'home' %} to / -->
+            <!-- UPDATED LINE: Changed from {% url 'home' %} to / -->
             <form method="POST" action="/" class="flex flex-col md:flex-row gap-3 sm:gap-4 justify-center items-center max-w-2xl mx-auto">
                 {% csrf_token %}
                 <input type="email" name="newsletter_email" placeholder="Enter your email" required 
