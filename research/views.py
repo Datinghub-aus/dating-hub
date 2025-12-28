@@ -180,7 +180,7 @@ Admin panel: https://dating-hub.com.au/admin/
         admin_subject,
         admin_message,
         settings.DEFAULT_FROM_EMAIL,
-        [settings.ADMIN_EMAIL],
+        [settings.DEFAULT_FROM_EMAIL],
         fail_silently=False,
     )
 

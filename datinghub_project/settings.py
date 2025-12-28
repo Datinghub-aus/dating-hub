@@ -149,3 +149,13 @@ if not DEBUG:
     CSRF_COOKIE_SECURE = True
     SECURE_BROWSER_XSS_FILTER = True
     SECURE_CONTENT_TYPE_NOSNIFF = True
+
+# CSRF and security
+CSRF_TRUSTED_ORIGINS = [
+    'https://dating-hub.com.au',
+    'https://www.dating-hub.com.au',
+]
+
+# Admin email for notifications
+ADMIN_EMAIL = os.environ.get('ADMIN_EMAIL', DEFAULT_FROM_EMAIL)
+ADMIN_EMAILS = [ADMIN_EMAIL]
